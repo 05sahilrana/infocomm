@@ -11,6 +11,168 @@
 
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="publications.css">
+
+  
+  <!-- NAVBAR style (inline so every page looks the same even with an old/cached style.css or script.js) -->
+  <style>
+    html body nav.nav.nav{position:sticky;top:0;z-index:1000;background:#f7f9fc !important;background-image:none !important;
+      backdrop-filter:none !important;border-bottom:1px solid #e3e8ef !important;box-shadow:0 1px 8px rgba(15,23,42,.06) !important}
+    html body nav.nav.nav .nav-inner{display:flex !important;align-items:center;justify-content:space-between;gap:1rem;
+      width:100% !important;max-width:none !important;margin:0 !important;padding:.6rem 2rem !important;box-sizing:border-box}
+    html body nav.nav.nav .brand{display:flex !important;align-items:center;gap:.75rem;margin:0 !important;text-decoration:none}
+    html body nav.nav.nav .brand-logo{height:44px !important;width:44px !important;object-fit:contain;border-radius:6px;background:#fff}
+    html body nav.nav.nav .brand-name{display:flex;flex-direction:column;line-height:1.15}
+    html body nav.nav.nav .brand-text{font-family:"Poppins",sans-serif;font-weight:600;font-size:1.2rem;color:#0b2d51 !important}
+    html body nav.nav.nav .brand-sub{font-family:"Inter",sans-serif;font-size:.72rem;font-weight:500;letter-spacing:.6px;text-transform:uppercase;color:#586175 !important}
+    html body nav.nav.nav .nav-links{list-style:none;margin:0;padding:0;background:transparent !important;gap:.25rem}
+    html body nav.nav.nav .nav-links li a{position:relative;display:block;text-decoration:none;font-family:"Inter",sans-serif;font-size:.95rem;font-weight:500;
+      color:#334155 !important;padding:.5rem .9rem;border-radius:6px;opacity:1 !important;transition:color .2s,background-color .2s}
+    html body nav.nav.nav .nav-links li a:hover{color:#0b6fb3 !important;background:#e8eef7 !important}
+    html body nav.nav.nav .nav-links li a.active{color:#0b6fb3 !important;font-weight:600}
+    html body nav.nav.nav .nav-links li a.active::after{content:"";position:absolute;left:.9rem;right:.9rem;bottom:2px;height:2px;border-radius:2px;background:#0b6fb3}
+    html body nav.nav.nav .nav-toggle{background:none;border:0;padding:.6rem .4rem;cursor:pointer}
+    html body nav.nav.nav .hamburger,html body nav.nav.nav .hamburger::before,html body nav.nav.nav .hamburger::after{background:#0b2d51 !important}
+    @media (min-width:700px){
+      html body nav.nav.nav .nav-toggle{display:none !important}
+      html body nav.nav.nav .nav-links{display:flex !important;flex-direction:row;align-items:center;position:static}
+    }
+    @media (max-width:699px){
+      html body nav.nav.nav .nav-inner{position:relative;padding:.5rem 1rem !important}
+      html body nav.nav.nav .brand-logo{height:38px !important;width:38px !important}
+      html body nav.nav.nav .nav-links{display:none !important;position:absolute;top:100%;left:0;right:0;flex-direction:column;
+        background:#f7f9fc !important;border-bottom:1px solid #e3e8ef;box-shadow:0 8px 16px rgba(15,23,42,.08);padding:.5rem 1rem 1rem}
+      html body nav.nav.nav .nav-links.open{display:flex !important}
+      html body nav.nav.nav .nav-links li a.active::after{display:none}
+    }
+    @media (min-width:700px) and (max-width:1100px){
+      html body nav.nav.nav .nav-inner{padding:.6rem 1rem !important}
+      html body nav.nav.nav .nav-links li a{padding:.5rem .55rem;font-size:.88rem}
+      html body nav.nav.nav .brand-sub{display:none}
+    }
+  </style>
+  <!-- PUBLICATIONS PAGE styles -->
+  <style>
+    .pb{--navy:#0b2d51;--blue:#0b6fb3;--sky:#3b82f6;--text:#334155;--muted:#64748b;--line:#e3e8ef;--tint:#f5f8fc}
+    .pb-wrap{max-width:1180px;margin:0 auto;padding:0 1.5rem}
+    .pb h1,.pb h2,.pb h3,.pb h4{font-family:"Poppins",sans-serif;color:var(--navy);margin:0}
+    .pb-section{padding:4.5rem 0}
+    .pb-tint{background:var(--tint)}
+    .pb-kicker{font-size:.76rem;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:var(--blue) !important;margin:0 0 .45rem !important}
+    .pb-head{text-align:center;margin-bottom:2.2rem}
+    .pb-head h2{font-size:clamp(1.6rem,3vw,2.1rem)}
+    .pb-hero{position:relative;overflow:hidden;color:#fff;padding:4.5rem 0 3.5rem;
+      background:radial-gradient(800px 380px at 85% 0%,rgba(59,130,246,.35),transparent 60%),linear-gradient(135deg,#071d36,#0b2d51 45%,#124a86)}
+    .pb-hero::after{content:"";position:absolute;right:-120px;top:-120px;width:460px;height:460px;border-radius:50%;pointer-events:none;
+      border:1px solid rgba(143,197,255,.25);box-shadow:0 0 0 60px rgba(143,197,255,.05),0 0 0 120px rgba(143,197,255,.035)}
+    .pb-eyebrow{display:inline-block;margin:0 0 1rem !important;padding:.35rem .8rem;border:1px solid rgba(255,255,255,.25);border-radius:999px;
+      font-size:.76rem;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:#cfe2ff !important;background:rgba(255,255,255,.06)}
+    .pb-hero h1{color:#fff;font-size:clamp(2rem,4.6vw,3.1rem);line-height:1.15}
+    .pb-hero h1 span{background:linear-gradient(90deg,#8ec5ff,#c4b5fd);-webkit-background-clip:text;background-clip:text;color:transparent}
+    .pb-lead{max-width:640px;margin:1rem 0 0 !important;font-size:1.08rem;color:#d6e4f5 !important;line-height:1.6}
+    .pb-stats{list-style:none;margin:2.2rem 0 0;padding:0;display:flex;gap:2.5rem;flex-wrap:wrap}
+    .pb-stats strong{display:block;font-family:"Poppins",sans-serif;font-size:2rem;color:#fff;line-height:1.1}
+    .pb-stats span{font-size:.85rem;color:#b9cde6}
+    .pb-jump{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:2rem;position:relative;z-index:1}
+    .pb-jump a{padding:.45rem .9rem;border-radius:999px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);
+      color:#fff;text-decoration:none;font-size:.88rem;font-weight:600;transition:background .2s}
+    .pb-jump a:hover{background:rgba(255,255,255,.2)}
+    .pb-reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+    .pb-reveal.in{opacity:1;transform:none}
+    @media (prefers-reduced-motion:reduce){.pb-reveal{opacity:1;transform:none;transition:none}}
+    @media (max-width:600px){.pb-section{padding:3.2rem 0}.pb-wrap{padding:0 1rem}.pb-hero{padding:3.2rem 0 2.8rem}.pb-stats{gap:1.6rem}}
+
+    .pb-body{padding-top:0;padding-bottom:4rem}
+    .pub-tabs{position:relative;z-index:2;margin:-1.9rem auto 1.6rem !important;max-width:620px;display:grid !important;grid-template-columns:1fr 1fr;gap:.4rem !important;
+      padding:.45rem !important;background:#fff !important;border:1px solid var(--line);border-radius:16px !important;box-shadow:0 14px 32px rgba(11,45,81,.14) !important}
+    .pb .tab-button{padding:.85rem 1rem !important;font-size:1rem !important;border:0 !important;border-radius:12px !important;background:transparent !important;
+      color:var(--text) !important;box-shadow:none !important;transform:none !important;display:flex;align-items:center;justify-content:center;gap:.5rem}
+    .pb .tab-button:hover{background:var(--tint) !important;color:var(--navy) !important}
+    .pb .tab-button.active{background:linear-gradient(135deg,#0b2d51,#124a86) !important;color:#fff !important}
+    .pb-count{font-size:.75rem;font-weight:700;padding:.1rem .5rem;border-radius:999px;background:rgba(11,111,179,.12);color:var(--blue)}
+    .tab-button.active .pb-count{background:rgba(255,255,255,.2);color:#fff}
+
+    .pb-search{display:flex;align-items:center;gap:.6rem;max-width:620px;margin:0 auto 2rem;padding:.7rem 1rem;background:var(--tint);border:1px solid var(--line);border-radius:12px}
+    .pb-search:focus-within{border-color:var(--blue);box-shadow:0 0 0 3px rgba(11,111,179,.15);background:#fff}
+    .pb-search svg{width:18px;height:18px;fill:none;stroke:var(--muted);stroke-width:2;stroke-linecap:round;flex:none}
+    .pb-search input{flex:1;border:0;background:transparent;font:inherit;font-size:.95rem;color:var(--navy);outline:none;min-width:0}
+    .pb-hits{font-size:.8rem;color:var(--muted);white-space:nowrap}
+    .pb-none{text-align:center;color:var(--muted)}
+
+    .pb .pub-section-header{background:none !important;border:0 !important;box-shadow:none !important;padding:0 !important;margin:0 0 1rem !important;text-align:center}
+    .pb .pub-section-header h2{font-size:clamp(1.5rem,3vw,2rem) !important;color:var(--navy) !important}
+    .pb .pub-section-header .year-range{color:var(--muted) !important}
+    .pb .year-subsection{margin:2.4rem 0 1.4rem !important}
+    .pb .year-subsection h3{font-size:1.2rem !important;color:var(--navy) !important;border-bottom:2px solid var(--line) !important;padding-bottom:.6rem !important;margin-bottom:1.2rem !important}
+    .pb .year-subsection h3::before{width:10px !important;height:10px !important;background:linear-gradient(135deg,var(--blue),#8b5cf6) !important;box-shadow:0 0 0 4px rgba(11,111,179,.15)}
+
+    .pb .publication-item{padding:1.4rem 1.6rem 1.3rem 1.8rem !important;margin-bottom:1rem !important;border-radius:14px !important;border:1px solid var(--line) !important;box-shadow:none !important}
+    .pb .publication-item:hover{transform:translateY(-3px) !important;border-color:#cfdcec !important;box-shadow:0 14px 28px rgba(11,45,81,.1) !important}
+    .pb .publication-item::before{width:4px !important;background:linear-gradient(var(--blue),#8b5cf6) !important;transform:scaleY(1) !important;opacity:.0;transition:opacity .2s !important}
+    .pb .publication-item:hover::before{opacity:1}
+    .pb .publication-item::after{font-size:2.2rem !important;color:#eef2f7 !important;top:1rem !important;right:1.3rem !important}
+    .pb .pub-title{font-family:"Poppins",sans-serif;font-size:1.05rem !important;color:var(--navy) !important;margin:0 0 .5rem !important;padding-right:2.5rem;line-height:1.45 !important}
+    .pb .pub-authors{font-size:.9rem !important;color:var(--muted) !important;margin:0 0 .45rem !important;order:2}
+    .pb .pub-venue{font-size:.9rem !important;margin:0 !important}
+    .pb .pub-venue em{color:var(--blue) !important}
+    .pb .pub-links{margin-top:.8rem !important}
+    .pb .pub-links a{padding:.3rem .8rem !important;font-size:.82rem !important;border-radius:8px !important;border-color:#bcd4ee !important;color:var(--blue) !important}
+    .pb .pub-links a:hover{background:var(--blue) !important;color:#fff !important}
+    .pb .publication-item.pb-hide,.pb .year-subsection.pb-hide{display:none !important}
+    .pb mark{background:#fde68a;color:inherit;border-radius:3px;padding:0 1px}
+    @media (max-width:600px){ .pub-tabs{margin-top:-1.5rem !important} .pb .tab-button{font-size:.88rem !important;padding:.7rem .5rem !important} .pb .publication-item{padding:1.1rem 1.1rem 1rem 1.2rem !important} }
+
+    /* collapsible year groups: newest open, older ones behind a dropdown; search opens all */
+    .pb-yr{all:unset;box-sizing:border-box;display:flex;align-items:center;gap:.8rem;width:100%;cursor:pointer}
+    .pb-yr:focus-visible{outline:2px solid var(--blue);outline-offset:4px;border-radius:6px}
+    .pb-yr-count{font-family:"Inter",sans-serif;font-size:.78rem;font-weight:600;color:var(--muted);background:var(--tint);border:1px solid var(--line);padding:.15rem .55rem;border-radius:999px}
+    .pb-yr-chev{margin-left:auto;width:30px;height:30px;border-radius:8px;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;transition:transform .25s,background .2s}
+    .pb-yr-chev svg{width:14px;height:14px;fill:none;stroke:var(--navy);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+    .pb-yr:hover .pb-yr-chev{background:var(--tint)}
+    .year-subsection.is-open .pb-yr-chev{transform:rotate(180deg)}
+    .pb .year-subsection:not(.is-open) > .publication-list{display:none}
+    .pb .year-subsection:not(.is-open){margin-bottom:.4rem !important}
+    .pb .year-subsection:not(.is-open) h3{margin-bottom:0 !important}
+    .pb.pb-searching .year-subsection > .publication-list{display:block}
+    .pb.pb-searching .pb-yr-chev{visibility:hidden}
+    .pb-older-hint{text-align:center;color:var(--muted);font-size:.88rem;margin:1.2rem 0 0}
+
+    .pub-tabs{max-width:760px !important;grid-template-columns:repeat(3,1fr) !important}
+    .pb .pb-flat:not(.show-all) > .publication-item:nth-child(n+9){display:none}
+    .pb.pb-searching .pb-flat > .publication-item:not(.pb-hide){display:block !important}
+    .pb-more-wrap{text-align:center;margin:1.4rem 0 0}
+    .pb-more{font:inherit;font-weight:700;font-size:.92rem;color:#fff;background:linear-gradient(135deg,#0b2d51,#124a86);border:0;border-radius:10px;padding:.75rem 1.4rem;cursor:pointer;transition:transform .15s}
+    .pb-more:hover{transform:translateY(-2px)}
+    .pb.pb-searching .pb-more-wrap{display:none}
+    .pb-empty-tab{max-width:620px;margin:1rem auto;text-align:center;border:1px dashed #bcd0e6;border-radius:16px;padding:2.4rem 1.5rem;background:#fff}
+    .pb-empty-tab h3{font-family:"Poppins",sans-serif;color:var(--navy);margin:0 0 .4rem}
+    .pb-empty-tab p{color:var(--muted);margin:0}
+    @media (max-width:600px){ .pb .tab-button{font-size:.8rem !important;padding:.65rem .3rem !important} }
+  </style>
+  <!-- FOOTER style (same on every page) -->
+  <style>
+    html body .ft{margin-top:0;padding:0;background:#040b16;color:#b9c7d8;border:0;position:relative;font-family:"Inter",sans-serif}
+    .ft-stripe{display:flex;height:4px}
+    .ft-stripe span{flex:1}
+    .ft-stripe span:nth-child(1){background:#1e88e5}.ft-stripe span:nth-child(2){background:#e8590c}.ft-stripe span:nth-child(3){background:#2e9d3a}
+    .ft-inner{max-width:1180px;margin:0 auto;padding:3rem 1.5rem 2rem;display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:2.5rem}
+    .ft-cover{display:block;width:100%;max-width:380px;height:auto;border-radius:8px;margin-bottom:1rem}
+    .ft address{font-style:normal;line-height:1.7;font-size:.92rem;color:#b9c7d8}
+    .ft h4{font-family:"Poppins",sans-serif;color:#fff;font-size:1rem;margin:0 0 .9rem}
+    .ft p{margin:0}
+    .ft a{color:#cfe2ff;text-decoration:none}
+    .ft a:hover{color:#fff;text-decoration:underline}
+    .ft ul{list-style:none;margin:0;padding:0}
+    .ft li{margin-bottom:.45rem}
+    .ft-social{margin-top:.6rem !important}
+    .ft-social a{display:inline-flex;align-items:center;gap:.45rem}
+    .ft-social svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+    .ft-incharge{margin-top:1.1rem !important;line-height:1.6}
+    .ft-incharge span{display:block;font-size:.72rem;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:#e8590c}
+    .ft-bottom{border-top:1px solid rgba(255,255,255,.1);max-width:1180px;margin:0 auto;padding:1.1rem 1.5rem 1.4rem;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-size:.84rem;color:#8a9bb2}
+    @media (max-width:800px){ .ft-inner{grid-template-columns:1fr 1fr} .ft-brand{grid-column:1/-1} }
+    @media (max-width:500px){ .ft-inner{grid-template-columns:1fr;padding:2.4rem 1rem 1.6rem} .ft-bottom{flex-direction:column;padding:1rem} }
+  </style>
 </head>
 <body>
 
@@ -18,8 +180,8 @@
   <nav class="nav" role="navigation" aria-label="Main navigation">
     <div class="nav-inner">
       <a class="brand" href="index.html">
-        <img src="https://cdn.jsdelivr.net/gh/YOUR_GH_USER/infocomm-lab/images/logo.png" alt="Infocomm Lab logo" class="brand-logo">
-        <span class="brand-text">Infocomm Lab</span>
+        <img src="https://cdn.jsdelivr.net/gh/SamannayaAdhikari/infocomm-lab-assets/infocommlogo.jpg" alt="Infocomm Lab logo" class="brand-logo">
+        <span class="brand-name"><span class="brand-text">Infocomm Lab</span><span class="brand-sub">IIT Mandi</span></span>
       </a>
 
       <button id="navToggle" class="nav-toggle" aria-expanded="false" aria-controls="navMenu" aria-label="Toggle navigation">
@@ -32,117 +194,1443 @@
         <li><a href="people.html">People</a></li>
         <li><a href="projects.html">Projects</a></li>
         <li><a href="publications.html" class="active">Publications</a></li>
+        <li><a href="resources.html">Resources</a></li>
+        <li><a href="join.html">Join Us</a></li>
       </ul>
     </div>
   </nav>
 
-  <main>
-    <header class="container section">
-      <div class="section-header">
-        <h1>Publications</h1>
-        <p class="muted">
-          Peer-reviewed journal and conference publications from the Infocomm Lab.
-        </p>
+  <!-- HERO SECTION -->
+  <section class="pb pb-hero">
+    <div class="pb-wrap">
+      <p class="pb-eyebrow">Publications</p>
+      <h1>Research that <span>shapes the field</span></h1>
+      <p class="pb-lead">Peer-reviewed journal and conference papers from the Infocomm Lab in wireless communications, sensing, information theory and IoT.</p>
+      <ul class="pb-stats">
+        <li><strong>120+</strong><span>Total publications</span></li>
+        <li><strong>8</strong><span>Conference papers in 2026</span></li>
+        <li><strong>15+</strong><span>Years active</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <main class="pb">
+    <div class="pb-wrap pb-body">
+      
+      <!-- Tab Navigation -->
+      <div class="pub-tabs">
+        <button class="tab-button active" onclick="switchTab('journals')" id="journals-tab">
+          Journal Papers <span class="pb-count">34</span>
+        </button>
+        <button class="tab-button" onclick="switchTab('conferences')" id="conferences-tab">
+          Conference Papers <span class="pb-count">53</span>
+        </button>
+        <button class="tab-button" onclick="switchTab('patents')" id="patents-tab">
+          Patents <span class="pb-count">0</span>
+        </button>
       </div>
-    </header>
 
-    <!-- PUBLICATIONS LIST -->
-    <section class="container section">
+      <div class="pb-search">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <input id="pubSearch" type="search" placeholder="Search by title, author or venue…" aria-label="Search publications">
+        <span id="pubHits" class="pb-hits"></span>
+      </div>
+      <p class="pb-none" id="pubNone" hidden>No papers match your search in this tab.</p>
 
-      <ol class="publication-list">
+      <!-- Tab Content Wrapper -->
+      <div class="tab-content-wrapper">
 
-        <!-- Publication 1 -->
-        <li class="publication-item">
-          <p class="pub-authors">
-            <strong>Author A</strong>, Author B, Author C
-          </p>
-          <p class="pub-title">
-            WiFi CSI-based Indoor Trajectory Reconstruction Using Deep Learning
-          </p>
-          <p class="pub-venue">
-            <em>IEEE International Conference on Communications (ICC)</em>, 2025
-          </p>
-          <p class="pub-links">
-            <a href="#" target="_blank" rel="noopener">Paper</a> ·
-            <a href="#" target="_blank" rel="noopener">Code</a>
-          </p>
-        </li>
+      <!-- JOURNAL PUBLICATIONS TAB -->
+      <div id="journals-content" class="tab-content active">
+      <section class="pub-section">
+        <div class="pub-section-header">
+          <h2>Journal Publications</h2>
+          <p class="year-range">Peer-reviewed journal articles and transactions</p>
+        </div>
 
-        <!-- Publication 2 -->
-        <li class="publication-item">
-          <p class="pub-authors">
-            Author D, <strong>Author E</strong>
-          </p>
-          <p class="pub-title">
-            Fault-Tolerant Control of Drone Swarms for Disaster Response
-          </p>
-          <p class="pub-venue">
-            <em>IEEE Transactions on Control Systems Technology</em>, 2024
-          </p>
-          <p class="pub-links">
-            <a href="#" target="_blank" rel="noopener">Paper</a>
-          </p>
-        </li>
+        <ol class="publication-list pb-flat" id="journalList">
+            <li class="publication-item">
+              <p class="pub-authors">
+                Gopal Chamarthi, Adarsh Patel, Rameshwar Pratap
+              </p>
+              <p class="pub-title">
+                Random Projection-Based Fast Multi-User Detectors in Uplink Massive MIMO Communication Networks <span class="badge-new">New</span>
+              </p>
+              <p class="pub-venue">
+                <em>IEEE Open Journal of the Communications Society</em>, 2025
+              </p>
+              <p class="pub-links">
+                <a href="https://ieeexplore.ieee.org/document/10909695" target="_blank" rel="noopener">Paper</a>
+              </p>
+            </li>
+            <li class="publication-item">
+              <p class="pub-authors">
+                Mohd Saif Ali Khan, Samar Agnihotri, Karthik R. M.
+              </p>
+              <p class="pub-title">
+                Comments on "Local Partial Zero-Forcing Combining for Cell-Free Massive MIMO Systems" <span class="badge-new">New</span>
+              </p>
+              <p class="pub-venue">
+                <em>IEEE Transactions on Communications</em>, 2025
+              </p>
+              <p class="pub-links">
+                <a href="https://ieeexplore.ieee.org/abstract/document/11131281" target="_blank" rel="noopener">Paper</a>
+              </p>
+            </li>
+            <li class="publication-item">
+              <p class="pub-authors">
+                S. Gujral and S. Sarma
+              </p>
+              <p class="pub-title">
+                Power Minimization in Multi-antenna Transmitter Aided Bidirectional Tag-to-Device Communications for IoT
+              </p>
+              <p class="pub-venue">
+                <em>IEEE Transactions on Vehicular Technology</em>, vol. 71, no. 12, pp. 13105-13119, 2022
+              </p>
+              <p class="pub-links">
+                <a href="https://doi.org/10.1109/TVT.2022.3201402" target="_blank" rel="noopener">DOI</a>
+                <a href="#" target="_blank" rel="noopener">PDF</a>
+              </p>
+            </li>
+            <li class="publication-item">
+              <p class="pub-authors">
+                S. Gujral and S. Sarma
+              </p>
+              <p class="pub-title">
+                Wireless Powered Backscatter-aided Cooperative Communication Scheme for IoT
+              </p>
+              <p class="pub-venue">
+                <em>Springer Wireless Networks</em>, vol. 28, pp. 1771-1784, 2022
+              </p>
+              <p class="pub-links">
+                <a href="https://doi.org/10.1007/s11276-022-02941-x" target="_blank" rel="noopener">DOI</a>
+              </p>
+            </li>
+            <li class="publication-item">
+              <p class="pub-authors">
+                A. Chawla, R. K. Singh, A. Patel, A. K. Jagannatham, and L. Hanzo
+              </p>
+              <p class="pub-title">
+                Distributed Detection for Centralized and Decentralized Millimeter Wave Massive MIMO Sensor Networks
+              </p>
+              <p class="pub-venue">
+                <em>IEEE Transactions on Vehicular Technology</em>, June 2021
+              </p>
+            </li>
+            <li class="publication-item">
+              <p class="pub-authors">
+                S. Alam, S. Thakor, and S. Abbas
+              </p>
+              <p class="pub-title">
+                Inner Bounds for the Almost Entropic Region and Network Code Construction
+              </p>
+              <p class="pub-venue">
+                <em>IEEE Transactions on Communications</em>, vol. 69, no. 1, pp. 19-30, January 2021
+              </p>
+              <p class="pub-links">
+                <a href="https://doi.org/10.1109/TCOMM.2020.3030055" target="_blank" rel="noopener">DOI</a>
+              </p>
+            </li>
+            <li class="publication-item">
+              <p class="pub-authors">
+                D. Saleem, S. Thakor, and A. Tiwari
+              </p>
+              <p class="pub-title">
+                Recursive Algorithm to Verify Quasi-Uniform Entropy Vectors and its Applications
+              </p>
+              <p class="pub-venue">
+                <em>IEEE Transactions on Communications</em>, vol. 69, no. 2, pp. 874-883, February 2021
+              </p>
+              <p class="pub-links">
+                <a href="https://doi.org/10.1109/TCOMM.2020.3040401" target="_blank" rel="noopener">DOI</a>
+              </p>
+            </li>
+            <li class="publication-item">
+              <p class="pub-authors">
+                M. I. Qureshi and S. Thakor
+              </p>
+              <p class="pub-title">
+                On the Information Capacity of Layered Undirected Unicast Networks
+              </p>
+              <p class="pub-venue">
+                <em>IEEE Communications Letters</em>, vol. 24, no. 12, pp. 2715-2718, December 2020
+              </p>
+              <p class="pub-links">
+                <a href="https://doi.org/10.1109/LCOMM.2020.3020511" target="_blank" rel="noopener">DOI</a>
+              </p>
+            </li>
+            <li class="publication-item">
+              <p class="pub-authors">
+                S. Sarma and K. Ishibashi
+              </p>
+              <p class="pub-title">
+                Time-to-Recharge Analysis for Energy-relay-assisted Energy Harvesting
+              </p>
+              <p class="pub-venue">
+                <em>IEEE Access</em>, vol. 7, pp. 139924-139937, 2019
+              </p>
+              <p class="pub-links">
+                <a href="https://doi.org/10.1109/ACCESS.2019.2943562" target="_blank" rel="noopener">DOI</a>
+              </p>
+            </li>
+            <li class="publication-item">
+              <p class="pub-authors">
+                A. Chawla, A. Patel, A. K. Jagannatham, and P. K. Varshney
+              </p>
+              <p class="pub-title">
+                Distributed Detection in Massive MIMO Wireless Sensor Networks under Perfect and Imperfect CSI
+              </p>
+              <p class="pub-venue">
+                <em>IEEE Transactions on Signal Processing</em>, vol. 67, no. 15, pp. 4055-4068, August 2019
+              </p>
+            </li>
+            <li class="publication-item">
+              <p class="pub-authors">
+                N. Varshney, A. Patel, W. Haselmayr, A. K. Jagannatham, P. K. Varshney, and A. Nallanathan
+              </p>
+              <p class="pub-title">
+                Impact of Intermediate Nanomachines in Multiple Cooperative Nanomachine-Assisted Diffusion Advection Mobile Molecular Communication
+              </p>
+              <p class="pub-venue">
+                <em>IEEE Transactions on Communications</em>, vol. 67, no. 7, pp. 4856-4871, July 2019
+              </p>
+            </li>
+            <li class="publication-item">
+              <p class="pub-authors">
+                Kumar, P., Thakor, S.
+              </p>
+              <p class="pub-title">
+                Performance of 3T-ANC based orthogonal frequency-division-multiplexed optical wireless link with pointing error
+              </p>
+              <p class="pub-venue">
+                <em>J Opt</em>, vol. 48, pp. 400-411, 2019
+              </p>
+              <p class="pub-links">
+                <a href="https://doi.org/10.1007/s12596-019-00542-0" target="_blank" rel="noopener">DOI</a>
+              </p>
+            </li>
+            <li class="publication-item">
+              <p class="pub-authors">
+                T. Chan, S. Thakor, and A. Grant
+              </p>
+              <p class="pub-title">
+                Minimal Characterization of Shannon-Type Inequalities Under Functional Dependence and Full Conditional Independence Structures
+              </p>
+              <p class="pub-venue">
+                <em>IEEE Transactions on Information Theory</em>, vol. 65, no. 7, pp. 4041-4051, July 2019
+              </p>
+              <p class="pub-links">
+                <a href="https://doi.org/10.1109/TIT.2019.2900669" target="_blank" rel="noopener">DOI</a>
+              </p>
+            </li>
+            <li class="publication-item">
+              <p class="pub-authors">
+                A. Bhardwaj, S. Agnihotri
+              </p>
+              <p class="pub-title">
+                Energy- and spectral-efficiency trade-off for D2D-multicasts in underlay cellular networks
+              </p>
+              <p class="pub-venue">
+                <em>IEEE Wireless Communications Letters</em>, 2018
+              </p>
+            </li>
+            <li class="publication-item">
+              <p class="pub-authors">
+                S. Sarma and J. Kuri
+              </p>
+              <p class="pub-title">
+                SNR based Secure Communication via Untrusted Amplify and Forward Relay Nodes Using Artificial Noise
+              </p>
+              <p class="pub-venue">
+                <em>Springer Wireless Networks</em>, vol. 24, no. 1, pp. 127-138, January 2018
+              </p>
+              <p class="pub-links">
+                <a href="https://doi.org/10.1007/s11276-016-1318-8" target="_blank" rel="noopener">DOI</a>
+              </p>
+            </li>
+            <li class="publication-item">
+              <p class="pub-authors">
+                N. Varshney, A. Patel, Y. Deng, W. Haselmayr, P. K. Varshney, and A. Nallanathan
+              </p>
+              <p class="pub-title">
+                Abnormality Detection inside Blood Vessels with Mobile Nanomachines
+              </p>
+              <p class="pub-venue">
+                <em>IEEE Transactions on Molecular, Biological, and Multiscale Communications</em>, vol. 4, no. 3, pp. 189-194, September 2018
+              </p>
+            </li>
+            <li class="publication-item">
+              <p class="pub-authors">
+                A. Goel, A. Patel, K. G. Nagananda, and P. K. Varshney
+              </p>
+              <p class="pub-title">
+                Robustness of the Counting Rule for Distributed Detection in Wireless Sensor Networks
+              </p>
+              <p class="pub-venue">
+                <em>IEEE Signal Processing Letters</em>, vol. 25, no. 8, pp. 1191-1195, August 2018
+              </p>
+            </li>
+            <li class="publication-item">
+              <p class="pub-authors">
+                A. Patel, H. Ram, A. K. Jagannatham, and P. K. Varshney
+              </p>
+              <p class="pub-title">
+                Robust Cooperative Spectrum Sensing for MIMO Cognitive Radio Networks under CSI Uncertainty
+              </p>
+              <p class="pub-venue">
+                <em>IEEE Transactions on Signal Processing</em>, vol. 66, no. 1, pp. 18-33, January 2018
+              </p>
+            </li>
+            <li class="publication-item">
+              <p class="pub-authors">
+                Kumar, P., Thakor, S.
+              </p>
+              <p class="pub-title">
+                Performance of OFDM-FSO link with analog network coding
+              </p>
+              <p class="pub-venue">
+                <em>Photon Netw Commun</em>, vol. 35, pp. 210-224, 2018
+              </p>
+              <p class="pub-links">
+                <a href="https://doi.org/10.1007/s11107-017-0730-z" target="_blank" rel="noopener">DOI</a>
+              </p>
+            </li>
+            <li class="publication-item">
+              <p class="pub-authors">
+                A. Bhardwaj, S. Agnihotri
+              </p>
+              <p class="pub-title">
+                Interference-aware D2D-multicast session provisioning in LTE-A networks
+              </p>
+              <p class="pub-venue">
+                <em>IEEE Wireless Communications and Networking</em>, 2017
+              </p>
+            </li>
+            <li class="publication-item">
+              <p class="pub-authors">
+                S. Thakor, T. Chan, and A. Grant
+              </p>
+              <p class="pub-title">
+                Capacity Bounds for Networks With Correlated Sources and Characterisation of Distributions by Entropies
+              </p>
+              <p class="pub-venue">
+                <em>IEEE Transactions on Information Theory</em>, vol. 63, no. 6, pp. 3540-3553, June 2017
+              </p>
+              <p class="pub-links">
+                <a href="https://doi.org/10.1109/TIT.2017.2681078" target="_blank" rel="noopener">DOI</a>
+              </p>
+            </li>
+            <li class="publication-item">
+              <p class="pub-authors">
+                A. Bhardwaj, S. Agnihotri
+              </p>
+              <p class="pub-title">
+                A resource allocation scheme for multiple device-to-device multicasts in cellular networks
+              </p>
+              <p class="pub-venue">
+                <em>IEEE Wireless Communications and Networking</em>, 2016
+              </p>
+            </li>
+            <li class="publication-item">
+              <p class="pub-authors">
+                S. Sarma, K. Kandhway, and J. Kuri
+              </p>
+              <p class="pub-title">
+                Robust Power Allocation and Outage Analysis for Secrecy in Independent Parallel Gaussian Channels
+              </p>
+              <p class="pub-venue">
+                <em>IEEE Wireless Communications Letters</em>, vol. 5, no. 1, pp. 68-71, February 2016
+              </p>
+              <p class="pub-links">
+                <a href="https://doi.org/10.1109/LWC.2015.2497347" target="_blank" rel="noopener">DOI</a>
+              </p>
+            </li>
+            <li class="publication-item">
+              <p class="pub-authors">
+                A. Patel, S. Biswas, and A. K. Jagannatham
+              </p>
+              <p class="pub-title">
+                Optimal GLRT-Based Robust Spectrum Sensing for MIMO Cognitive Radio Networks with CSI Uncertainty
+              </p>
+              <p class="pub-venue">
+                <em>IEEE Transactions on Signal Processing</em>, vol. 64, no. 6, pp. 1621-1633, March 2016
+              </p>
+            </li>
+            <li class="publication-item">
+              <p class="pub-authors">
+                S. Thakor, A. Grant, and T. Chan
+              </p>
+              <p class="pub-title">
+                Cut-Set Bounds on Network Information Flow
+              </p>
+              <p class="pub-venue">
+                <em>IEEE Transactions on Information Theory</em>, vol. 62, no. 4, pp. 1850-1865, April 2016
+              </p>
+              <p class="pub-links">
+                <a href="https://doi.org/10.1109/TIT.2016.2529643" target="_blank" rel="noopener">DOI</a>
+              </p>
+            </li>
+            <li class="publication-item">
+              <p class="pub-authors">
+                S. Sarma, S. Agnihotri, and J. Kuri
+              </p>
+              <p class="pub-title">
+                Secure communication in amplify-and-forward networks with multiple eavesdroppers: decoding with SNR thresholds
+              </p>
+              <p class="pub-venue">
+                <em>Springer Wireless Personal Communications</em>, vol. 85, no. 4, December 2015
+              </p>
+            </li>
+            <li class="publication-item">
+              <p class="pub-authors">
+                S. Sarma and J. Kuri
+              </p>
+              <p class="pub-title">
+                QEP Based Solution for Power Allocation in Amplify and Forward Networks
+              </p>
+              <p class="pub-venue">
+                <em>IEEE Communications Letters</em>, vol. 19, no. 10, pp. 1774-1777, October 2015
+              </p>
+              <p class="pub-links">
+                <a href="https://doi.org/10.1109/LCOMM.2015.2456921" target="_blank" rel="noopener">DOI</a>
+              </p>
+            </li>
+            <li class="publication-item">
+              <p class="pub-authors">
+                S. Sarma and J. Kuri
+              </p>
+              <p class="pub-title">
+                Optimal power allocation for protective jamming in wireless networks: A flow based model
+              </p>
+              <p class="pub-venue">
+                <em>Elsevier Computer Networks</em>, vol. 81, pp. 258-271, 2015
+              </p>
+            </li>
+            <li class="publication-item">
+              <p class="pub-authors">
+                S. Sarma, K. Kandhway, and J. Kuri
+              </p>
+              <p class="pub-title">
+                Robust Energy Harvesting Based on a Stackelberg Game
+              </p>
+              <p class="pub-venue">
+                <em>IEEE Wireless Communications Letters</em>, vol. 5, no. 3, pp. 336-339, 2015
+              </p>
+              <p class="pub-links">
+                <a href="https://doi.org/10.1109/LWC.2016.2555901" target="_blank" rel="noopener">DOI</a>
+              </p>
+            </li>
+            <li class="publication-item">
+              <p class="pub-authors">
+                A. Sunny, S. Sarma, and J. Kuri
+              </p>
+              <p class="pub-title">
+                Secure Transmission in Cooperative Networks with Weak Eavesdroppers
+              </p>
+              <p class="pub-venue">
+                <em>IEEE Signal Processing Letters</em>, vol. 22, no. 10, pp. 1693-1697, October 2015
+              </p>
+              <p class="pub-links">
+                <a href="https://doi.org/10.1109/LSP.2015.2425043" target="_blank" rel="noopener">DOI</a>
+              </p>
+            </li>
+            <li class="publication-item">
+              <p class="pub-authors">
+                C. L. Chan, S. Jaggi, V. Saligrama, S. Agnihotri
+              </p>
+              <p class="pub-title">
+                Non-adaptive group testing: Explicit bounds and novel algorithms
+              </p>
+              <p class="pub-venue">
+                <em>IEEE Transactions on Information Theory</em>, vol. 60, no. 5, 2014
+              </p>
+            </li>
+            <li class="publication-item">
+              <p class="pub-authors">
+                A. Patel, B. Tripathi, and A. K. Jagannatham
+              </p>
+              <p class="pub-title">
+                Robust Estimator-Correlator for Spectrum Sensing in MIMO CR Networks with CSI Uncertainty
+              </p>
+              <p class="pub-venue">
+                <em>IEEE Wireless Communications Letters</em>, vol. 3, no. 3, pp. 253-256, June 2014
+              </p>
+            </li>
+            <li class="publication-item">
+              <p class="pub-authors">
+                S. Agnihotri, V. Rajesh
+              </p>
+              <p class="pub-title">
+                Worst-case asymmetric distributed function computation
+              </p>
+              <p class="pub-venue">
+                <em>International Journal of General Systems</em>, vol. 42, no. 3, 2013
+              </p>
+            </li>
+            <li class="publication-item">
+              <p class="pub-authors">
+                A. Patel and A. K. Jagannatham
+              </p>
+              <p class="pub-title">
+                Non-Antipodal Signaling Based Robust Detection for Cooperative Spectrum Sensing in MIMO Cognitive Radio Networks
+              </p>
+              <p class="pub-venue">
+                <em>IEEE Signal Processing Letters</em>, vol. 20, no. 7, pp. 661-664, July 2013
+              </p>
+            </li>
+        </ol>
+        <p class="pb-more-wrap"><button type="button" class="pb-more" id="journalMore" aria-expanded="false">View all 34 journal papers</button></p>
 
-        <!-- Publication 3 -->
-        <li class="publication-item">
-          <p class="pub-authors">
-            Author F, Author G, <strong>Author H</strong>
-          </p>
-          <p class="pub-title">
-            Generative Models for Robust Signal Reconstruction in Wireless Systems
-          </p>
-          <p class="pub-venue">
-            <em>ACM MobiCom Workshop</em>, 2023
-          </p>
-          <p class="pub-links">
-            <a href="#" target="_blank" rel="noopener">Paper</a> ·
-            <a href="#" target="_blank" rel="noopener">Poster</a>
-          </p>
-        </li>
+      </section>
 
-        <!-- Copy–paste more publication-item blocks below -->
+      </div>
+      <!-- END JOURNAL PUBLICATIONS TAB -->
 
-      </ol>
+      <!-- CONFERENCE PUBLICATIONS TAB -->
+      <div id="conferences-content" class="tab-content">
+      <section class="pub-section">
+        <div class="pub-section-header">
+          <h2>Conference Publications</h2>
+          <p class="year-range">Peer-reviewed conference papers and workshop presentations</p>
+        </div>
 
-    </section>
+        <!-- 2026 -->
+        <div class="year-subsection">
+          <h3>2026</h3>
+          <ol class="publication-list">
+
+            <li class="publication-item">
+              <p class="pub-authors">
+                Anuranjan Jha, Adarsh Patel
+              </p>
+              <p class="pub-title">
+                Optimal Detection and Phase Optimization in IRS-Assisted Ambient Backscatter Communication with Correlated Ambient Source <span class="badge-new">New</span>
+              </p>
+              <p class="pub-venue">
+                <em>IEEE International Symposium on Personal, Indoor and Mobile Radio Communications (PIMRC)</em>, Singapore, 2026
+              </p>
+            </li>
+
+            <li class="publication-item">
+              <p class="pub-authors">
+                Anuranjan Jha, Adarsh Patel
+              </p>
+              <p class="pub-title">
+                Detection in Ambient Backscatter Communication System with Multi-Antenna Tag-Reader Pair and Correlated Ambient Source Signal <span class="badge-new">New</span>
+              </p>
+              <p class="pub-venue">
+                <em>International Conference on Signal Processing and Communications (SPCOM)</em>, IISc Bengaluru, 2026
+              </p>
+            </li>
+
+            <li class="publication-item">
+              <p class="pub-authors">
+                Mohd Saif Ali Khan, Karthik RM, Samar Agnihotri
+              </p>
+              <p class="pub-title">
+                Generalized Partial Full-Pilot Zero-Forcing Combining for Distributed mMIMO <span class="badge-new">New</span>
+              </p>
+              <p class="pub-venue">
+                <em>International Conference on Signal Processing and Communications (SPCOM)</em>, IISc Bengaluru, 2026
+              </p>
+            </li>
+
+            <li class="publication-item">
+              <p class="pub-authors">
+                Gopal Sai Krishna Chamarthi, Adarsh Patel, Rameshwar Pratap
+              </p>
+              <p class="pub-title">
+                Fast and Accurate Channel Estimation in IRS-assisted XL-MIMO Communication Networks <span class="badge-new">New</span>
+              </p>
+              <p class="pub-venue">
+                <em>IEEE Vehicular Technology Conference (VTC2026-Spring)</em>, Nice, France, 2026
+              </p>
+              <p class="pub-links">
+                <a href="https://events.vtsociety.org/vtc2026-spring/" target="_blank" rel="noopener">Conference</a>
+              </p>
+            </li>
+
+            <li class="publication-item">
+              <p class="pub-authors">
+                Sk Shafique Anwar, Adarsh Patel
+              </p>
+              <p class="pub-title">
+                Pilot-Free Data Detection using a Coherent-MAC based Unified Network Coordinator in IoT HetNets <span class="badge-new">New</span>
+              </p>
+              <p class="pub-venue">
+                <em>IEEE Vehicular Technology Conference (VTC2026-Spring)</em>, Nice, France, 2026
+              </p>
+              <p class="pub-links">
+                <a href="https://events.vtsociety.org/vtc2026-spring/" target="_blank" rel="noopener">Conference</a>
+              </p>
+            </li>
+
+            <li class="publication-item">
+              <p class="pub-authors">
+                N V Divya Lakshmi, Adarsh Patel
+              </p>
+              <p class="pub-title">
+                Semi-Blind Detection in M-ary Signaling-based Uplink Cell-Free mMIMO Industrial IoT Networks <span class="badge-new">New</span>
+              </p>
+              <p class="pub-venue">
+                <em>IEEE Vehicular Technology Conference (VTC2026-Spring)</em>, Nice, France, 2026
+              </p>
+              <p class="pub-links">
+                <a href="https://events.vtsociety.org/vtc2026-spring/" target="_blank" rel="noopener">Conference</a>
+              </p>
+            </li>
+
+            <li class="publication-item">
+              <p class="pub-authors">
+                Ishita Sharma, Adarsh Patel
+              </p>
+              <p class="pub-title">
+                A Zero-Overhead ISAC Framework for Target Localization in Downlink MIMO-OFDM Networks <span class="badge-new">New</span>
+              </p>
+              <p class="pub-venue">
+                <em>National Conference on Communications (NCC)</em>, IIT Hyderabad, 2026
+              </p>
+              <p class="pub-links">
+                <a href="https://ee.iith.ac.in/NCC2026/" target="_blank" rel="noopener">Conference</a>
+              </p>
+            </li>
+
+            <li class="publication-item">
+              <p class="pub-authors">
+                Sk Shafique Anwar, Adarsh Patel
+              </p>
+              <p class="pub-title">
+                Blind Detection-Estimation and Performance Characterization in Cell-Free Massive MIMO <span class="badge-new">New</span>
+              </p>
+              <p class="pub-venue">
+                <em>National Conference on Communications (NCC)</em>, IIT Hyderabad, 2026
+              </p>
+              <p class="pub-links">
+                <a href="https://ee.iith.ac.in/NCC2026/" target="_blank" rel="noopener">Conference</a>
+              </p>
+            </li>
+
+          </ol>
+        </div>
+
+        <!-- 2024-2025 -->
+        <div class="year-subsection">
+          <h3>2024 - 2025</h3>
+          <ol class="publication-list">
+          
+            <!-- 2025 -->
+            <li class="publication-item">
+              <p class="pub-authors">
+                Anuranjan Jha, Vidhi Desai, Adarsh Patel
+              </p>
+              <p class="pub-title">
+                Optimal Detector with Correlated RF Source Signal in Ambient Backscatter Communication Systems
+              </p>
+              <p class="pub-venue">
+                <em>Joint European Conference on Networks and Communications &amp; 6G Summit (EuCNC/6G Summit)</em>, 2025
+              </p>
+              <p class="pub-links">
+                <a href="https://ieeexplore.ieee.org/document/11036936/" target="_blank" rel="noopener">Paper</a>
+              </p>
+            </li>
+
+            <li class="publication-item">
+              <p class="pub-authors">
+                Mohd Saif Ali Khan, Karthik RM, Samar Agnihotri
+              </p>
+              <p class="pub-title">
+                Pilot Assignment for Distributed Massive MIMO Based on Channel Estimation Error Minimization
+              </p>
+              <p class="pub-venue">
+                <em>IEEE International Symposium on Information Theory (ISIT)</em>, 2025
+              </p>
+              <p class="pub-links">
+                <a href="https://arxiv.org/abs/2510.13732" target="_blank" rel="noopener">arXiv</a>
+              </p>
+            </li>
+
+            <li class="publication-item">
+              <p class="pub-authors">
+                M Surya Vamsi, Satyajit Thakor
+              </p>
+              <p class="pub-title">
+                On the Capacity of Undirected Multiple Unicast Layered Networks with Asymmetric Demands
+              </p>
+              <p class="pub-venue">
+                <em>IEEE Wireless Communication and Networking Conference (WCNC)</em>, 2025
+              </p>
+              <p class="pub-links">
+                <a href="https://ieeexplore.ieee.org/document/11195643" target="_blank" rel="noopener">Paper</a>
+              </p>
+            </li>
+
+            <!-- 2024 -->
+            <li class="publication-item">
+              <p class="pub-authors">
+                Anuranjan Jha, Adarsh Patel
+              </p>
+              <p class="pub-title">
+                Detection at Multi-Antenna Reader with Correlated RF Source in Ambient Backscatter Communication
+              </p>
+              <p class="pub-venue">
+                <em>IEEE International Conference on Advanced Networks and Telecommunications Systems (ANTS)</em>, 2024
+              </p>
+              <p class="pub-links">
+                <a href="https://ieeexplore.ieee.org/document/10898371/" target="_blank" rel="noopener">Paper</a>
+              </p>
+            </li>
+
+            <li class="publication-item">
+              <p class="pub-authors">
+                A. Deshwal and A. Patel
+              </p>
+              <p class="pub-title">
+                Blind Distributed Detection in MIMO Networks
+              </p>
+              <p class="pub-venue">
+                <em>16th International Conference on COMmunication Systems &amp; NETworkS (COMSNETS)</em>, Bengaluru, India, 2024
+              </p>
+            </li>
+
+            <li class="publication-item">
+              <p class="pub-authors">
+                S. Gujral and S. Sarma
+              </p>
+              <p class="pub-title">
+                Backscatter-NOMA Empowered Wireless Powered Cooperative Communications for Green IoT
+              </p>
+              <p class="pub-venue">
+                <em>National Conference on Communications (NCC)</em>, IIT Madras, 2024
+              </p>
+            </li>
+
+            <li class="publication-item">
+              <p class="pub-authors">
+                M. S. A. Khan, A. Bhardwaj, S. Agnihotri
+              </p>
+              <p class="pub-title">
+                Distributed resource allocation for D2D multicast in underlay cellular networks
+              </p>
+              <p class="pub-venue">
+                <em>International Symposium on Personal, Indoor and Mobile Radio Communications (PIMRC)</em>, Valencia, Spain, September 2024
+              </p>
+            </li>
+
+            <li class="publication-item">
+              <p class="pub-authors">
+                M. S. A. Khan, S. Agnihotri, R. M. Karthik
+              </p>
+              <p class="pub-title">
+                Joint AP-UE association and power factor optimization for distributed massive MIMO
+              </p>
+              <p class="pub-venue">
+                <em>International Symposium on Personal, Indoor and Mobile Radio Communications (PIMRC)</em>, Valencia, Spain, September 2024
+              </p>
+            </li>
+
+            <li class="publication-item">
+              <p class="pub-authors">
+                M. S. A. Khan, S. Agnihotri, R. M. Karthik
+              </p>
+              <p class="pub-title">
+                Distributed pilot assignment for distributed massive-MIMO networks
+              </p>
+              <p class="pub-venue">
+                <em>IEEE Wireless Communications and Networking Conference (WCNC)</em>, Dubai, UAE, April 2024
+              </p>
+            </li>
+
+            <li class="publication-item">
+              <p class="pub-authors">
+                S. Agnihotri, R. Rameshan, R. Ghosal, Prerit Gupta
+              </p>
+              <p class="pub-title">
+                Lossless Binary Image Compression Using Learned Multi-level Dictionaries
+              </p>
+              <p class="pub-venue">
+                <em>Allerton Conference on Communication, Control, and Computing (Allerton)</em>, Urbana, IL, September 2024
+              </p>
+            </li>
+
+          </ol>
+        </div>
+
+        <!-- 2021-2023 -->
+        <div class="year-subsection">
+          <h3>2021 - 2023</h3>
+          <ol class="publication-list">
+
+            <!-- 2023 -->
+            <li class="publication-item">
+              <p class="pub-authors">
+                G. Chamarthi, A. Patel, and R. Pratap
+              </p>
+              <p class="pub-title">
+                Towards obtaining SEP via Orthogonality of Projection Matrix in massive MIMO Networks
+              </p>
+              <p class="pub-venue">
+                <em>IEEE International Conference on Advanced Networks and Telecommunications Systems (ANTS)</em>, MNIT Jaipur, India, 2023
+              </p>
+              <p class="pub-links">
+                <a href="https://ieeexplore.ieee.org/document/10469655" target="_blank" rel="noopener">Paper</a>
+              </p>
+            </li>
+
+            <li class="publication-item">
+              <p class="pub-authors">
+                G. Chamarthi, A. Patel, and R. Pratap
+              </p>
+              <p class="pub-title">
+                Random Projection Based Efficient Detector in Massive MIMO Communication Networks
+              </p>
+              <p class="pub-venue">
+                <em>IEEE 24th International Workshop on Signal Processing Advances in Wireless Communications (SPAWC)</em>, Shanghai, China, 2023
+              </p>
+              <p class="pub-links">
+                <a href="https://ieeexplore.ieee.org/document/10304438" target="_blank" rel="noopener">Paper</a>
+              </p>
+            </li>
+
+            <!-- 2021 -->
+            <li class="publication-item">
+              <p class="pub-authors">
+                S. Gujral et al.
+              </p>
+              <p class="pub-title">
+                Transmit Power Minimization for Bidirectional Tag-to-Device Communications for IoT
+              </p>
+              <p class="pub-venue">
+                <em>International Conference on COMmunication Systems and NETworkS (COMSNETS)</em>, IEEE, pp. 572-580, 2021
+              </p>
+            </li>
+
+            <li class="publication-item">
+              <p class="pub-authors">
+                S. Gujral
+              </p>
+              <p class="pub-title">
+                Relay-Aided Bidirectional Communications Between Devices in a Hybrid User Scenario for IoT
+              </p>
+              <p class="pub-venue">
+                <em>National Conference on Communications (NCC)</em>, 2021, pp. 1-6
+              </p>
+              <p class="pub-links">
+                <a href="https://doi.org/10.1109/NCC52529.2021.9530107" target="_blank" rel="noopener">DOI</a>
+              </p>
+            </li>
+
+          </ol>
+        </div>
+
+        <!-- Before 2020 -->
+        <div class="year-subsection">
+          <h3>Before 2020</h3>
+          <ol class="publication-list">
+
+            <!-- 2020 -->
+            <li class="publication-item">
+              <p class="pub-authors">
+                M. I. Qureshi and S. Thakor
+              </p>
+              <p class="pub-title">
+                On the Partition Bound for Undirected Unicast Network Information Capacity
+              </p>
+              <p class="pub-venue">
+                <em>IEEE International Symposium on Information Theory (ISIT)</em>, 2020, pp. 1623-1628
+              </p>
+              <p class="pub-links">
+                <a href="https://doi.org/10.1109/ISIT44484.2020.9174428" target="_blank" rel="noopener">DOI</a>
+              </p>
+            </li>
+
+            <li class="publication-item">
+              <p class="pub-authors">
+                A. Chawla, R. K. Singh, A. Patel, and A. K. Jagannatham
+              </p>
+              <p class="pub-title">
+                Distributed Detection in Millimeter Wave Massive MIMO Wireless Sensor Networks
+              </p>
+              <p class="pub-venue">
+                <em>International Conference on Signal Processing and Communications (SPCOM)</em>, IISc, India, 2020, pp. 1-5
+              </p>
+            </li>
+
+            <!-- 2019 -->
+            <li class="publication-item">
+              <p class="pub-authors">
+                S. Alam, S. Thakor, and S. Abbas
+              </p>
+              <p class="pub-title">
+                An Analysis of a Randomized Local Search Algorithm for the Entropy Space
+              </p>
+              <p class="pub-venue">
+                <em>4th International Conference on Information Systems and Computer Networks (ISCON)</em>, 2019, pp. 330-334
+              </p>
+              <p class="pub-links">
+                <a href="https://doi.org/10.1109/ISCON47742.2019.9036317" target="_blank" rel="noopener">DOI</a>
+              </p>
+            </li>
+
+            <li class="publication-item">
+              <p class="pub-authors">
+                H. Tiwari and S. Thakor
+              </p>
+              <p class="pub-title">
+                On Characterization of Entropic Vectors at the Boundary of Almost Entropic Cones
+              </p>
+              <p class="pub-venue">
+                <em>IEEE Information Theory Workshop (ITW)</em>, 2019, pp. 1-5
+              </p>
+              <p class="pub-links">
+                <a href="https://doi.org/10.1109/ITW44776.2019.8989116" target="_blank" rel="noopener">DOI</a>
+              </p>
+            </li>
+
+            <li class="publication-item">
+              <p class="pub-authors">
+                S. Thakor and M. I. Qureshi
+              </p>
+              <p class="pub-title">
+                Undirected Unicast Network Capacity: A Partition Bound
+              </p>
+              <p class="pub-venue">
+                <em>IEEE International Symposium on Information Theory (ISIT)</em>, 2019, pp. 1-5
+              </p>
+              <p class="pub-links">
+                <a href="https://doi.org/10.1109/ISIT.2019.8849499" target="_blank" rel="noopener">DOI</a>
+              </p>
+            </li>
+
+            <li class="publication-item">
+              <p class="pub-authors">
+                S. Gujral and S. Sarma
+              </p>
+              <p class="pub-title">
+                Cooperative Communication in Hybrid User Scenario incorporating Backscattering and Energy Harvesting
+              </p>
+              <p class="pub-venue">
+                <em>IEEE International Conference on Advanced Networks and Telecommunications Systems (ANTS)</em>, pp. 1-6, 2019
+              </p>
+            </li>
+
+            <!-- 2018 -->
+            <li class="publication-item">
+              <p class="pub-authors">
+                S. Alam, S. Thakor, and S. Abbas
+              </p>
+              <p class="pub-title">
+                On Enumerating Distributions for Associated Vectors in the Entropy Space
+              </p>
+              <p class="pub-venue">
+                <em>International Symposium on Information Theory and Its Applications (ISITA)</em>, 2018, pp. 65-69
+              </p>
+              <p class="pub-links">
+                <a href="https://doi.org/10.23919/ISITA.2018.8664232" target="_blank" rel="noopener">DOI</a>
+              </p>
+            </li>
+
+            <li class="publication-item">
+              <p class="pub-authors">
+                T. Chan, S. Thakor, and A. Grant
+              </p>
+              <p class="pub-title">
+                A Minimal Set of Shannon-type Inequalities for MRF Structures with Functional Dependencies
+              </p>
+              <p class="pub-venue">
+                <em>IEEE International Symposium on Information Theory (ISIT)</em>, 2018, pp. 1759-1763
+              </p>
+              <p class="pub-links">
+                <a href="https://doi.org/10.1109/ISIT.2018.8437845" target="_blank" rel="noopener">DOI</a>
+              </p>
+            </li>
+
+            <li class="publication-item">
+              <p class="pub-authors">
+                A. Chawla, A. Patel, A. K. Jagannatham, and P. K. Varshney
+              </p>
+              <p class="pub-title">
+                Robust Distributed Detection in Massive MIMO Wireless Sensor Networks Under CSI Uncertainty
+              </p>
+              <p class="pub-venue">
+                <em>IEEE 88th Vehicular Technology Conference (VTC-Fall)</em>, Chicago, IL, USA, 2018, pp. 1-5
+              </p>
+            </li>
+
+            <li class="publication-item">
+              <p class="pub-authors">
+                N. Varshney, A. Patel, W. Haselmayr, A. K. Jagannatham, P. K. Varshney, and W. Guo
+              </p>
+              <p class="pub-title">
+                Impact of Cooperation in Flow-Induced Diffusive Mobile Molecular Communication
+              </p>
+              <p class="pub-venue">
+                <em>52nd Asilomar Conference on Signals, Systems, and Computers</em>, Pacific Grove, CA, USA, 2018, pp. 494-498
+              </p>
+            </li>
+
+            <!-- 2017 -->
+            <li class="publication-item">
+              <p class="pub-authors">
+                S. Thakor, T. Chan, and A. Grant
+              </p>
+              <p class="pub-title">
+                A minimal set of shannon-type inequalities for functional dependence structures
+              </p>
+              <p class="pub-venue">
+                <em>IEEE International Symposium on Information Theory (ISIT)</em>, 2017, pp. 679-683
+              </p>
+              <p class="pub-links">
+                <a href="https://doi.org/10.1109/ISIT.2017.8006614" target="_blank" rel="noopener">DOI</a>
+              </p>
+            </li>
+
+            <li class="publication-item">
+              <p class="pub-authors">
+                A. Patel, A. Ahmad, and R. Tripathi
+              </p>
+              <p class="pub-title">
+                Multiple Beacon Based Robust Cooperative Spectrum Sensing in MIMO Cognitive Radio Networks under CSI Uncertainty
+              </p>
+              <p class="pub-venue">
+                <em>IEEE 85th Vehicular Technology Conference (VTC Spring)</em>, Sydney, NSW, 2017, pp. 1-5
+              </p>
+            </li>
+
+            <!-- 2016 -->
+            <li class="publication-item">
+              <p class="pub-authors">
+                S. Sarma, S. Agnihotri, and J. Kuri
+              </p>
+              <p class="pub-title">
+                Secure Transmission in Amplify–and–Forward Diamond Networks with a Single Eavesdropper
+              </p>
+              <p class="pub-venue">
+                <em>Twenty Second National Conference on Communication (NCC)</em>, Guwahati, 2016, pp. 1-6
+              </p>
+              <p class="pub-links">
+                <a href="https://doi.org/10.1109/NCC.2016.7561158" target="_blank" rel="noopener">DOI</a>
+              </p>
+            </li>
+
+            <li class="publication-item">
+              <p class="pub-authors">
+                S. Sarma, K. Kandhway, B. Kotnis, and J. Kuri
+              </p>
+              <p class="pub-title">
+                Urban Monitoring Using Participatory Sensing: An Optimal Budget Allocation Approach
+              </p>
+              <p class="pub-venue">
+                <em>COMSNETS 2016 Social Networking Workshop</em>, pp. 1-6
+              </p>
+              <p class="pub-links">
+                <a href="https://doi.org/10.1109/COMSNETS.2016.7439968" target="_blank" rel="noopener">DOI</a>
+              </p>
+            </li>
+
+            <li class="publication-item">
+              <p class="pub-authors">
+                K. Verma, A. Garcia-Martinez, S. Agnihotri
+              </p>
+              <p class="pub-title">
+                On hardness of green file distribution and its practical applications
+              </p>
+              <p class="pub-venue">
+                <em>International Symposium on Network Computing and Applications (NCA)</em>, Cambridge, MA, October-November 2016
+              </p>
+            </li>
+
+            <li class="publication-item">
+              <p class="pub-authors">
+                M. Rajput, S. Dwivedi, Adarsh Patel, and A. K. Jagannatham
+              </p>
+              <p class="pub-title">
+                Subspace based multi-user spectrum sensing in frequency selective cognitive radio systems
+              </p>
+              <p class="pub-venue">
+                <em>IEEE Region 10 Conference (TENCON)</em>, Singapore, 2016, pp. 1154-1157
+              </p>
+            </li>
+
+            <!-- 2015 and Before -->
+            <li class="publication-item">
+              <p class="pub-authors">
+                A. Sunny, S. Sarma, and J. Kuri
+              </p>
+              <p class="pub-title">
+                Beating Resource Constrained Eavesdroppers: A Physical Layer Security Study
+              </p>
+              <p class="pub-venue">
+                <em>13th International Symposium on Modeling Optimization in Mobile, Ad Hoc Wireless Networks (WiOpt)</em>, pp. 167-174, May 2015
+              </p>
+              <p class="pub-links">
+                <a href="https://doi.org/10.1109/WIOPT.2015.7151069" target="_blank" rel="noopener">DOI</a>
+              </p>
+            </li>
+
+            <li class="publication-item">
+              <p class="pub-authors">
+                S. Shukla, S. Sarma, and J. Kuri
+              </p>
+              <p class="pub-title">
+                Maximizing Transported Data Before Partition in a Wireless Sensor Network
+              </p>
+              <p class="pub-venue">
+                <em>Sixth International Conference on Communication Systems and Networks (COMSNETS)</em>, 2014, pp. 1-8
+              </p>
+              <p class="pub-links">
+                <a href="https://doi.org/10.1109/COMSNETS.2014.6734884" target="_blank" rel="noopener">DOI</a>
+              </p>
+            </li>
+
+            <li class="publication-item">
+              <p class="pub-authors">
+                S. Sarma, S. Shukla, and J. Kuri
+              </p>
+              <p class="pub-title">
+                Joint Scheduling & Jamming for Data Secrecy in Wireless Networks
+              </p>
+              <p class="pub-venue">
+                <em>11th International Symposium on Modeling Optimization in Mobile, Ad Hoc Wireless Networks (WiOpt)</em>, 2013, pp. 248-255
+              </p>
+            </li>
+
+            <li class="publication-item">
+              <p class="pub-authors">
+                A. Patel, S. Biswas, and A. K. Jagannatham
+              </p>
+              <p class="pub-title">
+                Multiple Beacon Based Robust Cooperative Spectrum Sensing in MIMO Cognitive Radio Networks
+              </p>
+              <p class="pub-venue">
+                <em>IEEE 78th Vehicular Technology Conference (VTC Fall)</em>, Las Vegas, NV, 2013, pp. 1-5
+              </p>
+            </li>
+
+            <li class="publication-item">
+              <p class="pub-authors">
+                S. Thakor, T. H. Chan, and A. Grant
+              </p>
+              <p class="pub-title">
+                Characterising correlation via entropy functions
+              </p>
+              <p class="pub-venue">
+                <em>IEEE Information Theory Workshop (ITW)</em>, 2013, pp. 1-2
+              </p>
+              <p class="pub-links">
+                <a href="https://doi.org/10.1109/ITW.2013.6691218" target="_blank" rel="noopener">DOI</a>
+              </p>
+            </li>
+
+            <li class="publication-item">
+              <p class="pub-authors">
+                X. Xu, S. Thakor, and Y. L. Guan
+              </p>
+              <p class="pub-title">
+                On the mutual information between random variables in networks
+              </p>
+              <p class="pub-venue">
+                <em>IEEE Information Theory Workshop (ITW)</em>, 2013, pp. 1-5
+              </p>
+              <p class="pub-links">
+                <a href="https://doi.org/10.1109/ITW.2013.6691320" target="_blank" rel="noopener">DOI</a>
+              </p>
+            </li>
+
+            <li class="publication-item">
+              <p class="pub-authors">
+                S. Thakor, T. Chan, and K. W. Shum
+              </p>
+              <p class="pub-title">
+                Symmetry in distributed storage systems
+              </p>
+              <p class="pub-venue">
+                <em>IEEE International Symposium on Information Theory (ISIT)</em>, 2013, pp. 1242-1246
+              </p>
+              <p class="pub-links">
+                <a href="https://doi.org/10.1109/ISIT.2013.6620425" target="_blank" rel="noopener">DOI</a>
+              </p>
+            </li>
+
+            <li class="publication-item">
+              <p class="pub-authors">
+                A. Patel and A. K. Jagannatham
+              </p>
+              <p class="pub-title">
+                SOCP based robust detector for cooperative spectrum sensing in MIMO cognitive radio
+              </p>
+              <p class="pub-venue">
+                <em>IEEE 7th Sensor Array and Multichannel Signal Processing Workshop (SAM)</em>, Hoboken, NJ, 2012, pp. 133-136
+              </p>
+            </li>
+
+            <li class="publication-item">
+              <p class="pub-authors">
+                Xu, Xiaoli, Satyajit Thakor, and Yong Liang Guan
+              </p>
+              <p class="pub-title">
+                Reduced functional dependence graphs and their applications
+              </p>
+              <p class="pub-venue">
+                <em>International Symposium on Network Coding (NetCod)</em>, IEEE, 2012
+              </p>
+            </li>
+
+            <li class="publication-item">
+              <p class="pub-authors">
+                S. Thakor, A. Grant, and T. Chan
+              </p>
+              <p class="pub-title">
+                Compact representation of polymatroid axioms for random variables with conditional independencies
+              </p>
+              <p class="pub-venue">
+                <em>IEEE Information Theory Workshop (ITW)</em>, 2012, pp. 267-271
+              </p>
+              <p class="pub-links">
+                <a href="https://doi.org/10.1109/ITW.2012.6404673" target="_blank" rel="noopener">DOI</a>
+              </p>
+            </li>
+
+            <li class="publication-item">
+              <p class="pub-authors">
+                Xu, Xiaoli, Satyajit Thakor, and Yong Liang Guan
+              </p>
+              <p class="pub-title">
+                Weighted sum-rate functional dependence bound for network coding capacity
+              </p>
+              <p class="pub-venue">
+                <em>International Symposium on Information Theory and its Applications</em>, IEEE, 2012
+              </p>
+            </li>
+
+            <li class="publication-item">
+              <p class="pub-authors">
+                S. Thakor, A. Grant, and T. Chan
+              </p>
+              <p class="pub-title">
+                On Complexity Reduction of the LP Bound Computation and Related Problems
+              </p>
+              <p class="pub-venue">
+                <em>International Symposium on Networking Coding</em>, 2011, pp. 1-6
+              </p>
+              <p class="pub-links">
+                <a href="https://doi.org/10.1109/ISNETCOD.2011.5978922" target="_blank" rel="noopener">DOI</a>
+              </p>
+            </li>
+
+            <li class="publication-item">
+              <p class="pub-authors">
+                S. Thakor, T. Chan, and A. Grant
+              </p>
+              <p class="pub-title">
+                Bounds for network information flow with correlated sources
+              </p>
+              <p class="pub-venue">
+                <em>Australian Communications Theory Workshop</em>, 2011, pp. 43-48
+              </p>
+              <p class="pub-links">
+                <a href="https://doi.org/10.1109/AUSCTW.2011.5728735" target="_blank" rel="noopener">DOI</a>
+              </p>
+            </li>
+
+            <li class="publication-item">
+              <p class="pub-authors">
+                A. Patel and A. Trivedi
+              </p>
+              <p class="pub-title">
+                Particle-Swarm-Optimization-Based Multiuser Detector for Multicarrier CDMA Communications
+              </p>
+              <p class="pub-venue">
+                <em>International Conference on Computational Intelligence and Communication Networks (CICN)</em>, Bhopal, 2010, pp. 534-538
+              </p>
+            </li>
+
+            <li class="publication-item">
+              <p class="pub-authors">
+                S. Thakor, A. Grant, and T. Chan
+              </p>
+              <p class="pub-title">
+                Network coding capacity: A functional dependence bound
+              </p>
+              <p class="pub-venue">
+                <em>IEEE International Symposium on Information Theory (ISIT)</em>, 2009, pp. 263-267
+              </p>
+              <p class="pub-links">
+                <a href="https://doi.org/10.1109/ISIT.2009.5205943" target="_blank" rel="noopener">DOI</a>
+              </p>
+            </li>
+
+          </ol>
+        </div>
+
+      </section>
+
+      </div>
+      <!-- END CONFERENCE PUBLICATIONS TAB -->
+
+      <!-- PATENTS TAB -->
+      <div id="patents-content" class="tab-content">
+      <section class="pub-section">
+        <div class="pub-section-header">
+          <h2>Patents</h2>
+          <p class="year-range">Patents filed and granted by lab members</p>
+        </div>
+        <div class="pb-empty-tab">
+          <h3>Coming soon</h3>
+          <p>Patents from the Infocomm Lab will be listed here.</p>
+        </div>
+      </section>
+      </div>
+      <!-- END PATENTS TAB -->
+
+
+      </div>
+      <!-- END TAB CONTENT WRAPPER -->
+
+    </div>
   </main>
 
-  <!-- FOOTER -->
-  <footer class="site-footer">
-    <div class="container footer-grid">
-      <div>
-        <h4>Infocomm Lab</h4>
-        <p class="muted">
-          School of Computing and Electrical Engineering<br>
-          IIT Mandi
-        </p>
+  <!-- FOOTER (same on every page) -->
+  <footer class="site-footer ft">
+    <div class="ft-stripe" aria-hidden="true"><span></span><span></span><span></span></div>
+    <div class="ft-inner">
+      <div class="ft-brand">
+        <img class="ft-cover" src="infocomm_lab_scee_iit_mandi_cover.jpeg" alt="Info Comm Lab, IIT Mandi">
+        <address>
+          InfoComm Lab,<br>
+          School of Computing and Electrical Engineering,<br>
+          3rd Floor, A18 Building,<br>
+          North Campus, IIT Mandi,<br>
+          Mandi, Himachal Pradesh &ndash; 175075
+        </address>
       </div>
-
       <div>
-        <h4>Contact</h4>
-        <p class="muted">
-          Email: <a href="mailto:lab@iitmandi.ac.in">lab@iitmandi.ac.in</a>
-        </p>
+        <h4>Contact Us</h4>
+        <p><a href="mailto:infocomm@iitmandi.ac.in">infocomm@iitmandi.ac.in</a></p>
+        <p class="ft-social"><a href="https://www.linkedin.com/company/infocomm-lab-scee-iit-mandi/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 10v7M8 7v.01M12 17v-4a2 2 0 0 1 4 0v4M12 10v7"/></svg>InfoComm Lab on LinkedIn</a></p>
+        <p class="ft-incharge"><span>Student lab in-charge</span>Sahil Rana<br><a href="mailto:d24135@students.iitmandi.ac.in">d24135@students.iitmandi.ac.in</a></p>
       </div>
-
       <div>
         <h4>Quick Links</h4>
-        <ul class="footer-links">
+        <ul>
           <li><a href="index.html">Home</a></li>
-          <li><a href="projects.html">Projects</a></li>
+          <li><a href="about.html">About</a></li>
           <li><a href="people.html">People</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="publications.html">Publications</a></li>
+          <li><a href="resources.html">Resources</a></li>
+          <li><a href="join.html">Join Us</a></li>
         </ul>
       </div>
     </div>
-
-    <div class="footer-bottom">
-      <p>
-        © <span id="year"></span> Infocomm Lab, IIT Mandi
-      </p>
+    <div class="ft-bottom">
+      <p>&copy; <span id="year"></span> Infocomm Lab, IIT Mandi</p>
+      <p>Website created by Samannaya Adhikari, Sahil Rana and Bhavesh Sharma</p>
     </div>
   </footer>
 
+
   <script src="script.js"></script>
+  
+  <script>
+    // Tab switching functionality with sliding animation
+    let currentTab = 'journals';
+    
+    function switchTab(tabName) {
+      if (tabName === currentTab) return; // Don't switch if already on this tab
+      
+      const newContent = document.getElementById(tabName + '-content');
+      const oldContent = document.getElementById(currentTab + '-content');
+      const newButton = document.getElementById(tabName + '-tab');
+      const oldButton = document.getElementById(currentTab + '-tab');
+      
+      // Determine slide direction
+      const order = ['journals', 'conferences', 'patents'];
+      const slideDirection = order.indexOf(tabName) > order.indexOf(currentTab) ? 'left' : 'right';
+      
+      // Start slide out animation
+      oldContent.classList.add('sliding-out-' + slideDirection);
+      
+      // Wait for slide out to complete, then switch
+      setTimeout(() => {
+        // Remove active class from old tab
+        oldContent.classList.remove('active', 'sliding-out-' + slideDirection);
+        oldButton.classList.remove('active');
+        
+        // Add active class to new tab
+        newContent.classList.add('active');
+        newButton.classList.add('active');
+        
+        // Update current tab
+        currentTab = tabName;
+        
+        // Scroll to top of publications section smoothly
+        const publicationsSection = document.querySelector('.tab-content-wrapper');
+        if (publicationsSection) {
+          publicationsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 500); // Match this with the CSS transition duration
+    }
+
+    // Update year dynamically in footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+  <script>
+    // publication search (current tab), with match count
+    (function () {
+      var input = document.getElementById('pubSearch'), hits = document.getElementById('pubHits'), none = document.getElementById('pubNone');
+      if (!input) return;
+      function run() {
+        var q = input.value.trim().toLowerCase(), tab = document.querySelector('.tab-content.active'), shown = 0;
+        document.querySelectorAll('.pb .publication-item').forEach(function (li) {
+          var ok = !q || li.textContent.toLowerCase().indexOf(q) !== -1;
+          li.classList.toggle('pb-hide', !ok);
+          if (ok && tab && tab.contains(li)) shown++;
+        });
+        document.querySelectorAll('.pb .year-subsection').forEach(function (y) {
+          y.classList.toggle('pb-hide', !y.querySelector('.publication-item:not(.pb-hide)'));
+        });
+        hits.textContent = q ? shown + ' found' : '';
+        none.hidden = !q || shown > 0;
+      }
+      input.addEventListener('input', run);
+      document.querySelectorAll('.tab-button').forEach(function (b) { b.addEventListener('click', function () { setTimeout(run, 550); }); });
+    })();
+  </script>
+  <script>
+    // turn year headings into dropdowns; keep only the newest group open in each tab
+    (function () {
+      var chev = '<span class="pb-yr-chev" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span>';
+      document.querySelectorAll('.tab-content').forEach(function (tab) {
+        tab.querySelectorAll('.year-subsection').forEach(function (ys, idx) {
+          var h = ys.querySelector('h3'), n = ys.querySelectorAll('.publication-item').length;
+          var label = h.textContent.trim();
+          h.innerHTML = '<button type="button" class="pb-yr" aria-expanded="' + (idx === 0) + '">' + label +
+            ' <span class="pb-yr-count">' + n + (n === 1 ? ' paper' : ' papers') + '</span>' + chev + '</button>';
+          if (idx === 0) ys.classList.add('is-open');
+          h.querySelector('button').addEventListener('click', function () {
+            var open = ys.classList.toggle('is-open');
+            this.setAttribute('aria-expanded', String(open));
+          });
+        });
+      });
+      // while searching, show every matching paper regardless of dropdowns
+      var input = document.getElementById('pubSearch'), main = document.querySelector('main.pb');
+      if (input && main) input.addEventListener('input', function () { main.classList.toggle('pb-searching', !!input.value.trim()); });
+    })();
+  </script>
+  <script>
+    // journal list: first 8 shown, rest behind "View all"
+    (function () {
+      var list = document.getElementById('journalList'), btn = document.getElementById('journalMore');
+      if (!list || !btn) return;
+      var label = btn.textContent;
+      btn.addEventListener('click', function () {
+        var open = list.classList.toggle('show-all');
+        btn.setAttribute('aria-expanded', String(open));
+        btn.textContent = open ? 'Show fewer' : label;
+        if (!open) list.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    })();
+  </script>
 </body>
 </html>

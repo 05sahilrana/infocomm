@@ -14,8 +14,8 @@
   <meta property="og:title" content="Infocomm Lab — IIT Mandi" />
   <meta property="og:description" content="Research in wireless sensing, communications and AI-driven systems." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://infocomm.iitmandi.ac.in/your-page-path" />
-  <meta property="og:image" content="https://cdn.jsdelivr.net/gh/YOUR_GH_USER/infocomm-lab/images/hero-hero.jpg" />
+  <meta property="og:url" content="https://infocomm.iitmandi.ac.in/" />
+  <meta property="og:image" content="https://infocomm.iitmandi.ac.in/infocomm_lab_scee_iit_mandi_cover.jpeg" />
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@600&display=swap" rel="stylesheet">
@@ -23,15 +23,240 @@
   <link rel="stylesheet" href="style.css">
 
   <!-- canonical (update when you have the final URL) -->
-  <link rel="canonical" href="https://infocomm.iitmandi.ac.in/your-page-path" />
+  <link rel="canonical" href="https://infocomm.iitmandi.ac.in/" />
+  <!-- NAVBAR style (inline so every page looks the same even with an old/cached style.css or script.js) -->
+  <style>
+    html body nav.nav.nav{position:sticky;top:0;z-index:1000;background:#f7f9fc !important;background-image:none !important;
+      backdrop-filter:none !important;border-bottom:1px solid #e3e8ef !important;box-shadow:0 1px 8px rgba(15,23,42,.06) !important}
+    html body nav.nav.nav .nav-inner{display:flex !important;align-items:center;justify-content:space-between;gap:1rem;
+      width:100% !important;max-width:none !important;margin:0 !important;padding:.6rem 2rem !important;box-sizing:border-box}
+    html body nav.nav.nav .brand{display:flex !important;align-items:center;gap:.75rem;margin:0 !important;text-decoration:none}
+    html body nav.nav.nav .brand-logo{height:44px !important;width:44px !important;object-fit:contain;border-radius:6px;background:#fff}
+    html body nav.nav.nav .brand-name{display:flex;flex-direction:column;line-height:1.15}
+    html body nav.nav.nav .brand-text{font-family:"Poppins",sans-serif;font-weight:600;font-size:1.2rem;color:#0b2d51 !important}
+    html body nav.nav.nav .brand-sub{font-family:"Inter",sans-serif;font-size:.72rem;font-weight:500;letter-spacing:.6px;text-transform:uppercase;color:#586175 !important}
+    html body nav.nav.nav .nav-links{list-style:none;margin:0;padding:0;background:transparent !important;gap:.25rem}
+    html body nav.nav.nav .nav-links li a{position:relative;display:block;text-decoration:none;font-family:"Inter",sans-serif;font-size:.95rem;font-weight:500;
+      color:#334155 !important;padding:.5rem .9rem;border-radius:6px;opacity:1 !important;transition:color .2s,background-color .2s}
+    html body nav.nav.nav .nav-links li a:hover{color:#0b6fb3 !important;background:#e8eef7 !important}
+    html body nav.nav.nav .nav-links li a.active{color:#0b6fb3 !important;font-weight:600}
+    html body nav.nav.nav .nav-links li a.active::after{content:"";position:absolute;left:.9rem;right:.9rem;bottom:2px;height:2px;border-radius:2px;background:#0b6fb3}
+    html body nav.nav.nav .nav-toggle{background:none;border:0;padding:.6rem .4rem;cursor:pointer}
+    html body nav.nav.nav .hamburger,html body nav.nav.nav .hamburger::before,html body nav.nav.nav .hamburger::after{background:#0b2d51 !important}
+    @media (min-width:700px){
+      html body nav.nav.nav .nav-toggle{display:none !important}
+      html body nav.nav.nav .nav-links{display:flex !important;flex-direction:row;align-items:center;position:static}
+    }
+    @media (max-width:699px){
+      html body nav.nav.nav .nav-inner{position:relative;padding:.5rem 1rem !important}
+      html body nav.nav.nav .brand-logo{height:38px !important;width:38px !important}
+      html body nav.nav.nav .nav-links{display:none !important;position:absolute;top:100%;left:0;right:0;flex-direction:column;
+        background:#f7f9fc !important;border-bottom:1px solid #e3e8ef;box-shadow:0 8px 16px rgba(15,23,42,.08);padding:.5rem 1rem 1rem}
+      html body nav.nav.nav .nav-links.open{display:flex !important}
+      html body nav.nav.nav .nav-links li a.active::after{display:none}
+    }
+    @media (min-width:700px) and (max-width:1100px){
+      html body nav.nav.nav .nav-inner{padding:.6rem 1rem !important}
+      html body nav.nav.nav .nav-links li a{padding:.5rem .55rem;font-size:.88rem}
+      html body nav.nav.nav .brand-sub{display:none}
+    }
+  </style>
+  <!-- HOME PAGE styles -->
+  <style>
+    .hm{--navy:#0b2d51;--blue:#0b6fb3;--sky:#3b82f6;--text:#334155;--muted:#64748b;--line:#e3e8ef;--tint:#f5f8fc;
+        --b-blue:#1e88e5;--b-orange:#e8590c;--b-green:#2e9d3a}
+    .hm-wrap{max-width:1180px;margin:0 auto;padding:0 1.5rem}
+    .hm h1,.hm h2,.hm h3{font-family:"Poppins",sans-serif;color:var(--navy);margin:0}
+    .hm p{margin:0}
+    .hm-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+    .hm-section{padding:4.5rem 0}
+    .hm-tint{background:var(--tint)}
+    .hm-kicker{font-size:.76rem;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:var(--blue);margin-bottom:.45rem !important}
+    .hm-head{text-align:center;margin-bottom:2.2rem}
+    .hm-head h2{font-size:clamp(1.6rem,3vw,2.1rem)}
+    .hm-center{text-align:center;margin-top:2rem !important}
+    .hm-link{font-weight:700;color:var(--blue);text-decoration:none}
+    .hm-link:hover{text-decoration:underline}
+
+    /* hero */
+    .hm-hero{position:relative;overflow:hidden;padding:3rem 0 3.5rem;color:#fff;
+      background:radial-gradient(700px 360px at 90% 10%,rgba(30,136,229,.28),transparent 60%),
+                 radial-gradient(500px 300px at 10% 100%,rgba(46,157,58,.12),transparent 60%),
+                 linear-gradient(135deg,#000 0%,#040b16 40%,#0b2d51 100%)}
+    .hm-hero-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:3rem;align-items:start}
+    .hm-banner{display:block;width:100%;max-width:620px;height:auto;mix-blend-mode:lighten;margin:0 0 1.2rem -6px}
+    .hm-lead{font-size:1.08rem;line-height:1.65;color:#cdd9e8;max-width:560px}
+    .hm-cta{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.6rem}
+    .hm-btn{display:inline-block;padding:.75rem 1.25rem;border-radius:10px;font-weight:700;text-decoration:none;transition:transform .15s,box-shadow .15s,background .15s}
+    .hm-btn:hover{transform:translateY(-2px)}
+    .hm-btn-light{background:#fff;color:var(--navy)}
+    .hm-btn-light:hover{box-shadow:0 10px 24px rgba(0,0,0,.35)}
+    .hm-btn-ghost{border:1px solid rgba(255,255,255,.45);color:#fff}
+    .hm-btn-ghost:hover{background:rgba(255,255,255,.1)}
+    .hm-slider{position:relative;margin:0;border-radius:18px;overflow:hidden;aspect-ratio:4/3;background:#0b1a2e;
+      box-shadow:0 30px 60px rgba(0,0,0,.45),0 0 0 1px rgba(255,255,255,.08)}
+    .hm-slide{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .9s ease}
+    .hm-slide.active{opacity:1}
+    .hm-slider::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(0,0,0,.35));pointer-events:none}
+    .hm-tricolor{position:absolute;left:0;right:0;bottom:0;display:flex;height:5px}
+    .hm-tricolor span{flex:1}
+    .hm-tricolor span:nth-child(1){background:var(--b-blue)}
+    .hm-tricolor span:nth-child(2){background:var(--b-orange)}
+    .hm-tricolor span:nth-child(3){background:var(--b-green)}
+
+    /* news */
+    .news-box{margin-top:1.8rem;background:rgba(255,255,255,.97);border-radius:14px;overflow:hidden;max-width:560px;box-shadow:0 20px 40px rgba(0,0,0,.35)}
+    .news-head{display:flex;align-items:center;gap:.55rem;padding:.7rem 1rem;background:#f7f9fc;border-bottom:1px solid var(--line)}
+    .news-head h2{margin:0;font-size:1rem;color:var(--navy)}
+    .news-more{margin-left:auto;font-size:.82rem;font-weight:600;color:var(--blue);text-decoration:none}
+    .news-more:hover{text-decoration:underline}
+    .news-dot{width:9px;height:9px;border-radius:50%;background:var(--b-orange);animation:newsPulse 1.8s infinite}
+    @keyframes newsPulse{0%{box-shadow:0 0 0 0 rgba(232,89,12,.5)}70%{box-shadow:0 0 0 8px rgba(232,89,12,0)}100%{box-shadow:0 0 0 0 rgba(232,89,12,0)}}
+    .news-viewport{height:190px;overflow:hidden;position:relative}
+    .news-viewport::before,.news-viewport::after{content:"";position:absolute;left:0;right:0;height:18px;z-index:1;pointer-events:none}
+    .news-viewport::before{top:0;background:linear-gradient(#fff,rgba(255,255,255,0))}
+    .news-viewport::after{bottom:0;background:linear-gradient(rgba(255,255,255,0),#fff)}
+    .news-track{list-style:none;margin:0;padding:0}
+    .news-track.scrolling{animation:newsScroll var(--news-duration,30s) linear infinite}
+    .news-viewport:hover .news-track,.news-viewport:focus-within .news-track{animation-play-state:paused}
+    @keyframes newsScroll{from{transform:translateY(0)}to{transform:translateY(-50%)}}
+    .news-track li{padding:.7rem 1rem;border-bottom:1px dashed var(--line)}
+    .news-track time{display:block;font-size:.75rem;font-weight:700;color:var(--blue);text-transform:uppercase;letter-spacing:.4px}
+    .news-track p{margin:.15rem 0 0;font-size:.92rem;color:#1f2937;line-height:1.4}
+    .news-track a{color:#0b4f9c;font-weight:600;text-decoration:none}
+    .news-track a:hover{text-decoration:underline}
+
+    /* stats */
+    .hm-stats{list-style:none;margin:-2.2rem 0 0;padding:0;position:relative;z-index:2;display:grid;grid-template-columns:repeat(4,1fr);
+      background:#fff;border:1px solid var(--line);border-radius:18px;box-shadow:0 18px 40px rgba(11,45,81,.12);overflow:hidden}
+    .hm-stats li{padding:1.4rem 1rem;text-align:center;border-right:1px solid var(--line)}
+    .hm-stats li:last-child{border-right:0}
+    .hm-stats strong{display:block;font-family:"Poppins",sans-serif;font-size:2rem;color:var(--navy);line-height:1.1}
+    .hm-stats span{font-size:.88rem;color:var(--muted)}
+
+    /* boxes */
+    .hm-two{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+    .hm-box{display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);border-radius:18px;padding:1.6rem 1.7rem;box-shadow:0 6px 18px rgba(11,45,81,.06)}
+    .hm-box-head{display:flex;gap:.9rem;align-items:flex-start;padding-bottom:1rem;margin-bottom:.4rem;border-bottom:1px solid var(--line)}
+    .hm-box-head h2{font-size:1.3rem}
+    .hm-box-head p{color:var(--muted);font-size:.9rem;margin-top:.15rem !important}
+    .hm-bar{flex:none;width:5px;height:44px;border-radius:4px}
+    .hm-blue{background:var(--b-blue)} .hm-orange{background:var(--b-orange)}
+    .hm-list{list-style:none;margin:0 0 1rem;padding:0}
+    .hm-list li{padding:.85rem 0;border-bottom:1px dashed var(--line)}
+    .hm-list li:last-child{border-bottom:0}
+    .hm-list time{display:block;font-size:.74rem;font-weight:700;color:var(--blue);text-transform:uppercase;letter-spacing:.4px}
+    .hm-list p{color:var(--text);margin-top:.15rem !important}
+    .hm-awards li{display:flex;justify-content:space-between;gap:1rem;align-items:center}
+    .hm-awards time{flex:none;color:var(--b-orange);background:#fff1e8;padding:.2rem .55rem;border-radius:6px;font-size:.8rem}
+    .hm-awards strong{color:var(--navy)}
+    .hm-more{margin-top:auto;align-self:flex-start;font-weight:700;color:var(--blue);text-decoration:none}
+    .hm-more:hover{text-decoration:underline}
+
+    /* areas */
+    .hm-areas{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem}
+    .hm-area{display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;text-decoration:none;transition:transform .2s,box-shadow .2s}
+    .hm-area:hover{transform:translateY(-6px);box-shadow:0 18px 36px rgba(11,45,81,.14)}
+    .hm-area-img{height:150px;background:linear-gradient(135deg,#e8f1fb,#eef0ff);display:flex;align-items:center;justify-content:center;overflow:hidden}
+    .hm-area-img img{width:100%;height:100%;object-fit:contain;background:#fff;transition:transform .4s}
+    .hm-area:hover .hm-area-img img{transform:scale(1.05)}
+    .hm-area-body{padding:1.1rem 1.2rem 1.3rem;display:flex;flex-direction:column;flex:1}
+    .hm-area h3{font-size:1rem;line-height:1.35}
+    .hm-area p{color:var(--muted);font-size:.9rem;margin:.4rem 0 .8rem !important;line-height:1.5}
+    .hm-area span{margin-top:auto;font-weight:700;font-size:.88rem;color:var(--blue)}
+
+    /* faculty */
+    .hm-faculty{display:grid;grid-template-columns:repeat(6,1fr);gap:1.1rem}
+    .hm-faculty a{display:flex;flex-direction:column;align-items:center;text-align:center;text-decoration:none;background:#fff;border:1px solid var(--line);
+      border-radius:16px;padding:1.3rem .7rem;transition:transform .2s,box-shadow .2s}
+    .hm-faculty a:hover{transform:translateY(-5px);box-shadow:0 14px 30px rgba(11,45,81,.12)}
+    .hm-av{position:relative;width:84px;height:84px;border-radius:50%;overflow:hidden;margin-bottom:.8rem;background:linear-gradient(135deg,#dbeafe,#e0e7ff);
+      display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 3px #fff,0 0 0 5px #d6e4f5}
+    .hm-av span{font-family:"Poppins",sans-serif;font-weight:600;color:var(--blue);font-size:1.4rem}
+    .hm-av img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+    .hm-faculty strong{font-size:.9rem;color:var(--navy);line-height:1.3}
+    .hm-faculty em{font-style:normal;font-size:.78rem;color:var(--muted);margin-top:.25rem}
+
+    /* publications */
+    .hm-pubs{list-style:none;padding:0;margin:0 auto;max-width:960px;counter-reset:pub-counter}
+    .hm .publication-item{padding:1.3rem 1.6rem 1.2rem 1.8rem !important;margin-bottom:1rem !important;border-radius:14px !important;border:1px solid var(--line) !important;box-shadow:none !important;opacity:1}
+    .hm .publication-item:hover{transform:translateY(-3px) !important;box-shadow:0 14px 28px rgba(11,45,81,.1) !important}
+    .hm .publication-item::after{font-size:2rem !important;color:#eef2f7 !important;top:1rem !important;right:1.3rem !important}
+    .hm .pub-title{font-family:"Poppins",sans-serif;font-size:1.02rem !important;color:var(--navy) !important;margin:0 0 .45rem !important;padding-right:2.5rem}
+    .hm .pub-authors{font-size:.88rem !important;color:var(--muted) !important;margin:0 0 .4rem !important}
+    .hm .pub-venue{font-size:.88rem !important;margin:0 !important}
+    .hm .pub-links{margin-top:.7rem !important}
+    .hm .pub-links a{padding:.28rem .75rem !important;font-size:.8rem !important;border-radius:8px !important}
+
+    /* join */
+    .hm-join{display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap;border-radius:20px;padding:2.4rem 2.6rem;color:#fff;position:relative;overflow:hidden;
+      background:radial-gradient(500px 200px at 90% 0%,rgba(30,136,229,.35),transparent 60%),linear-gradient(135deg,#040b16,#0b2d51)}
+    .hm-join::after{content:"";position:absolute;left:0;right:0;bottom:0;height:4px;background:linear-gradient(90deg,var(--b-blue) 33%,var(--b-orange) 33% 66%,var(--b-green) 66%)}
+    .hm-join h2{color:#fff;font-size:1.6rem}
+    .hm-join p{color:#cdd9e8;max-width:560px;margin-top:.5rem !important}
+    .hm-join-note{font-size:.92rem}
+    .hm-join-note a{color:#fff;font-weight:700}
+    .hm-join .hm-cta{margin-top:0}
+
+    .hm-reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+    .hm-reveal.in{opacity:1;transform:none}
+    @media (prefers-reduced-motion:reduce){.news-track.scrolling{animation:none}.news-viewport{overflow-y:auto}.hm-reveal{opacity:1;transform:none;transition:none}}
+
+    @media (max-width:960px){
+      .hm-hero-grid{grid-template-columns:1fr;gap:2rem}
+      .hm-areas{grid-template-columns:repeat(2,1fr)}
+      .hm-faculty{grid-template-columns:repeat(3,1fr)}
+      .hm-two{grid-template-columns:1fr}
+    }
+    @media (max-width:600px){
+      .hm-wrap{padding:0 1rem}
+      .hm-section{padding:3.2rem 0}
+      .hm-hero{padding:1.5rem 0 3rem}
+      .hm-stats{grid-template-columns:repeat(2,1fr)}
+      .hm-stats li:nth-child(2){border-right:0}
+      .hm-stats li:nth-child(-n+2){border-bottom:1px solid var(--line)}
+      .hm-areas{grid-template-columns:1fr}
+      .hm-faculty{grid-template-columns:repeat(2,1fr)}
+      .hm-join{padding:1.8rem 1.4rem}
+    }
+  </style>
+  <!-- FOOTER style (same on every page) -->
+  <style>
+    html body .ft{margin-top:0;padding:0;background:#040b16;color:#b9c7d8;border:0;position:relative;font-family:"Inter",sans-serif}
+    .ft-stripe{display:flex;height:4px}
+    .ft-stripe span{flex:1}
+    .ft-stripe span:nth-child(1){background:#1e88e5}.ft-stripe span:nth-child(2){background:#e8590c}.ft-stripe span:nth-child(3){background:#2e9d3a}
+    .ft-inner{max-width:1180px;margin:0 auto;padding:3rem 1.5rem 2rem;display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:2.5rem}
+    .ft-cover{display:block;width:100%;max-width:380px;height:auto;border-radius:8px;margin-bottom:1rem}
+    .ft address{font-style:normal;line-height:1.7;font-size:.92rem;color:#b9c7d8}
+    .ft h4{font-family:"Poppins",sans-serif;color:#fff;font-size:1rem;margin:0 0 .9rem}
+    .ft p{margin:0}
+    .ft a{color:#cfe2ff;text-decoration:none}
+    .ft a:hover{color:#fff;text-decoration:underline}
+    .ft ul{list-style:none;margin:0;padding:0}
+    .ft li{margin-bottom:.45rem}
+    .ft-social{margin-top:.6rem !important}
+    .ft-social a{display:inline-flex;align-items:center;gap:.45rem}
+    .ft-social svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+    .ft-incharge{margin-top:1.1rem !important;line-height:1.6}
+    .ft-incharge span{display:block;font-size:.72rem;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:#e8590c}
+    .ft-bottom{border-top:1px solid rgba(255,255,255,.1);max-width:1180px;margin:0 auto;padding:1.1rem 1.5rem 1.4rem;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-size:.84rem;color:#8a9bb2}
+    @media (max-width:800px){ .ft-inner{grid-template-columns:1fr 1fr} .ft-brand{grid-column:1/-1} }
+    @media (max-width:500px){ .ft-inner{grid-template-columns:1fr;padding:2.4rem 1rem 1.6rem} .ft-bottom{flex-direction:column;padding:1rem} }
+  </style>
+  <script>
+    // lab photos: try other extensions; drop the photo if none exists
+    function hmNextImg(img){var l=(img.getAttribute('data-exts')||'').split(',').filter(Boolean);
+      if(!l.length){img.remove();return;} var e=l.shift(); img.setAttribute('data-exts',l.join(',')); img.src=img.getAttribute('data-base')+'.'+e;}
+  </script>
 </head>
 <body>
   <!-- NAVBAR -->
   <nav class="nav" role="navigation" aria-label="Main navigation">
     <div class="nav-inner">
       <a class="brand" href="index.html">
-        <img src="https://cdn.jsdelivr.net/gh/SamannayaAdhikari/infocomm-lab-assets/iitmandilogo.png" alt="Infocomm Lab logo" class="brand-logo">
-        <span class="brand-text">Infocomm Lab</span>
+        <img src="https://cdn.jsdelivr.net/gh/SamannayaAdhikari/infocomm-lab-assets/infocommlogo.jpg" alt="Infocomm Lab logo" class="brand-logo">
+        <span class="brand-name"><span class="brand-text">Infocomm Lab</span><span class="brand-sub">IIT Mandi</span></span>
       </a>
 
       <button id="navToggle" class="nav-toggle" aria-expanded="false" aria-controls="navMenu" aria-label="Toggle navigation">
@@ -42,260 +267,299 @@
         <li><a href="index.html" class="active">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="people.html">People</a></li>
-        <li><a href="projects.html">Research</a></li>
+        <li><a href="projects.html">Projects</a></li>
         <li><a href="publications.html">Publications</a></li>
+        <li><a href="resources.html">Resources</a></li>
+        <li><a href="join.html">Join Us</a></li>
       </ul>
     </div>
   </nav>
 
-  <main>
+  <main class="hm">
+
     <!-- HERO -->
-    <header class="hero">
-      <div class="hero-content">
-        <h1>Infocomm Lab</h1>
-        <p class="lead">Research in wireless sensing, communications and AI-driven systems. Building robust algorithms and experimental testbeds for real-world problems.</p>
-        <p class="hero-cta">
-          <a class="btn btn-primary" href="projects.html">Explore Research</a>
-          <a class="btn btn-outline" href="people.html">Meet the Team</a>
-        </p>
+    <section class="hm-hero">
+      <div class="hm-wrap hm-hero-grid">
+        <div class="hm-hero-left">
+          <h1 class="hm-sr">Infocomm Lab, IIT Mandi</h1>
+          <img class="hm-banner" src="infocomm_lab_scee_iit_mandi_cover.jpeg" alt="Info Comm Lab, Indian Institute of Technology Mandi">
+          <p class="hm-lead">Research in wireless communications, sensing and information theory &mdash; building rigorous algorithms and experimental testbeds for real-world networks.</p>
+          <div class="hm-cta">
+            <a class="hm-btn hm-btn-light" href="projects.html">Explore research</a>
+            <a class="hm-btn hm-btn-ghost" href="people.html">Meet the team</a>
+          </div>
+
+          <!-- LATEST NEWS (auto-scrolling; hover to pause). Add newest items at the top. -->
+          <div class="news-box" aria-label="Latest news">
+            <div class="news-head">
+              <span class="news-dot" aria-hidden="true"></span>
+              <h2>Latest News</h2>
+              <a href="publications.html" class="news-more">All publications &rarr;</a>
+            </div>
+            <div class="news-viewport">
+              <ul class="news-track" id="newsTrack">
+            <li><time>Oct 7&ndash;10, 2026</time><p>The InfoComm Lab, with Dr. Adarsh Patel, showcased its 5G/6G research &mdash; posters and live demos &mdash; at <strong>India Mobile Congress 2026</strong>, Yashobhoomi, New Delhi (IIT Mandi booth, Hall 1). 📡</p></li>
+            <li><time>Oct 2026</time><p>Our team at <strong>IMC 2026</strong>: N V Divya Lakshmi, Ishita Sharma, Sahil Rana, Anshuman Thakur, Abhay Upadhyay and Shivam Rajput presented work on cell-free massive MIMO testbeds, ISAC for 6G, AI-native O-RAN and RIS-assisted systems.</p></li>
+            <li><time>Sep 2026</time><p><a href="https://www.researchgate.net/profile/Anuranjan-Jha" target="_blank" rel="noopener">Anuranjan Jha</a> and Shreya Srivastava presented the lab&rsquo;s work at <a href="https://pimrc2026.ieee-pimrc.org/" target="_blank" rel="noopener">IEEE PIMRC 2026</a>, Singapore. Congratulations!</p></li>
+            <li><time>2026</time><p><strong>Best Paper Award</strong> at COMSNETS 2026 to <a href="https://www.linkedin.com/in/samannaya-adhikari-084303209/" target="_blank" rel="noopener">Samannaya Adhikari</a> and <a href="https://www.linkedin.com/in/siddhartha-sarma-614b0565/" target="_blank" rel="noopener">Dr. Siddhartha Sarma</a>. 🏆</p></li>
+            <li><time>2026</time><p><a href="https://www.linkedin.com/in/nv-divyalakshmi/" target="_blank" rel="noopener">N V Divya Lakshmi</a> received the <strong>IEEE Communications Society Student Travel Grant</strong> to attend IEEE VTC2026-Spring, Nice, France. 🏆</p></li>
+            <li><time>2026</time><p><a href="https://www.linkedin.com/in/gopal-sai-krishna-6996a9124/" target="_blank" rel="noopener">Gopal Sai Krishna Chamarthi</a> received the <strong>ANRF International Travel Support (ITS)</strong> to attend IEEE VTC2026-Spring, Nice, France. 🏆</p></li>
+            <li><time>Jul 17, 2026</time><p><a href="https://www.researchgate.net/profile/Anuranjan-Jha" target="_blank" rel="noopener">Anuranjan Jha</a> presented the lab&rsquo;s work at <a href="https://ece.iisc.ac.in/~spcom/2026/" target="_blank" rel="noopener">IEEE SPCOM 2026</a>, IISc Bengaluru. Congratulations, Anuranjan!</p></li>
+            <li><time>Jun 9, 2026</time><p><a href="https://sites.google.com/students.iitmandi.ac.in/gopal-chamarthi/home" target="_blank" rel="noopener">Gopal Sai Krishna Chamarthi</a>, <a href="https://www.linkedin.com/in/n-v-divya-lakshmi-57178015b/" target="_blank" rel="noopener">N V Divya Lakshmi</a> and <a href="https://www.linkedin.com/in/sk-shafique/" target="_blank" rel="noopener">Sk Md Shafique Anwar</a> presented the lab&rsquo;s papers at <a href="https://events.vtsociety.org/vtc2026-spring/" target="_blank" rel="noopener">IEEE VTC2026-Spring</a>, Nice, France. Congratulations to all three!</p></li>
+            <li><time>Jun 1, 2026</time><p>Paper on optimal detection and phase optimization in IRS-assisted AmBC with correlated ambient source accepted at <a href="https://pimrc2026.ieee-pimrc.org/" target="_blank" rel="noopener">IEEE PIMRC 2026</a>, Singapore. Congratulations, Anuranjan!</p></li>
+            <li><time>May 2026</time><p><strong>PhD / MS(R) positions</strong> open in wireless sensing, communications and IoT.</p></li>
+            <li><time>Mar 2026</time><p>Three papers from the lab accepted at <a href="https://events.vtsociety.org/vtc2026-spring/" target="_blank" rel="noopener">IEEE VTC2026-Spring</a>, Nice, France.</p></li>
+            <li><time>Jan 22, 2026</time><p>Two papers from the lab accepted at <a href="https://ee.iith.ac.in/NCC2026/" target="_blank" rel="noopener">IEEE NCC 2026</a>, IIT Hyderabad.</p></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <figure class="hm-slider" aria-label="Lab photos">
+          <img class="hm-slide active" src="https://cdn.jsdelivr.net/gh/SamannayaAdhikari/infocomm-lab-assets/hero8.jpeg" alt="Infocomm Lab photo" onerror="this.remove()">
+          <img class="hm-slide" src="Lab3.jpg" data-base="Lab3" data-exts="jpeg,png,JPG,JPEG,PNG,webp,WEBP,jfif" alt="Infocomm Lab photo" onerror="hmNextImg(this)">
+          <img class="hm-slide" src="Lab8.jpg" data-base="Lab8" data-exts="jpeg,png,JPG,JPEG,PNG,webp,WEBP,jfif" alt="Infocomm Lab photo" onerror="hmNextImg(this)">
+          <img class="hm-slide" src="Lab6.jpg" data-base="Lab6" data-exts="jpeg,png,JPG,JPEG,PNG,webp,WEBP,jfif" alt="Infocomm Lab photo" onerror="hmNextImg(this)">
+          <img class="hm-slide" src="Lab1.jpg" data-base="Lab1" data-exts="jpeg,png,JPG,JPEG,PNG,webp,WEBP,jfif" alt="Infocomm Lab photo" onerror="hmNextImg(this)">
+          <img class="hm-slide" src="https://cdn.jsdelivr.net/gh/SamannayaAdhikari/infocomm-lab-assets/hero3.jpeg" alt="Infocomm Lab photo" onerror="this.remove()">
+          <img class="hm-slide" src="Lab9.jpg" data-base="Lab9" data-exts="jpeg,png,JPG,JPEG,PNG,webp,WEBP,jfif" alt="Infocomm Lab photo" onerror="hmNextImg(this)">
+          <img class="hm-slide" src="Lab5.jpg" data-base="Lab5" data-exts="jpeg,png,JPG,JPEG,PNG,webp,WEBP,jfif" alt="Infocomm Lab photo" onerror="hmNextImg(this)">
+          <img class="hm-slide" src="Lab7.jpg" data-base="Lab7" data-exts="jpeg,png,JPG,JPEG,PNG,webp,WEBP,jfif" alt="Infocomm Lab photo" onerror="hmNextImg(this)">
+          <img class="hm-slide" src="https://cdn.jsdelivr.net/gh/SamannayaAdhikari/infocomm-lab-assets/hero9.jpeg" alt="Infocomm Lab photo" onerror="this.remove()">
+          <img class="hm-slide" src="Lab10.jpg" data-base="Lab10" data-exts="jpeg,png,JPG,JPEG,PNG,webp,WEBP,jfif" alt="Infocomm Lab photo" onerror="hmNextImg(this)">
+          <img class="hm-slide" src="Lab11.jpg" data-base="Lab11" data-exts="jpeg,png,JPG,JPEG,PNG,webp,WEBP,jfif" alt="Infocomm Lab photo" onerror="hmNextImg(this)">
+          <img class="hm-slide" src="https://cdn.jsdelivr.net/gh/SamannayaAdhikari/infocomm-lab-assets/hero7.jpeg" alt="Infocomm Lab photo" onerror="this.remove()">
+          <img class="hm-slide" src="Lab12.jpg" data-base="Lab12" data-exts="jpeg,png,JPG,JPEG,PNG,webp,WEBP,jfif" alt="Infocomm Lab photo" onerror="hmNextImg(this)">
+        </figure>
       </div>
+      <div class="hm-tricolor" aria-hidden="true"><span></span><span></span><span></span></div>
+    </section>
 
-      <figure class="hero-image hero-slider" aria-label="Lab hero images">
-        <img class="hero-slide active" src="https://cdn.jsdelivr.net/gh/SamannayaAdhikari/infocomm-lab-assets/infocommimg1 (1).jpg" alt="Infocomm Lab image 1">
-        <img class="hero-slide" src="https://cdn.jsdelivr.net/gh/SamannayaAdhikari/infocomm-lab-assets/infocommimg2.jpg" alt="Infocomm Lab image 2">
-        <img class="hero-slide" src="https://cdn.jsdelivr.net/gh/SamannayaAdhikari/infocomm-lab-assets/infocommimg3.jpg" alt="Infocomm Lab image 3">
-      </figure>
+    <!-- STATS -->
+    <section class="hm-wrap">
+      <ul class="hm-stats">
+        <li><strong>120+</strong><span>Publications</span></li>
+        <li><strong>6</strong><span>Faculty</span></li>
+        <li><strong>30</strong><span>Students &amp; researchers</span></li>
+        <li><strong>4</strong><span>Active projects</span></li>
+      </ul>
+    </section>
 
-    </header>
-
-    <!-- HIGHLIGHTS / QUICK STATS -->
-    <section class="highlights container">
-      <div class="grid-3">
-        <article class="stat-card">
-          <h3>40+</h3>
-          <p>Publications</p>
-        </article>
-        <article class="stat-card">
-          <h3>10+</h3>
-          <p>Active Projects</p>
-        </article>
-        <article class="stat-card">
-          <h3>15</h3>
-          <p>Students & Researchers</p>
-        </article>
+    <!-- ANNOUNCEMENTS + AWARDS -->
+    <section class="hm-section">
+      <div class="hm-wrap hm-two">
+        <div class="hm-box">
+          <div class="hm-box-head"><span class="hm-bar hm-blue"></span><div><h2>Announcements</h2><p>News, updates and opportunities</p></div></div>
+          <ul class="hm-list">
+            <li><time>Oct 7&ndash;10, 2026</time><p>Showcased our 5G/6G research at <strong>India Mobile Congress 2026</strong>, New Delhi</p></li>
+            <li><time>Sep 2026</time><p>Anuranjan Jha and Shreya Srivastava presented at <strong>IEEE PIMRC 2026</strong>, Singapore</p></li>
+            <li><time>Jul 17, 2026</time><p>Anuranjan Jha presented at <strong>IEEE SPCOM 2026</strong>, IISc Bengaluru</p></li>
+            <li><time>May 2026</time><p><strong>PhD / MS(R) positions</strong> available</p></li>
+          </ul>
+          <a class="hm-more" href="announcements.html">View all announcements &rarr;</a>
+        </div>
+        <div class="hm-box">
+          <div class="hm-box-head"><span class="hm-bar hm-orange"></span><div><h2>Awards &amp; Honors</h2><p>Recognition and achievements</p></div></div>
+          <ul class="hm-list hm-awards">
+            <li><p><strong>IEEE ComSoc Student Travel Grant</strong><br>N V Divya Lakshmi &middot; IEEE VTC2026-Spring, Nice</p><time>2026</time></li>
+            <li><p><strong>ANRF International Travel Support (ITS)</strong><br>Gopal Sai Krishna Chamarthi &middot; IEEE VTC2026-Spring, Nice</p><time>2026</time></li>
+            <li><p><strong>Best Paper Award, COMSNETS</strong><br>Samannaya Adhikari &amp; Dr. Siddhartha Sarma</p><time>2026</time></li>
+          </ul>
+          <a class="hm-more" href="awards.html">View all awards &rarr;</a>
+        </div>
       </div>
     </section>
 
-
-
-    <!-- ANNOUNCEMENTS -->
-<section class="container section announcements-awards">
-<div class="two-col-announcement">
-
-  <!-- ANNOUNCEMENTS -->
-  <div>
-    <div class="section-header">
-      <h2>Announcements</h2>
-      <p class="muted">News, updates and opportunities</p>
-    </div>
-
-    <ul class="announcement-list">
-      <li class="announcement-item">
-        <time datetime="2026-01-20" class="announcement-date">Jan 20, 2026</time>
-        <p>
-          <strong>PhD / MS(R) positions</strong> available in wireless sensing and
-          communication systems.
-        </p>
-      </li>
-
-      <li class="announcement-item">
-        <time datetime="2025-12-10" class="announcement-date">Dec 10, 2025</time>
-        <p>
-          Paper accepted at <strong>IEEE ICC 2026</strong>.
-        </p>
-      </li>
-    </ul>
-  </div>
-
-  <!-- AWARDS -->
-  <div>
-    <div class="section-header">
-      <h2>Awards & Honors</h2>
-      <p class="muted">Recognition and achievements</p>
-    </div>
-
-    <ul class="award-list">
-      <li>
-        <strong>SERB Core Research Grant</strong><br>
-        Wireless Energy Harvesting Networks (2025)
-      </li>
-
-      <li>
-        <strong>Best Paper Award</strong><br>
-        IEEE Conference on Communications (2024)
-      </li>
-
-      <li>
-        <strong>Young Faculty Award</strong><br>
-        IIT Mandi (2023)
-      </li>
-    </ul>
-  </div>
-</div>
-
-</section>
-
-
-
-    <!-- RECENT PROJECTS (card grid) -->
-    <section class="container section" id="recent-projects">
-      <div class="section-header">
-        <h2>Major Areas of Interest</h2>
-        <p class="muted">Some of the Main Research Focus</p>
-      </div>
-
-      <div class="card-grid">
-        <!-- Project card 1 -->
-        <article class="card">
-          <img class="card-img" loading="lazy" src="https://cdn.jsdelivr.net/gh/SamannayaAdhikari/infocomm-lab-assets/project4.png" alt="Project 1 image">
-          <div class="card-body">
-            <h3 class="card-title">Network Coding and Information Theory</h3>
-            <p class="card-text">One of the important unsolved problem in network information theory is the characterization of the capacity and design of </p>
-            <a class="card-link" href="projects.html#wifi-csi">Read more →</a>
-          </div>
-        </article>
-
-        <!-- Project card 2 -->
-        <article class="card">
-          <img class="card-img" loading="lazy" src="https://cdn.jsdelivr.net/gh/SamannayaAdhikari/infocomm-lab-assets/project5.png" alt="Project 2 image">
-          <div class="card-body">
-            <h3 class="card-title">Intelligent Reflecting Surface (IRS)</h3>
-            <p class="card-text">Intelligent Reflecting Surface (IRS) is a transformative technology for wireless communication that improves network performance by </p>
-            <a class="card-link" href="projects.html#swarm-drones">Read more →</a>
-          </div>
-        </article>
-
-        <!-- Project card 3 -->
-        <article class="card">
-          <img class="card-img" loading="lazy" src="https://cdn.jsdelivr.net/gh/SamannayaAdhikari/infocomm-lab-assets/project3.png" alt="Project 3 image">
-          <div class="card-body">
-            <h3 class="card-title">Wireless Powered Communication Network (WPCN) </h3>
-            <p class="card-text">A Wireless Powered Communication Network (WPCN) is a network paradigm where wireless devices (WDs) are powered by radio frequency (RF) </p>
-            <a class="card-link" href="projects.html#genai">Read more →</a>
-          </div>
-        </article>
-
-
-        <article class="card">
-          <img class="card-img" loading="lazy" src="https://cdn.jsdelivr.net/gh/SamannayaAdhikari/infocomm-lab-assets/project1.png" alt="Project 3 image">
-          <div class="card-body">
-            <h3 class="card-title"> Cell-free massive MIMO </h3>
-            <p class="card-text">Cell-Free Massive Multiple-Input Multiple-Output (CF-mMIMO) is a distributed wireless communication technology that </p>
-            <a class="card-link" href="projects.html#genai">Read more →</a>
-          </div>
-        </article>
-
-
-        <article class="card">
-          <img class="card-img" loading="lazy" src="https://cdn.jsdelivr.net/gh/SamannayaAdhikari/infocomm-lab-assets/project2.png" alt="Project 3 image">
-          <div class="card-body">
-            <h3 class="card-title"> Massive MIMO Communication Networks </h3>
-            <p class="card-text">Massive MIMO is a wireless technology that uses a large number of antennas at a base station to significantly improve communication efficiency, capacity, and reliability.</p>
-            <a class="card-link" href="projects.html#genai">Read more →</a>
-          </div>
-        </article>
+    <!-- AREAS -->
+    <section class="hm-section hm-tint" id="recent-projects">
+      <div class="hm-wrap">
+        <div class="hm-head"><p class="hm-kicker">Research</p><h2>Major areas of interest</h2></div>
+        <div class="hm-areas">
+          <a class="hm-area" href="projects.html#network-coding">
+            <div class="hm-area-img"><img loading="lazy" src="https://cdn.jsdelivr.net/gh/SamannayaAdhikari/infocomm-lab-assets/project4.png" alt="" onerror="this.remove()"></div>
+            <div class="hm-area-body"><h3>Network Coding &amp; Information Theory</h3><p>Characterising network capacity and designing codes that approach it.</p><span>Read more &rarr;</span></div>
+          </a>
+          <a class="hm-area" href="projects.html#irs">
+            <div class="hm-area-img"><img loading="lazy" src="https://cdn.jsdelivr.net/gh/SamannayaAdhikari/infocomm-lab-assets/IRS-AmBC.jpg.jpeg" alt="" onerror="this.remove()"></div>
+            <div class="hm-area-body"><h3>Intelligent Reflecting Surfaces</h3><p>Programmable surfaces that reshape the radio environment.</p><span>Read more &rarr;</span></div>
+          </a>
+          <a class="hm-area" href="projects.html#wpcn">
+            <div class="hm-area-img"><img loading="lazy" src="https://cdn.jsdelivr.net/gh/SamannayaAdhikari/infocomm-lab-assets/project3.png" alt="" onerror="this.remove()"></div>
+            <div class="hm-area-body"><h3>Wireless Powered Networks</h3><p>Devices powered by RF energy for perpetual, battery-free operation.</p><span>Read more &rarr;</span></div>
+          </a>
+          <a class="hm-area" href="projects.html#backscatter">
+            <div class="hm-area-img"><img loading="lazy" src="https://cdn.jsdelivr.net/gh/SamannayaAdhikari/infocomm-lab-assets/AmBC.jpg.jpeg" alt="" onerror="this.remove()"></div>
+            <div class="hm-area-body"><h3>Backscatter Communication</h3><p>Ultra-low-power links that reflect existing RF signals.</p><span>Read more &rarr;</span></div>
+          </a>
+        </div>
       </div>
     </section>
 
-    <!-- PEOPLE PREVIEW -->
-    <section class="container section" id="people-preview">
-      <div class="section-header">
-        <h2>People</h2>
-        <p class="muted">Faculty, researchers and students</p>
+    <!-- PEOPLE -->
+    <section class="hm-section" id="people-preview">
+      <div class="hm-wrap">
+        <div class="hm-head"><p class="hm-kicker">Our people</p><h2>Faculty</h2></div>
+        <div class="hm-faculty">
+          <a href="people.html#faculties"><div class="hm-av"><span>AP</span><img loading="lazy" src="https://cdn.jsdelivr.net/gh/SamannayaAdhikari/infocomm-lab-assets/adarsh.jpg" alt="" onerror="this.remove()"></div><strong>Dr. Adarsh Patel</strong><em>Assistant Professor</em></a>
+          <a href="people.html#faculties"><div class="hm-av"><span>PM</span><img loading="lazy" src="https://cdn.jsdelivr.net/gh/SamannayaAdhikari/infocomm-lab-assets/pavan.png" alt="" onerror="this.remove()"></div><strong>Dr. Pavan Kumar Reddy Manne</strong><em>Assistant Professor</em></a>
+          <a href="people.html#faculties"><div class="hm-av"><span>SA</span><img loading="lazy" src="https://cdn.jsdelivr.net/gh/SamannayaAdhikari/infocomm-lab-assets/samar.jpg" alt="" onerror="this.remove()"></div><strong>Dr. Samar Agnihotri</strong><em>Associate Professor</em></a>
+          <a href="people.html#faculties"><div class="hm-av"><span>ST</span><img loading="lazy" src="https://cdn.jsdelivr.net/gh/SamannayaAdhikari/infocomm-lab-assets/satyajit.jpg" alt="" onerror="this.remove()"></div><strong>Prof. Satyajit Thakor</strong><em>Professor</em></a>
+          <a href="people.html#faculties"><div class="hm-av"><span>SS</span><img loading="lazy" src="https://cdn.jsdelivr.net/gh/SamannayaAdhikari/infocomm-lab-assets/siddhartha.jpg" alt="" onerror="this.remove()"></div><strong>Dr. Siddhartha Sarma</strong><em>Assistant Professor</em></a>
+          <a href="people.html#faculties"><div class="hm-av"><span>SD</span><img loading="lazy" src="https://cdn.jsdelivr.net/gh/SamannayaAdhikari/infocomm-lab-assets/sourav.jpg" alt="" onerror="this.remove()"></div><strong>Dr. Sourav Dutta</strong><em>Assistant Professor</em></a>
+        </div>
+        <p class="hm-center"><a class="hm-link" href="people.html">View all people &rarr;</a></p>
       </div>
-
-      <div class="card-grid small">
-        <article class="person-card">
-          <img class="avatar" loading="lazy" src="https://cdn.jsdelivr.net/gh/SamannayaAdhikari/infocomm-lab-assets/samar.jpg" alt="Prof. A">
-          <div class="person-info">
-            <h4>Dr. Samar Agnihotri</h4>
-            <p class="muted">Associate Professor</p>
-          </div>
-        </article>
-
-        <article class="person-card">
-          <img class="avatar" loading="lazy" src="https://cdn.jsdelivr.net/gh/SamannayaAdhikari/infocomm-lab-assets/satyajit.jpg" alt="Dr. B">
-          <div class="person-info">
-            <h4>Dr. Satyajit Thakor</h4>
-            <p class="muted">Associate Professor</p>
-          </div>
-        </article>
-
-        <article class="person-card">
-          <img class="avatar" loading="lazy" src="https://cdn.jsdelivr.net/gh/SamannayaAdhikari/infocomm-lab-assets/adarsh.jpg" alt="Student C">
-          <div class="person-info">
-            <h4>Dr. Adarsh Patel</h4>
-            <p class="muted">Assistant Professor</p>
-          </div>
-        </article>
-
-
-
-         <article class="person-card">
-          <img class="avatar" loading="lazy" src="https://cdn.jsdelivr.net/gh/SamannayaAdhikari/infocomm-lab-assets/siddhartha.jpg" alt="Student C">
-          <div class="person-info">
-            <h4>Dr. Siddhartha Sarma</h4>
-            <p class="muted">Assistant Professor</p>
-          </div>
-        </article>
-      </div>
-
-      <p class="center"><a class="btn btn-outline" href="people.html">View all people</a></p>
     </section>
 
-    <!-- LATEST PUBLICATIONS (minimal preview) -->
-    <section class="container section" id="publications-preview">
-      <div class="section-header">
-        <h2>Recent Publications</h2>
-        <p class="muted">Selected recent papers</p>
+    <!-- RECENT PUBLICATIONS -->
+    <section class="hm-section hm-tint" id="publications-preview">
+      <div class="hm-wrap">
+        <div class="hm-head"><p class="hm-kicker">Latest conference papers (2026)</p><h2>Recent publications</h2></div>
+        <ol class="hm-pubs">
+            <li class="publication-item">
+              <p class="pub-authors">
+                Anuranjan Jha, Adarsh Patel
+              </p>
+              <p class="pub-title">
+                Optimal Detection and Phase Optimization in IRS-Assisted Ambient Backscatter Communication with Correlated Ambient Source <span class="badge-new">New</span>
+              </p>
+              <p class="pub-venue">
+                <em>IEEE International Symposium on Personal, Indoor and Mobile Radio Communications (PIMRC)</em>, Singapore, 2026
+              </p>
+            </li>
+            <li class="publication-item">
+              <p class="pub-authors">
+                Anuranjan Jha, Adarsh Patel
+              </p>
+              <p class="pub-title">
+                Detection in Ambient Backscatter Communication System with Multi-Antenna Tag-Reader Pair and Correlated Ambient Source Signal <span class="badge-new">New</span>
+              </p>
+              <p class="pub-venue">
+                <em>International Conference on Signal Processing and Communications (SPCOM)</em>, IISc Bengaluru, 2026
+              </p>
+            </li>
+            <li class="publication-item">
+              <p class="pub-authors">
+                Mohd Saif Ali Khan, Karthik RM, Samar Agnihotri
+              </p>
+              <p class="pub-title">
+                Generalized Partial Full-Pilot Zero-Forcing Combining for Distributed mMIMO <span class="badge-new">New</span>
+              </p>
+              <p class="pub-venue">
+                <em>International Conference on Signal Processing and Communications (SPCOM)</em>, IISc Bengaluru, 2026
+              </p>
+            </li>
+            <li class="publication-item">
+              <p class="pub-authors">
+                Gopal Sai Krishna Chamarthi, Adarsh Patel, Rameshwar Pratap
+              </p>
+              <p class="pub-title">
+                Fast and Accurate Channel Estimation in IRS-assisted XL-MIMO Communication Networks <span class="badge-new">New</span>
+              </p>
+              <p class="pub-venue">
+                <em>IEEE Vehicular Technology Conference (VTC2026-Spring)</em>, Nice, France, 2026
+              </p>
+              <p class="pub-links">
+                <a href="https://events.vtsociety.org/vtc2026-spring/" target="_blank" rel="noopener">Conference</a>
+              </p>
+            </li>
+        </ol>
+        <p class="hm-center"><a class="hm-link" href="publications.html">View all publications &rarr;</a></p>
       </div>
+    </section>
 
-      <ol class="pub-list">
-        <li><strong>Author A, Author B</strong>. Title of paper. <em>Conference / Journal (2025)</em>. <a href="publications.html">Details</a></li>
-        <li><strong>Author C, Author D</strong>. Title of paper. <em>Conference / Journal (2024)</em>. <a href="publications.html">Details</a></li>
-      </ol>
+    <!-- JOIN -->
+    <section class="hm-section">
+      <div class="hm-wrap">
+        <div class="hm-join">
+          <div><h2>Join the Infocomm Lab</h2><p>PhD and MS (Research) positions are open in wireless communications, sensing and IoT. Send your CV and transcripts to the lab.</p><p class="hm-join-note">You can also email your CV, along with the area you would like to work on, directly to a faculty member&rsquo;s personal email &mdash; see the <a href="people.html#faculties">Faculty</a> list.</p></div>
+          <div class="hm-cta"><a class="hm-btn hm-btn-light" href="mailto:infocomm@iitmandi.ac.in">infocomm@iitmandi.ac.in</a><a class="hm-btn hm-btn-ghost" href="about.html">About the lab</a></div>
+        </div>
+      </div>
     </section>
 
   </main>
 
-  <!-- FOOTER -->
-  <footer class="site-footer">
-    <div class="container footer-grid">
-      <div>
-        <h4>Infocomm Lab</h4>
-        <p class="muted">School of Computing and Electrical Engineering<br>IIT Mandi</p>
+  <!-- FOOTER (same on every page) -->
+  <footer class="site-footer ft">
+    <div class="ft-stripe" aria-hidden="true"><span></span><span></span><span></span></div>
+    <div class="ft-inner">
+      <div class="ft-brand">
+        <img class="ft-cover" src="infocomm_lab_scee_iit_mandi_cover.jpeg" alt="Info Comm Lab, IIT Mandi">
+        <address>
+          InfoComm Lab,<br>
+          School of Computing and Electrical Engineering,<br>
+          3rd Floor, A18 Building,<br>
+          North Campus, IIT Mandi,<br>
+          Mandi, Himachal Pradesh &ndash; 175075
+        </address>
       </div>
-
       <div>
-        <h4>Contact</h4>
-        <p class="muted">Email: <a href="mailto:lab@iitmandi.ac.in">lab@iitmandi.ac.in</a></p>
+        <h4>Contact Us</h4>
+        <p><a href="mailto:infocomm@iitmandi.ac.in">infocomm@iitmandi.ac.in</a></p>
+        <p class="ft-social"><a href="https://www.linkedin.com/company/infocomm-lab-scee-iit-mandi/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 10v7M8 7v.01M12 17v-4a2 2 0 0 1 4 0v4M12 10v7"/></svg>InfoComm Lab on LinkedIn</a></p>
+        <p class="ft-incharge"><span>Student lab in-charge</span>Sahil Rana<br><a href="mailto:d24135@students.iitmandi.ac.in">d24135@students.iitmandi.ac.in</a></p>
       </div>
-
       <div>
         <h4>Quick Links</h4>
-        <ul class="footer-links">
+        <ul>
           <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="people.html">People</a></li>
           <li><a href="projects.html">Projects</a></li>
           <li><a href="publications.html">Publications</a></li>
+          <li><a href="resources.html">Resources</a></li>
+          <li><a href="join.html">Join Us</a></li>
         </ul>
       </div>
     </div>
-
-    <div class="footer-bottom">
-      <p>© <span id="year"></span> Infocomm Lab, IIT Mandi — <small>Site last updated: <time datetime="2026-02-01">Feb 1, 2026</time></small></p>
+    <div class="ft-bottom">
+      <p>&copy; <span id="year"></span> Infocomm Lab, IIT Mandi</p>
+      <p>Website created by Samannaya Adhikari, Sahil Rana and Bhavesh Sharma</p>
     </div>
   </footer>
 
+
   <script src="script.js"></script>
+  <script>
+    // Latest News: duplicate items so the upward scroll loops seamlessly
+    (function () {
+      var track = document.getElementById('newsTrack');
+      if (!track || track.children.length < 2) return;
+      Array.prototype.slice.call(track.children).forEach(function (li) {
+        var c = li.cloneNode(true); c.setAttribute('aria-hidden', 'true'); track.appendChild(c);
+      });
+      track.style.setProperty('--news-duration', (track.children.length / 2 * 5) + 's'); // ~5s per item
+      track.classList.add('scrolling');
+    })();
+  </script>
+  <script>
+    (function () {
+      if (!('IntersectionObserver' in window)) return;
+      var io = new IntersectionObserver(function (es) {
+        es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+      }, { threshold: 0.08 });
+      document.querySelectorAll('.hm-box, .hm-area, .hm-faculty a, .hm .publication-item, .hm-head, .hm-join').forEach(function (el) { el.classList.add('hm-reveal'); io.observe(el); });
+    })();
+  </script>
+  <script>
+    // home photo frame: cross-fade every 4 s, only between photos that actually loaded
+    (function () {
+      var frame = document.querySelector('.hm-slider'); if (!frame) return;
+      function ok(img) { return img.complete && img.naturalWidth > 0; }
+      function show(step) {
+        var sl = Array.prototype.filter.call(frame.querySelectorAll('.hm-slide'), ok);
+        if (!sl.length) return;
+        var cur = frame.querySelector('.hm-slide.active');
+        var i = sl.indexOf(cur);                      // -1 if the current photo is missing/broken
+        if (i !== -1 && !step) return;                // current photo is fine
+        frame.querySelectorAll('.hm-slide.active').forEach(function (x) { x.classList.remove('active'); });
+        sl[(i + 1) % sl.length].classList.add('active');
+      }
+      // never leave a blank frame: if the first photo is missing, jump to one that loaded
+      [300, 1000, 2500].forEach(function (t) { setTimeout(function () { show(false); }, t); });
+      setInterval(function () { show(true); }, 4000);
+    })();
+  </script>
 </body>
 </html>

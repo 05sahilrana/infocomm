@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <title>Announcements — Infocomm Lab, IIT Mandi</title>
+  <meta name="description" content="Announcements, news, and opportunities from Infocomm Lab, IIT Mandi.">
+  <meta name="theme-color" content="#0b2d51">
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <!-- NAVBAR style (inline so every page looks the same even with an old/cached style.css or script.js) -->
+  <style>
+    html body nav.nav.nav{position:sticky;top:0;z-index:1000;background:#f7f9fc !important;background-image:none !important;
+      backdrop-filter:none !important;border-bottom:1px solid #e3e8ef !important;box-shadow:0 1px 8px rgba(15,23,42,.06) !important}
+    html body nav.nav.nav .nav-inner{display:flex !important;align-items:center;justify-content:space-between;gap:1rem;
+      width:100% !important;max-width:none !important;margin:0 !important;padding:.6rem 2rem !important;box-sizing:border-box}
+    html body nav.nav.nav .brand{display:flex !important;align-items:center;gap:.75rem;margin:0 !important;text-decoration:none}
+    html body nav.nav.nav .brand-logo{height:44px !important;width:44px !important;object-fit:contain;border-radius:6px;background:#fff}
+    html body nav.nav.nav .brand-name{display:flex;flex-direction:column;line-height:1.15}
+    html body nav.nav.nav .brand-text{font-family:"Poppins",sans-serif;font-weight:600;font-size:1.2rem;color:#0b2d51 !important}
+    html body nav.nav.nav .brand-sub{font-family:"Inter",sans-serif;font-size:.72rem;font-weight:500;letter-spacing:.6px;text-transform:uppercase;color:#586175 !important}
+    html body nav.nav.nav .nav-links{list-style:none;margin:0;padding:0;background:transparent !important;gap:.25rem}
+    html body nav.nav.nav .nav-links li a{position:relative;display:block;text-decoration:none;font-family:"Inter",sans-serif;font-size:.95rem;font-weight:500;
+      color:#334155 !important;padding:.5rem .9rem;border-radius:6px;opacity:1 !important;transition:color .2s,background-color .2s}
+    html body nav.nav.nav .nav-links li a:hover{color:#0b6fb3 !important;background:#e8eef7 !important}
+    html body nav.nav.nav .nav-links li a.active{color:#0b6fb3 !important;font-weight:600}
+    html body nav.nav.nav .nav-links li a.active::after{content:"";position:absolute;left:.9rem;right:.9rem;bottom:2px;height:2px;border-radius:2px;background:#0b6fb3}
+    html body nav.nav.nav .nav-toggle{background:none;border:0;padding:.6rem .4rem;cursor:pointer}
+    html body nav.nav.nav .hamburger,html body nav.nav.nav .hamburger::before,html body nav.nav.nav .hamburger::after{background:#0b2d51 !important}
+    @media (min-width:700px){
+      html body nav.nav.nav .nav-toggle{display:none !important}
+      html body nav.nav.nav .nav-links{display:flex !important;flex-direction:row;align-items:center;position:static}
+    }
+    @media (max-width:699px){
+      html body nav.nav.nav .nav-inner{position:relative;padding:.5rem 1rem !important}
+      html body nav.nav.nav .brand-logo{height:38px !important;width:38px !important}
+      html body nav.nav.nav .nav-links{display:none !important;position:absolute;top:100%;left:0;right:0;flex-direction:column;
+        background:#f7f9fc !important;border-bottom:1px solid #e3e8ef;box-shadow:0 8px 16px rgba(15,23,42,.08);padding:.5rem 1rem 1rem}
+      html body nav.nav.nav .nav-links.open{display:flex !important}
+      html body nav.nav.nav .nav-links li a.active::after{display:none}
+    }
+    @media (min-width:700px) and (max-width:1100px){
+      html body nav.nav.nav .nav-inner{padding:.6rem 1rem !important}
+      html body nav.nav.nav .nav-links li a{padding:.5rem .55rem;font-size:.88rem}
+      html body nav.nav.nav .brand-sub{display:none}
+    }
+  </style>
+  <!-- FOOTER style (same on every page) -->
+  <style>
+    html body .ft{margin-top:0;padding:0;background:#040b16;color:#b9c7d8;border:0;position:relative;font-family:"Inter",sans-serif}
+    .ft-stripe{display:flex;height:4px}
+    .ft-stripe span{flex:1}
+    .ft-stripe span:nth-child(1){background:#1e88e5}.ft-stripe span:nth-child(2){background:#e8590c}.ft-stripe span:nth-child(3){background:#2e9d3a}
+    .ft-inner{max-width:1180px;margin:0 auto;padding:3rem 1.5rem 2rem;display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:2.5rem}
+    .ft-cover{display:block;width:100%;max-width:380px;height:auto;border-radius:8px;margin-bottom:1rem}
+    .ft address{font-style:normal;line-height:1.7;font-size:.92rem;color:#b9c7d8}
+    .ft h4{font-family:"Poppins",sans-serif;color:#fff;font-size:1rem;margin:0 0 .9rem}
+    .ft p{margin:0}
+    .ft a{color:#cfe2ff;text-decoration:none}
+    .ft a:hover{color:#fff;text-decoration:underline}
+    .ft ul{list-style:none;margin:0;padding:0}
+    .ft li{margin-bottom:.45rem}
+    .ft-social{margin-top:.6rem !important}
+    .ft-social a{display:inline-flex;align-items:center;gap:.45rem}
+    .ft-social svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+    .ft-incharge{margin-top:1.1rem !important;line-height:1.6}
+    .ft-incharge span{display:block;font-size:.72rem;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:#e8590c}
+    .ft-bottom{border-top:1px solid rgba(255,255,255,.1);max-width:1180px;margin:0 auto;padding:1.1rem 1.5rem 1.4rem;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-size:.84rem;color:#8a9bb2}
+    @media (max-width:800px){ .ft-inner{grid-template-columns:1fr 1fr} .ft-brand{grid-column:1/-1} }
+    @media (max-width:500px){ .ft-inner{grid-template-columns:1fr;padding:2.4rem 1rem 1.6rem} .ft-bottom{flex-direction:column;padding:1rem} }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a class="brand" href="index.html">
+        <img src="https://cdn.jsdelivr.net/gh/SamannayaAdhikari/infocomm-lab-assets/infocommlogo.jpg" alt="Infocomm Lab logo" class="brand-logo">
+        <span class="brand-name"><span class="brand-text">Infocomm Lab</span><span class="brand-sub">IIT Mandi</span></span>
+      </a>
+
+      <button id="navToggle" class="nav-toggle" aria-expanded="false" aria-controls="navMenu" aria-label="Toggle navigation">
+        <span class="hamburger"></span>
+      </button>
+
+      <ul id="navMenu" class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="people.html">People</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="publications.html">Publications</a></li>
+        <li><a href="resources.html">Resources</a></li>
+        <li><a href="join.html">Join Us</a></li>
+      </ul>
+    </div>
+  </nav>
+
+<!-- MAIN CONTENT -->
+<main class="container section">
+
+  <div class="section-header center">
+    <h2>Announcements</h2>
+    <p class="muted">News, updates, opportunities, and recent activities</p>
+  </div>
+
+  <ul class="announcement-list">
+
+    <li class="announcement-item">
+      <time datetime="2026-09" class="announcement-date">Sep 2026</time>
+      <p><strong>Anuranjan Jha</strong> and <strong>Shreya Srivastava</strong> presented the lab&rsquo;s work at <a href="https://pimrc2026.ieee-pimrc.org/" target="_blank" rel="noopener">IEEE PIMRC 2026</a>, Singapore.</p>
+    </li>
+
+    <li class="announcement-item">
+      <time datetime="2026-07-17" class="announcement-date">Jul 17, 2026</time>
+      <p><strong>Anuranjan Jha</strong> presented the lab&rsquo;s work at <a href="https://ece.iisc.ac.in/~spcom/2026/" target="_blank" rel="noopener">IEEE SPCOM 2026</a>, IISc Bengaluru.</p>
+    </li>
+
+    <li class="announcement-item">
+      <time datetime="2026-06-09" class="announcement-date">Jun 9, 2026</time>
+      <p><strong>Gopal Sai Krishna Chamarthi</strong>, <strong>N V Divya Lakshmi</strong> and <strong>Sk Md Shafique Anwar</strong> presented the lab&rsquo;s papers at <a href="https://events.vtsociety.org/vtc2026-spring/" target="_blank" rel="noopener">IEEE VTC2026-Spring</a>, Nice, France.</p>
+    </li>
+    <li class="announcement-item">
+      <time datetime="2026-05" class="announcement-date">May 2026</time>
+      <p>
+        <strong>PhD / MS(R) positions</strong> available in wireless sensing,
+        wireless communications, and IoT systems.  
+        Interested candidates are encouraged to email their CV and transcripts.
+      </p>
+    </li>
+
+    <li class="announcement-item">
+      <time datetime="2026" class="announcement-date">2026</time>
+      <p><strong>Best Paper Award at COMSNETS</strong> to Samannaya Adhikari, M.Tech (Research) scholar, and Dr. Siddhartha Sarma for their work in communication and networking systems.</p>
+    </li>
+
+    <li class="announcement-item">
+      <time datetime="2026" class="announcement-date">2026</time>
+      <p>Two members of the InfoComm Lab received prestigious travel support to attend <a href="https://events.vtsociety.org/vtc2026-spring/" target="_blank" rel="noopener">IEEE VTC2026-Spring</a>, Nice, France: <strong>N V Divya Lakshmi</strong> &mdash; IEEE Communications Society Student Travel Grant; <strong>Gopal Sai Krishna Chamarthi</strong> &mdash; ANRF International Travel Support (ITS).</p>
+    </li>
+
+    <li class="announcement-item">
+      <time datetime="2025-12-10" class="announcement-date">Dec 10, 2025</time>
+      <p>
+        Paper accepted at <strong>IEEE International Conference on Communications (ICC 2026)</strong>
+        in the area of Massive MIMO communication networks.
+      </p>
+    </li>
+
+    <li class="announcement-item">
+      <time datetime="2025-11-02" class="announcement-date">Nov 02, 2025</time>
+      <p>
+        <strong>New SERB-funded project</strong> awarded on Wireless Energy Harvesting
+        and Wireless Powered Communication Networks.
+      </p>
+    </li>
+
+    <li class="announcement-item">
+      <time datetime="2025-09-18" class="announcement-date">Sep 18, 2025</time>
+      <p>
+        Our lab organized a <strong>hands-on workshop</strong> on Cell-Free Massive MIMO
+        and Intelligent Reflecting Surfaces.
+      </p>
+    </li>
+
+    <li class="announcement-item">
+      <time datetime="2025-07-05" class="announcement-date">Jul 05, 2025</time>
+      <p>
+        Two M.Tech (by Research) students successfully defended their theses
+        in Wireless Sensing and Backscatter Communication.
+      </p>
+    </li>
+
+  </ul>
+
+</main>
+
+  <!-- FOOTER (same on every page) -->
+  <footer class="site-footer ft">
+    <div class="ft-stripe" aria-hidden="true"><span></span><span></span><span></span></div>
+    <div class="ft-inner">
+      <div class="ft-brand">
+        <img class="ft-cover" src="infocomm_lab_scee_iit_mandi_cover.jpeg" alt="Info Comm Lab, IIT Mandi">
+        <address>
+          InfoComm Lab,<br>
+          School of Computing and Electrical Engineering,<br>
+          3rd Floor, A18 Building,<br>
+          North Campus, IIT Mandi,<br>
+          Mandi, Himachal Pradesh &ndash; 175075
+        </address>
+      </div>
+      <div>
+        <h4>Contact Us</h4>
+        <p><a href="mailto:infocomm@iitmandi.ac.in">infocomm@iitmandi.ac.in</a></p>
+        <p class="ft-social"><a href="https://www.linkedin.com/company/infocomm-lab-scee-iit-mandi/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 10v7M8 7v.01M12 17v-4a2 2 0 0 1 4 0v4M12 10v7"/></svg>InfoComm Lab on LinkedIn</a></p>
+        <p class="ft-incharge"><span>Student lab in-charge</span>Sahil Rana<br><a href="mailto:d24135@students.iitmandi.ac.in">d24135@students.iitmandi.ac.in</a></p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="people.html">People</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="publications.html">Publications</a></li>
+          <li><a href="resources.html">Resources</a></li>
+          <li><a href="join.html">Join Us</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="ft-bottom">
+      <p>&copy; <span id="year"></span> Infocomm Lab, IIT Mandi</p>
+      <p>Website created by Samannaya Adhikari, Sahil Rana and Bhavesh Sharma</p>
+    </div>
+  </footer>
+
+
+<script src="script.js"></script>
+</body>
+</html>

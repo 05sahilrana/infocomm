@@ -7,23 +7,167 @@
   <title>Research — Infocomm Lab, IIT Mandi</title>
   <meta name="description" content="Research areas of the Infocomm Lab, IIT Mandi in wireless communications, sensing, information theory, and IoT networks." />
   <meta name="keywords" content="Wireless Communications, Massive MIMO, Cell-free MIMO, WPCN, IRS, Backscatter, IIT Mandi" />
-  <link rel="canonical" href="https://infocomm.iitmandi.ac.in/research.html" />
+  <link rel="canonical" href="https://infocomm.iitmandi.ac.in/projects.html" />
 
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <!-- NAVBAR style (inline so every page looks the same even with an old/cached style.css or script.js) -->
+  <style>
+    html body nav.nav.nav{position:sticky;top:0;z-index:1000;background:#f7f9fc !important;background-image:none !important;
+      backdrop-filter:none !important;border-bottom:1px solid #e3e8ef !important;box-shadow:0 1px 8px rgba(15,23,42,.06) !important}
+    html body nav.nav.nav .nav-inner{display:flex !important;align-items:center;justify-content:space-between;gap:1rem;
+      width:100% !important;max-width:none !important;margin:0 !important;padding:.6rem 2rem !important;box-sizing:border-box}
+    html body nav.nav.nav .brand{display:flex !important;align-items:center;gap:.75rem;margin:0 !important;text-decoration:none}
+    html body nav.nav.nav .brand-logo{height:44px !important;width:44px !important;object-fit:contain;border-radius:6px;background:#fff}
+    html body nav.nav.nav .brand-name{display:flex;flex-direction:column;line-height:1.15}
+    html body nav.nav.nav .brand-text{font-family:"Poppins",sans-serif;font-weight:600;font-size:1.2rem;color:#0b2d51 !important}
+    html body nav.nav.nav .brand-sub{font-family:"Inter",sans-serif;font-size:.72rem;font-weight:500;letter-spacing:.6px;text-transform:uppercase;color:#586175 !important}
+    html body nav.nav.nav .nav-links{list-style:none;margin:0;padding:0;background:transparent !important;gap:.25rem}
+    html body nav.nav.nav .nav-links li a{position:relative;display:block;text-decoration:none;font-family:"Inter",sans-serif;font-size:.95rem;font-weight:500;
+      color:#334155 !important;padding:.5rem .9rem;border-radius:6px;opacity:1 !important;transition:color .2s,background-color .2s}
+    html body nav.nav.nav .nav-links li a:hover{color:#0b6fb3 !important;background:#e8eef7 !important}
+    html body nav.nav.nav .nav-links li a.active{color:#0b6fb3 !important;font-weight:600}
+    html body nav.nav.nav .nav-links li a.active::after{content:"";position:absolute;left:.9rem;right:.9rem;bottom:2px;height:2px;border-radius:2px;background:#0b6fb3}
+    html body nav.nav.nav .nav-toggle{background:none;border:0;padding:.6rem .4rem;cursor:pointer}
+    html body nav.nav.nav .hamburger,html body nav.nav.nav .hamburger::before,html body nav.nav.nav .hamburger::after{background:#0b2d51 !important}
+    @media (min-width:700px){
+      html body nav.nav.nav .nav-toggle{display:none !important}
+      html body nav.nav.nav .nav-links{display:flex !important;flex-direction:row;align-items:center;position:static}
+    }
+    @media (max-width:699px){
+      html body nav.nav.nav .nav-inner{position:relative;padding:.5rem 1rem !important}
+      html body nav.nav.nav .brand-logo{height:38px !important;width:38px !important}
+      html body nav.nav.nav .nav-links{display:none !important;position:absolute;top:100%;left:0;right:0;flex-direction:column;
+        background:#f7f9fc !important;border-bottom:1px solid #e3e8ef;box-shadow:0 8px 16px rgba(15,23,42,.08);padding:.5rem 1rem 1rem}
+      html body nav.nav.nav .nav-links.open{display:flex !important}
+      html body nav.nav.nav .nav-links li a.active::after{display:none}
+    }
+    @media (min-width:700px) and (max-width:1100px){
+      html body nav.nav.nav .nav-inner{padding:.6rem 1rem !important}
+      html body nav.nav.nav .nav-links li a{padding:.5rem .55rem;font-size:.88rem}
+      html body nav.nav.nav .brand-sub{display:none}
+    }
+  </style>
+  <!-- PROJECTS PAGE styles -->
+  <style>
+    .pj{--navy:#0b2d51;--blue:#0b6fb3;--sky:#3b82f6;--text:#334155;--muted:#64748b;--line:#e3e8ef;--tint:#f5f8fc}
+    .pj-wrap{max-width:1180px;margin:0 auto;padding:0 1.5rem}
+    .pj h1,.pj h2,.pj h3,.pj h4{font-family:"Poppins",sans-serif;color:var(--navy);margin:0}
+    .pj-section{padding:4.5rem 0}
+    .pj-tint{background:var(--tint)}
+    .pj-kicker{font-size:.76rem;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:var(--blue) !important;margin:0 0 .45rem !important}
+    .pj-head{text-align:center;margin-bottom:2.2rem}
+    .pj-head h2{font-size:clamp(1.6rem,3vw,2.1rem)}
+    .pj-hero{position:relative;overflow:hidden;color:#fff;padding:4.5rem 0 3.5rem;
+      background:radial-gradient(800px 380px at 85% 0%,rgba(59,130,246,.35),transparent 60%),linear-gradient(135deg,#071d36,#0b2d51 45%,#124a86)}
+    .pj-hero::after{content:"";position:absolute;right:-120px;top:-120px;width:460px;height:460px;border-radius:50%;pointer-events:none;
+      border:1px solid rgba(143,197,255,.25);box-shadow:0 0 0 60px rgba(143,197,255,.05),0 0 0 120px rgba(143,197,255,.035)}
+    .pj-eyebrow{display:inline-block;margin:0 0 1rem !important;padding:.35rem .8rem;border:1px solid rgba(255,255,255,.25);border-radius:999px;
+      font-size:.76rem;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:#cfe2ff !important;background:rgba(255,255,255,.06)}
+    .pj-hero h1{color:#fff;font-size:clamp(2rem,4.6vw,3.1rem);line-height:1.15}
+    .pj-hero h1 span{background:linear-gradient(90deg,#8ec5ff,#c4b5fd);-webkit-background-clip:text;background-clip:text;color:transparent}
+    .pj-lead{max-width:640px;margin:1rem 0 0 !important;font-size:1.08rem;color:#d6e4f5 !important;line-height:1.6}
+    .pj-stats{list-style:none;margin:2.2rem 0 0;padding:0;display:flex;gap:2.5rem;flex-wrap:wrap}
+    .pj-stats strong{display:block;font-family:"Poppins",sans-serif;font-size:2rem;color:#fff;line-height:1.1}
+    .pj-stats span{font-size:.85rem;color:#b9cde6}
+    .pj-jump{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:2rem;position:relative;z-index:1}
+    .pj-jump a{padding:.45rem .9rem;border-radius:999px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);
+      color:#fff;text-decoration:none;font-size:.88rem;font-weight:600;transition:background .2s}
+    .pj-jump a:hover{background:rgba(255,255,255,.2)}
+    .pj-reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+    .pj-reveal.in{opacity:1;transform:none}
+    @media (prefers-reduced-motion:reduce){.pj-reveal{opacity:1;transform:none;transition:none}}
+    @media (max-width:600px){.pj-section{padding:3.2rem 0}.pj-wrap{padding:0 1rem}.pj-hero{padding:3.2rem 0 2.8rem}.pj-stats{gap:1.6rem}}
+
+    .pj-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.3rem}
+    .pj-card{position:relative;background:#fff;border:1px solid var(--line);border-radius:16px;padding:1.6rem 1.6rem 1.4rem;overflow:hidden;
+      transition:transform .2s,box-shadow .2s,border-color .2s}
+    .pj-card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:linear-gradient(var(--blue),#8b5cf6)}
+    .pj-card:hover{transform:translateY(-5px);box-shadow:0 16px 32px rgba(11,45,81,.12);border-color:#cfdcec}
+    .pj-card h3{font-size:1.1rem;line-height:1.4;margin-top:.8rem}
+    .pj-status{display:inline-flex;align-items:center;gap:.4rem;font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.5px;
+      color:#047857;background:#d1fae5;padding:.2rem .55rem;border-radius:6px}
+    .pj-status::before{content:"";width:7px;height:7px;border-radius:50%;background:#10b981;animation:pjPulse 1.8s infinite}
+    @keyframes pjPulse{0%{box-shadow:0 0 0 0 rgba(16,185,129,.5)}70%{box-shadow:0 0 0 6px rgba(16,185,129,0)}100%{box-shadow:0 0 0 0 rgba(16,185,129,0)}}
+    .pj-pi{margin:.8rem 0 0;font-size:.9rem;color:var(--text)}
+    .pj-pi span{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.4px;color:var(--blue);background:#e8f1fb;padding:.15rem .45rem;border-radius:5px;margin-right:.35rem}
+
+    .pj-timeline{list-style:none;margin:0 auto;padding:0;max-width:860px;position:relative;counter-reset:pj}
+    .pj-timeline::before{content:"";position:absolute;left:19px;top:8px;bottom:8px;width:2px;background:linear-gradient(var(--blue),#c4b5fd)}
+    .pj-timeline li{position:relative;counter-increment:pj;margin:0 0 1rem;padding:1.1rem 1.3rem 1.1rem 1.3rem;margin-left:3.4rem;background:#fff;border:1px solid var(--line);
+      border-radius:14px;transition:transform .2s,box-shadow .2s}
+    .pj-timeline li:hover{transform:translateX(6px);box-shadow:0 10px 24px rgba(11,45,81,.1)}
+    .pj-timeline li::before{content:counter(pj);position:absolute;left:-3.4rem;top:50%;transform:translateY(-50%);width:40px;height:40px;border-radius:50%;
+      background:#fff;border:2px solid var(--blue);color:var(--blue);font-family:"Poppins",sans-serif;font-weight:600;display:flex;align-items:center;justify-content:center}
+    .pj-timeline h3{font-size:1rem;line-height:1.4}
+    .pj-timeline .pj-pi{margin-top:.45rem}
+
+    .pj-areas{list-style:none;padding:0;margin:0 auto 3rem;display:flex;flex-wrap:wrap;justify-content:center;gap:.5rem}
+    .pj-areas li{padding:.45rem 1rem;border-radius:999px;background:#eef3fa;border:1px solid #dbe4f0;color:var(--navy);font-weight:600;font-size:.9rem}
+    .pj-theme{display:grid;grid-template-columns:1fr 1.1fr;gap:2.5rem;align-items:center;margin-bottom:2.2rem;background:#fff;border:1px solid var(--line);
+      border-radius:20px;padding:1.6rem;box-shadow:0 6px 18px rgba(11,45,81,.06);scroll-margin-top:90px}
+    .pj-rev .pj-media{order:2}
+    .pj-media{border-radius:14px;overflow:hidden;background:linear-gradient(135deg,#e8f1fb,#eef0ff);min-height:220px;display:flex;align-items:center;justify-content:center}
+    .pj-media img{width:100%;max-height:300px;object-fit:contain;display:block;background:#fff}
+    .pj-noimg::after{content:"";width:70px;height:70px;border-radius:50%;border:2px dashed #b7cbe6}
+    .pj-no{font-family:"Poppins",sans-serif;font-weight:700;font-size:.95rem;color:var(--sky)}
+    .pj-text h3{font-size:1.35rem;margin:.3rem 0 .8rem}
+    .pj-text p{color:var(--text);line-height:1.65;margin:0 0 .7rem}
+    .pj-cta{display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap;margin-top:3rem;padding:2rem 2.4rem;border-radius:20px;color:#fff;
+      background:radial-gradient(500px 200px at 90% 0%,rgba(139,92,246,.35),transparent 60%),linear-gradient(135deg,#0b2d51,#124a86)}
+    .pj-cta h3{color:#fff;font-size:1.4rem}
+    .pj-cta p{color:#d6e4f5;margin:.3rem 0 0}
+    .pj-btn{padding:.8rem 1.3rem;border-radius:10px;background:#fff;color:var(--navy);font-weight:700;text-decoration:none;transition:transform .15s}
+    .pj-btn:hover{transform:translateY(-2px)}
+    @media (max-width:860px){
+      .pj-grid{grid-template-columns:1fr}
+      .pj-theme{grid-template-columns:1fr;gap:1.2rem}
+      .pj-rev .pj-media{order:0}
+    }
+
+    .pj-card{display:flex;gap:1rem;align-items:flex-start;padding:1.3rem 1.4rem !important}
+    .pj-card h3{margin-top:0 !important;font-size:1.02rem !important}
+    .pj-ico{flex:none;width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#e6f0fb,#eef0ff)}
+    .pj-ico svg{width:23px;height:23px;fill:none;stroke:var(--blue);stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+    .pj-card .pj-pi{margin-top:.55rem}
+  </style>
+  <!-- FOOTER style (same on every page) -->
+  <style>
+    html body .ft{margin-top:0;padding:0;background:#040b16;color:#b9c7d8;border:0;position:relative;font-family:"Inter",sans-serif}
+    .ft-stripe{display:flex;height:4px}
+    .ft-stripe span{flex:1}
+    .ft-stripe span:nth-child(1){background:#1e88e5}.ft-stripe span:nth-child(2){background:#e8590c}.ft-stripe span:nth-child(3){background:#2e9d3a}
+    .ft-inner{max-width:1180px;margin:0 auto;padding:3rem 1.5rem 2rem;display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:2.5rem}
+    .ft-cover{display:block;width:100%;max-width:380px;height:auto;border-radius:8px;margin-bottom:1rem}
+    .ft address{font-style:normal;line-height:1.7;font-size:.92rem;color:#b9c7d8}
+    .ft h4{font-family:"Poppins",sans-serif;color:#fff;font-size:1rem;margin:0 0 .9rem}
+    .ft p{margin:0}
+    .ft a{color:#cfe2ff;text-decoration:none}
+    .ft a:hover{color:#fff;text-decoration:underline}
+    .ft ul{list-style:none;margin:0;padding:0}
+    .ft li{margin-bottom:.45rem}
+    .ft-social{margin-top:.6rem !important}
+    .ft-social a{display:inline-flex;align-items:center;gap:.45rem}
+    .ft-social svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+    .ft-incharge{margin-top:1.1rem !important;line-height:1.6}
+    .ft-incharge span{display:block;font-size:.72rem;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:#e8590c}
+    .ft-bottom{border-top:1px solid rgba(255,255,255,.1);max-width:1180px;margin:0 auto;padding:1.1rem 1.5rem 1.4rem;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-size:.84rem;color:#8a9bb2}
+    @media (max-width:800px){ .ft-inner{grid-template-columns:1fr 1fr} .ft-brand{grid-column:1/-1} }
+    @media (max-width:500px){ .ft-inner{grid-template-columns:1fr;padding:2.4rem 1rem 1.6rem} .ft-bottom{flex-direction:column;padding:1rem} }
+  </style>
 </head>
 
 <body>
 
   <!-- NAVBAR -->
-  <nav class="nav">
+  <nav class="nav" role="navigation" aria-label="Main navigation">
     <div class="nav-inner">
       <a class="brand" href="index.html">
-        <img src="https://cdn.jsdelivr.net/gh/SamannayaAdhikari/infocomm-lab-assets/iitmandilogo.png" alt="Infocomm Lab logo" class="brand-logo">
-        <span class="brand-text">Infocomm Lab</span>
+        <img src="https://cdn.jsdelivr.net/gh/SamannayaAdhikari/infocomm-lab-assets/infocommlogo.jpg" alt="Infocomm Lab logo" class="brand-logo">
+        <span class="brand-name"><span class="brand-text">Infocomm Lab</span><span class="brand-sub">IIT Mandi</span></span>
       </a>
 
-      <button id="navToggle" class="nav-toggle">
+      <button id="navToggle" class="nav-toggle" aria-expanded="false" aria-controls="navMenu" aria-label="Toggle navigation">
         <span class="hamburger"></span>
       </button>
 
@@ -31,160 +175,203 @@
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="people.html">People</a></li>
-        <li><a href="research.html" class="active">Research</a></li>
+        <li><a href="projects.html" class="active">Projects</a></li>
         <li><a href="publications.html">Publications</a></li>
+        <li><a href="resources.html">Resources</a></li>
+        <li><a href="join.html">Join Us</a></li>
       </ul>
+
     </div>
   </nav>
 
-  <main>
+  <main class="pj">
 
-    <!-- PAGE HEADER -->
-    <header class="container section">
-      <div class="section-header">
-        <h1>Research</h1>
-        <p class="muted">
-          Our research spans theory, algorithms, and experimental systems in modern wireless networks.
-        </p>
+    <!-- HERO -->
+    <section class="pj-hero">
+      <div class="pj-wrap">
+        <p class="pj-eyebrow">Research &amp; Projects</p>
+        <h1>Ideas we are <span>turning into systems</span></h1>
+        <p class="pj-lead">Funded projects and core research themes of the Infocomm Lab &mdash; spanning theory, algorithms and experimental wireless systems.</p>
+        <ul class="pj-stats">
+          <li><strong>10</strong><span>Funded projects</span></li>
+          <li><strong>6</strong><span>Research themes</span></li>
+        </ul>
+        <nav class="pj-jump" aria-label="Jump to section">
+          <a href="#projects">Projects</a><a href="#themes">Research themes</a><a href="about.html#infrastructure">Facilities</a>
+        </nav>
       </div>
-    </header>
-
-    <!-- RESEARCH AREAS (TEXT ONLY) -->
-    <section class="container section">
-      <h2>Core Research Areas</h2>
-
-      <ul class="research-area-list">
-        <li>Wireless LANs</li>
-        <li>Wireless Communications</li>
-        <li>Information Theory</li>
-        <li>Wireless Energy Harvesting</li>
-        <li>IoT Networks</li>
-        <li>Wireless Sensing</li>
-      </ul>
     </section>
 
-    <!-- DETAILED THEMES -->
-    <section class="section light-bg">
-      <div class="container">
+    <!-- PROJECTS -->
+    <section id="projects" class="pj-section">
+      <div class="pj-wrap">
+        <div class="pj-head"><p class="pj-kicker">Funded research</p><h2>Projects that power our research</h2></div>
+        <div class="pj-grid">
+          <article class="pj-card">
+            <span class="pj-ico"><svg viewBox="0 0 24 24"><path d="M5 12.5a10 10 0 0 1 14 0M8.5 16a5 5 0 0 1 7 0"/><circle cx="12" cy="19" r="1"/></svg></span>
+            <div><h3><strong>POWER</strong>: Platform For Open WLAN Experimentation and Research</h3><p class="pj-pi"><span>PI</span> Dr. Samar Agnihotri</p></div>
+          </article>
+          <article class="pj-card">
+            <span class="pj-ico"><svg viewBox="0 0 24 24"><path d="M5 12.5a10 10 0 0 1 14 0M8.5 16a5 5 0 0 1 7 0"/><circle cx="12" cy="19" r="1"/></svg></span>
+            <div><h3>Next Generation WLANs</h3><p class="pj-pi"><span>PI</span> Dr. Samar Agnihotri</p></div>
+          </article>
+          <article class="pj-card">
+            <span class="pj-ico"><svg viewBox="0 0 24 24"><circle cx="5" cy="6" r="2"/><circle cx="19" cy="6" r="2"/><circle cx="12" cy="18" r="2"/><path d="M6.5 7.5 11 16.5M17.5 7.5 13 16.5M7 6h10"/></svg></span>
+            <div><h3>Entropy region information inequalities and their applications</h3><p class="pj-pi"><span>PI</span> Prof. Satyajit Thakor</p></div>
+          </article>
+          <article class="pj-card">
+            <span class="pj-ico"><svg viewBox="0 0 24 24"><path d="M12 20v-8M8 8a5.6 5.6 0 0 1 8 0M5 5a10 10 0 0 1 14 0"/><circle cx="12" cy="11" r="1.4"/></svg></span>
+            <div><h3>Quick detection using sketching technique in massive MIMO wireless networks</h3><p class="pj-pi"><span>PIs</span> Dr. Adarsh Patel, Dr. Rameshwar Pratap</p></div>
+          </article>
+          <article class="pj-card">
+            <span class="pj-ico"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/><path d="M10 6.5h4a3 3 0 0 1 3 3V14"/></svg></span>
+            <div><h3>IU-ATC Project</h3><p class="pj-pi"><span>Co-PI</span> Prof. Satyajit Thakor</p></div>
+          </article>
+          <article class="pj-card">
+            <span class="pj-ico"><svg viewBox="0 0 24 24"><path d="M13 2 5 14h6l-1 8 8-12h-6z"/></svg></span>
+            <div><h3>A Multi-Dimensional Smart Energy Grids Analysis for the Indian Scenario</h3><p class="pj-pi"><span>Co-PI</span> Dr. Samar Agnihotri</p></div>
+          </article>
+          <article class="pj-card">
+            <span class="pj-ico"><svg viewBox="0 0 24 24"><ellipse cx="12" cy="5.5" rx="7" ry="2.5"/><path d="M5 5.5v6c0 1.4 3.1 2.5 7 2.5s7-1.1 7-2.5v-6M5 11.5v6c0 1.4 3.1 2.5 7 2.5s7-1.1 7-2.5v-6"/></svg></span>
+            <div><h3>Design of Advanced Big Data Analytics in the CygNet Management System for large telecom networks</h3><p class="pj-pi"><span>Co-PI</span> Dr. Samar Agnihotri</p></div>
+          </article>
+          <article class="pj-card">
+            <span class="pj-ico"><svg viewBox="0 0 24 24"><circle cx="5" cy="6" r="2"/><circle cx="19" cy="6" r="2"/><circle cx="12" cy="18" r="2"/><path d="M6.5 7.5 11 16.5M17.5 7.5 13 16.5M7 6h10"/></svg></span>
+            <div><h3>Characterization of the entropy regions for three and four random variables and their application</h3><p class="pj-pi"><span>PI</span> Prof. Satyajit Thakor</p></div>
+          </article>
+          <article class="pj-card">
+            <span class="pj-ico"><svg viewBox="0 0 24 24"><path d="M5 19c0-8 6-14 15-14 0 9-6 15-14 15"/><path d="M5 19 14 10"/></svg></span>
+            <div><h3>Smart Agriculture: Farmer Zone</h3><p class="pj-pi"><span>Co-PI</span> Dr. Siddhartha Sarma</p></div>
+          </article>
+          <article class="pj-card">
+            <span class="pj-ico"><svg viewBox="0 0 24 24"><path d="M5 19c0-8 6-14 15-14 0 9-6 15-14 15"/><path d="M5 19 14 10"/></svg></span>
+            <div><h3>Developing a low-cost, scalable and resilient agricultural IoT framework</h3><p class="pj-pi"><span>Co-PI</span> Dr. Siddhartha Sarma</p></div>
+          </article>
+        </div>
+      </div>
+    </section>
 
-        <!-- Cell-free Massive MIMO -->
-        <article class="research-block">
-          <img src="https://cdn.jsdelivr.net/gh/SamannayaAdhikari/infocomm-lab-assets/project1.png" alt="Cell-free Massive MIMO">
-          <div>
+    <!-- THEMES -->
+    <section id="themes" class="pj-section">
+      <div class="pj-wrap">
+        <div class="pj-head"><p class="pj-kicker">What drives us</p><h2>Core research themes</h2></div>
+        <ul class="pj-areas">
+          <li>Wireless LANs</li><li>Wireless Communications</li><li>Information Theory</li>
+          <li>Wireless Energy Harvesting</li><li>IoT Networks</li><li>Wireless Sensing</li>
+        </ul>
+
+        <article id="cell-free" class="pj-theme">
+          <div class="pj-media"><img loading="lazy" src="https://cdn.jsdelivr.net/gh/SamannayaAdhikari/infocomm-lab-assets/project1.png" alt="Cell-free massive MIMO illustration" onerror="this.parentNode.classList.add('pj-noimg');this.remove()"></div>
+          <div class="pj-text">
             <h3>Cell-free Massive MIMO</h3>
-            <p>
-              Cell-Free Massive Multiple-Input Multiple-Output (CF-mMIMO) is a distributed wireless
-              communication technology that eliminates fixed cell boundaries found in traditional
-              cellular networks.
-            </p>
-            <p>
-              In CF-mMIMO systems, a large number of geographically distributed, low-power access
-              points jointly serve all users using the same time–frequency resources under centralized
-              coordination.
-            </p>
+            <p>Cell-free massive MIMO (CF-mMIMO) is a distributed wireless technology that removes the fixed cell boundaries of traditional cellular networks.</p>
+            <p>A large number of geographically distributed, low-power access points jointly serve all users on the same time&ndash;frequency resources under centralized coordination.</p>
           </div>
         </article>
 
-        <!-- Massive MIMO -->
-        <article class="research-block reverse">
-          <img src="https://cdn.jsdelivr.net/gh/SamannayaAdhikari/infocomm-lab-assets/project2.png" alt="Massive MIMO Communication Networks">
-          <div>
+        <article id="massive-mimo" class="pj-theme pj-rev">
+          <div class="pj-media"><img loading="lazy" src="https://cdn.jsdelivr.net/gh/SamannayaAdhikari/infocomm-lab-assets/project2.png" alt="Massive MIMO illustration" onerror="this.parentNode.classList.add('pj-noimg');this.remove()"></div>
+          <div class="pj-text">
             <h3>Massive MIMO Communication Networks</h3>
-            <p>
-              Massive MIMO employs a large number of antennas at base stations to significantly
-              improve spectral efficiency, reliability, and throughput.
-            </p>
-            <p>
-              It enables advanced techniques such as beamforming and spatial multiplexing and
-              is a key enabling technology for 5G and beyond wireless networks.
-            </p>
+            <p>Massive MIMO uses a large number of antennas at base stations to substantially improve spectral efficiency, reliability and throughput.</p>
+            <p>It enables beamforming and spatial multiplexing, and is a key technology for 5G and beyond.</p>
           </div>
         </article>
 
-        <!-- WPCN -->
-        <article class="research-block">
-          <img src="https://cdn.jsdelivr.net/gh/SamannayaAdhikari/infocomm-lab-assets/project3.png" alt="Wireless Powered Communication Network">
-          <div>
+        <article id="wpcn" class="pj-theme">
+          <div class="pj-media"><img loading="lazy" src="https://cdn.jsdelivr.net/gh/SamannayaAdhikari/infocomm-lab-assets/project3.png" alt="Wireless powered communication network illustration" onerror="this.parentNode.classList.add('pj-noimg');this.remove()"></div>
+          <div class="pj-text">
             <h3>Wireless Powered Communication Networks (WPCN)</h3>
-            <p>
-              WPCNs enable wireless devices to harvest energy from radio frequency (RF) signals,
-              allowing energy-constrained devices to operate perpetually without battery replacement.
-            </p>
-            <p>
-              This paradigm is particularly useful for IoT sensors and wireless sensor networks.
-            </p>
+            <p>WPCNs let wireless devices harvest energy from radio-frequency signals, so energy-constrained devices can run without battery replacement.</p>
+            <p>This paradigm is especially useful for IoT sensors and wireless sensor networks.</p>
           </div>
         </article>
 
-        <!-- Network Coding -->
-        <article class="research-block reverse">
-          <img src="https://cdn.jsdelivr.net/gh/SamannayaAdhikari/infocomm-lab-assets/project4.png" alt="Network Coding and Information Theory">
-          <div>
+        <article id="network-coding" class="pj-theme pj-rev">
+          <div class="pj-media"><img loading="lazy" src="https://cdn.jsdelivr.net/gh/SamannayaAdhikari/infocomm-lab-assets/project4.png" alt="Network coding illustration" onerror="this.parentNode.classList.add('pj-noimg');this.remove()"></div>
+          <div class="pj-text">
             <h3>Network Coding and Information Theory</h3>
-            <p>
-              Network information theory studies the fundamental limits of information flow in networks.
-              Network coding enables intermediate nodes to perform coding operations instead of
-              simple forwarding.
-            </p>
-            <p>
-              This approach can achieve capacity bounds in many network settings.
-            </p>
+            <p>Network information theory studies the fundamental limits of information flow in networks. Network coding lets intermediate nodes combine data instead of simply forwarding it.</p>
+            <p>This approach achieves capacity bounds in many network settings.</p>
           </div>
         </article>
 
-        <!-- IRS -->
-        <article class="research-block">
-          <img src="https://cdn.jsdelivr.net/gh/SamannayaAdhikari/infocomm-lab-assets/project5.png" alt="Intelligent Reflecting Surface">
-          <div>
+        <article id="irs" class="pj-theme">
+          <div class="pj-media"><img loading="lazy" src="https://cdn.jsdelivr.net/gh/SamannayaAdhikari/infocomm-lab-assets/IRS-AmBC.jpg.jpeg" alt="Intelligent reflecting surface illustration" onerror="this.parentNode.classList.add('pj-noimg');this.remove()"></div>
+          <div class="pj-text">
             <h3>Intelligent Reflecting Surfaces (IRS)</h3>
-            <p>
-              IRS technology enhances wireless performance by intelligently reconfiguring the
-              propagation environment using programmable reflective elements.
-            </p>
-            <p>
-              IRS enables passive beamforming, improving coverage, capacity, and energy efficiency.
-            </p>
+            <p>IRS technology improves wireless performance by reconfiguring the propagation environment with programmable reflecting elements.</p>
+            <p>It enables passive beamforming, improving coverage, capacity and energy efficiency.</p>
           </div>
         </article>
 
-        <!-- Backscatter -->
-        <article class="research-block reverse">
-          <img src="https://cdn.jsdelivr.net/gh/SamannayaAdhikari/infocomm-lab-assets/project6.png" alt="Backscatter Communication">
-          <div>
+        <article id="backscatter" class="pj-theme pj-rev">
+          <div class="pj-media"><img loading="lazy" src="https://cdn.jsdelivr.net/gh/SamannayaAdhikari/infocomm-lab-assets/AmBC_SIMO.jpg.jpeg" alt="Backscatter communication illustration" onerror="this.parentNode.classList.add('pj-noimg');this.remove()"></div>
+          <div class="pj-text">
             <h3>Backscatter Communication</h3>
-            <p>
-              Backscatter communication allows ultra-low-power devices to transmit data by reflecting
-              existing RF signals instead of generating their own carriers.
-            </p>
-            <p>
-              This makes it highly suitable for battery-free IoT and sensing applications.
-            </p>
+            <p>Backscatter communication lets ultra-low-power devices send data by reflecting existing RF signals instead of generating their own carrier.</p>
+            <p>This makes it well suited to battery-free IoT and sensing applications.</p>
           </div>
         </article>
 
+        <div class="pj-cta">
+          <div><h3>See the results</h3><p>Our papers from these projects are listed on the Publications page.</p></div>
+          <a class="pj-btn" href="publications.html">Browse publications &rarr;</a>
+        </div>
       </div>
     </section>
 
   </main>
 
-  <!-- FOOTER -->
-  <footer class="site-footer">
-    <div class="container footer-grid">
-      <div>
-        <h4>Infocomm Lab</h4>
-        <p class="muted">School of Computing and Electrical Engineering<br>IIT Mandi</p>
+  <!-- FOOTER (same on every page) -->
+  <footer class="site-footer ft">
+    <div class="ft-stripe" aria-hidden="true"><span></span><span></span><span></span></div>
+    <div class="ft-inner">
+      <div class="ft-brand">
+        <img class="ft-cover" src="infocomm_lab_scee_iit_mandi_cover.jpeg" alt="Info Comm Lab, IIT Mandi">
+        <address>
+          InfoComm Lab,<br>
+          School of Computing and Electrical Engineering,<br>
+          3rd Floor, A18 Building,<br>
+          North Campus, IIT Mandi,<br>
+          Mandi, Himachal Pradesh &ndash; 175075
+        </address>
       </div>
       <div>
-        <h4>Contact</h4>
-        <p class="muted">Email: <a href="mailto:lab@iitmandi.ac.in">lab@iitmandi.ac.in</a></p>
+        <h4>Contact Us</h4>
+        <p><a href="mailto:infocomm@iitmandi.ac.in">infocomm@iitmandi.ac.in</a></p>
+        <p class="ft-social"><a href="https://www.linkedin.com/company/infocomm-lab-scee-iit-mandi/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 10v7M8 7v.01M12 17v-4a2 2 0 0 1 4 0v4M12 10v7"/></svg>InfoComm Lab on LinkedIn</a></p>
+        <p class="ft-incharge"><span>Student lab in-charge</span>Sahil Rana<br><a href="mailto:d24135@students.iitmandi.ac.in">d24135@students.iitmandi.ac.in</a></p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="people.html">People</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="publications.html">Publications</a></li>
+          <li><a href="resources.html">Resources</a></li>
+          <li><a href="join.html">Join Us</a></li>
+        </ul>
       </div>
     </div>
-
-    <div class="footer-bottom">
-      <p>© <span id="year"></span> Infocomm Lab, IIT Mandi</p>
+    <div class="ft-bottom">
+      <p>&copy; <span id="year"></span> Infocomm Lab, IIT Mandi</p>
+      <p>Website created by Samannaya Adhikari, Sahil Rana and Bhavesh Sharma</p>
     </div>
   </footer>
 
+
   <script src="script.js"></script>
+  <script>
+    (function () {
+      if (!('IntersectionObserver' in window)) return;
+      var io = new IntersectionObserver(function (es) {
+        es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+      }, { threshold: 0.08 });
+      document.querySelectorAll('.pj-card, .pj-theme, .pj-head').forEach(function (el) { el.classList.add('pj-reveal'); io.observe(el); });
+    })();
+  </script>
 </body>
 </html>
