@@ -556,11 +556,11 @@
     })();
   </script>
   <script>
-    // home photo frame: auto cross-fade every 4 s through photos that loaded;
-    // arrows and dots let visitors jump to a photo (auto-play resumes after a pause)
+    // home photo frame: auto cross-fade every 3 s through photos that loaded;
+    // arrows and dots let visitors jump to a photo (auto-play resumes 6 s after a click)
     (function () {
       var frame = document.querySelector('.hm-slider'); if (!frame) return;
-      var dotsBox = frame.querySelector('.hm-dots'), resumeAt = 0, lastCount = -1;
+      var dotsBox = frame.querySelector('.hm-dots'), lastCount = -1;
       function ok(img) { return img.complete && img.naturalWidth > 0; }
       function list() { return Array.prototype.filter.call(frame.querySelectorAll('.hm-slide'), ok); }
       function current(sl) { return sl.indexOf(frame.querySelector('.hm-slide.active')); }
@@ -584,18 +584,14 @@
           b.classList.toggle('on', i === idx); b.setAttribute('aria-current', i === idx ? 'true' : 'false');
         });
       }
-      function pause() { resumeAt = Date.now() + 12000; }      // manual choice: hold for 12 s, then continue
+      var timer = null;
+      function schedule(ms) { clearTimeout(timer); timer = setTimeout(function () { var sl = list(); if (sl.length > 1) go(current(sl) + 1); else fix(); schedule(3000); }, ms); }
+      function pause() { schedule(6000); }      // after a click: hold 6 s, then continue every 3 s
       frame.querySelector('.hm-prev').addEventListener('click', function () { pause(); var sl = list(); go(current(sl) - 1); });
       frame.querySelector('.hm-next').addEventListener('click', function () { pause(); var sl = list(); go(current(sl) + 1); });
-      frame.addEventListener('mouseenter', function () { frame.classList.add('hover'); });
-      frame.addEventListener('mouseleave', function () { frame.classList.remove('hover'); });
       function fix() { var sl = list(); var i = current(sl); if (i === -1) go(0); else dots(sl, i); }
       [300, 1000, 2500, 5000].forEach(function (t) { setTimeout(fix, t); });
-      setInterval(function () {
-        if (Date.now() < resumeAt || frame.classList.contains('hover')) { fix(); return; }
-        var sl = list(); if (sl.length < 2) { fix(); return; }
-        go(current(sl) + 1);
-      }, 4000);
+      schedule(3000);
     })();
   </script>
 </body>
