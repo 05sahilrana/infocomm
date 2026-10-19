@@ -98,6 +98,16 @@
     .hm-slide{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .9s ease}
     .hm-slide.active{opacity:1}
     .hm-slider::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(0,0,0,.35));pointer-events:none}
+    .hm-nav{position:absolute;top:50%;transform:translateY(-50%);z-index:3;width:42px;height:42px;border-radius:50%;border:0;cursor:pointer;
+      background:rgba(4,11,22,.55);color:#fff;font-size:1.9rem;line-height:1;display:flex;align-items:center;justify-content:center;padding-bottom:4px;
+      opacity:.75;transition:opacity .2s,background .2s}
+    .hm-slider:hover .hm-nav,.hm-nav:focus-visible{opacity:1}
+    .hm-nav:hover{background:rgba(4,11,22,.8)}
+    .hm-prev{left:12px} .hm-next{right:12px}
+    .hm-dots{position:absolute;left:0;right:0;bottom:12px;z-index:3;display:flex;justify-content:center;gap:7px;flex-wrap:wrap;padding:0 60px}
+    .hm-dots button{width:9px;height:9px;border-radius:50%;border:0;padding:0;cursor:pointer;background:rgba(255,255,255,.5);transition:background .2s,transform .2s}
+    .hm-dots button.on{background:#fff;transform:scale(1.35)}
+    .hm-slider::after{z-index:2}
     .hm-tricolor{position:absolute;left:0;right:0;bottom:0;display:flex;height:5px}
     .hm-tricolor span{flex:1}
     .hm-tricolor span:nth-child(1){background:var(--b-blue)}
@@ -330,6 +340,9 @@
           <img class="hm-slide" src="Lab11.jpg" data-base="Lab11" data-exts="jpeg,png,JPG,JPEG,PNG,webp,WEBP,jfif" alt="Infocomm Lab photo" onerror="hmNextImg(this)">
           <img class="hm-slide" src="https://cdn.jsdelivr.net/gh/SamannayaAdhikari/infocomm-lab-assets/hero7.jpeg" alt="Infocomm Lab photo" onerror="this.remove()">
           <img class="hm-slide" src="Lab12.jpg" data-base="Lab12" data-exts="jpeg,png,JPG,JPEG,PNG,webp,WEBP,jfif" alt="Infocomm Lab photo" onerror="hmNextImg(this)">
+          <button type="button" class="hm-nav hm-prev" aria-label="Previous photo">&#8249;</button>
+          <button type="button" class="hm-nav hm-next" aria-label="Next photo">&#8250;</button>
+          <div class="hm-dots" role="tablist" aria-label="Choose a photo"></div>
         </figure>
       </div>
       <div class="hm-tricolor" aria-hidden="true"><span></span><span></span><span></span></div>
@@ -543,22 +556,46 @@
     })();
   </script>
   <script>
-    // home photo frame: cross-fade every 4 s, only between photos that actually loaded
+    // home photo frame: auto cross-fade every 4 s through photos that loaded;
+    // arrows and dots let visitors jump to a photo (auto-play resumes after a pause)
     (function () {
       var frame = document.querySelector('.hm-slider'); if (!frame) return;
+      var dotsBox = frame.querySelector('.hm-dots'), resumeAt = 0, lastCount = -1;
       function ok(img) { return img.complete && img.naturalWidth > 0; }
-      function show(step) {
-        var sl = Array.prototype.filter.call(frame.querySelectorAll('.hm-slide'), ok);
-        if (!sl.length) return;
-        var cur = frame.querySelector('.hm-slide.active');
-        var i = sl.indexOf(cur);                      // -1 if the current photo is missing/broken
-        if (i !== -1 && !step) return;                // current photo is fine
+      function list() { return Array.prototype.filter.call(frame.querySelectorAll('.hm-slide'), ok); }
+      function current(sl) { return sl.indexOf(frame.querySelector('.hm-slide.active')); }
+      function go(idx) {
+        var sl = list(); if (!sl.length) return;
+        idx = (idx + sl.length) % sl.length;
         frame.querySelectorAll('.hm-slide.active').forEach(function (x) { x.classList.remove('active'); });
-        sl[(i + 1) % sl.length].classList.add('active');
+        sl[idx].classList.add('active'); dots(sl, idx);
       }
-      // never leave a blank frame: if the first photo is missing, jump to one that loaded
-      [300, 1000, 2500].forEach(function (t) { setTimeout(function () { show(false); }, t); });
-      setInterval(function () { show(true); }, 4000);
+      function dots(sl, idx) {
+        if (sl.length !== lastCount) {
+          lastCount = sl.length; dotsBox.innerHTML = '';
+          sl.forEach(function (_, i) {
+            var b = document.createElement('button'); b.type = 'button';
+            b.setAttribute('aria-label', 'Show photo ' + (i + 1));
+            b.addEventListener('click', function () { pause(); go(i); });
+            dotsBox.appendChild(b);
+          });
+        }
+        Array.prototype.forEach.call(dotsBox.children, function (b, i) {
+          b.classList.toggle('on', i === idx); b.setAttribute('aria-current', i === idx ? 'true' : 'false');
+        });
+      }
+      function pause() { resumeAt = Date.now() + 12000; }      // manual choice: hold for 12 s, then continue
+      frame.querySelector('.hm-prev').addEventListener('click', function () { pause(); var sl = list(); go(current(sl) - 1); });
+      frame.querySelector('.hm-next').addEventListener('click', function () { pause(); var sl = list(); go(current(sl) + 1); });
+      frame.addEventListener('mouseenter', function () { frame.classList.add('hover'); });
+      frame.addEventListener('mouseleave', function () { frame.classList.remove('hover'); });
+      function fix() { var sl = list(); var i = current(sl); if (i === -1) go(0); else dots(sl, i); }
+      [300, 1000, 2500, 5000].forEach(function (t) { setTimeout(fix, t); });
+      setInterval(function () {
+        if (Date.now() < resumeAt || frame.classList.contains('hover')) { fix(); return; }
+        var sl = list(); if (sl.length < 2) { fix(); return; }
+        go(current(sl) + 1);
+      }, 4000);
     })();
   </script>
 </body>
