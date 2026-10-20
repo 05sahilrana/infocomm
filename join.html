@@ -115,46 +115,32 @@
     .jn-head-sm{margin:2.6rem 0 1rem !important}
     .jn-sub-lead{color:var(--muted);margin-top:.5rem !important}
     .fl-wrap{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;align-items:stretch}
-    .fl-panel{--c:#2b6584;border-radius:20px;padding:1.8rem 1.6rem;box-shadow:0 12px 30px rgba(11,45,81,.1)}
-    .fl-panel h3{font-size:1.35rem;margin-bottom:1.3rem !important}
-    .fl-dark{background:#2b5d78;color:#fff;--line:#e8f0f4}
+    .fl-panel{border-radius:20px;padding:1.8rem 1.6rem;box-shadow:0 12px 30px rgba(11,45,81,.1)}
+    .fl-panel h3{font-size:1.35rem;margin-bottom:1.4rem !important}
+    .fl-dark{background:linear-gradient(165deg,#24546d,#2f6a88);color:#fff;--ln:#e8590c}
     .fl-dark h3{color:#fff !important}
-    .fl-light{background:#fff;border:1px solid #dbe4ea;--line:#2b6584}
-    .fl-light h3{color:#2b5d78 !important}
-    .fc{display:grid;grid-template-columns:1fr 1fr;column-gap:1rem;justify-items:center;align-items:center}
-    .fc-one{grid-template-columns:1fr;margin-top:1.6rem}
-    .fc-row{grid-template-columns:1.5fr 36px 1fr;margin-top:1.4rem;column-gap:.4rem}
-    .n{border-radius:22px;padding:.7rem 1rem;text-align:center;font-family:Georgia,"Times New Roman",serif;font-size:.95rem;line-height:1.35;width:100%}
-    .fl-dark .n{background:#e9f1f5;color:#1f3f50}
+    .fl-light{background:#fff;border:1px solid #dbe4ea;--ln:#e8590c}
+    .fl-light h3{color:#24546d !important}
+    .fc{position:relative;display:grid;grid-template-columns:1fr 1fr;column-gap:1.4rem;row-gap:42px;justify-items:center;align-items:center}
+    .fc svg.fl-lines{position:absolute;inset:0;width:100%;height:100%;overflow:visible;pointer-events:none;z-index:0}
+    .n{position:relative;z-index:1;border-radius:22px;padding:.7rem 1rem;text-align:center;font-family:Georgia,"Times New Roman",serif;font-size:.95rem;line-height:1.35;width:100%;
+       box-shadow:0 4px 12px rgba(0,0,0,.12)}
+    .fl-dark .n{background:#eef5f8;color:#1f3f50}
     .fl-light .n{background:#2b6584;color:#fff}
-    .n.start{grid-column:1/-1;width:72%;border-radius:26px;padding:.9rem 1.2rem;font-size:1rem}
-    .fc-row .n.start{grid-column:auto;width:100%}
-    .n.go{width:auto;min-width:50%;padding:.55rem 1.2rem;border-radius:12px;font-weight:600}
+    .n.start{width:74%;border-radius:26px;padding:.9rem 1.2rem;font-size:1rem}
+    .n.narrow{width:84%}
+    .n.go{width:auto;min-width:46%;padding:.6rem 1.3rem;border-radius:999px;font-family:"Inter",sans-serif;font-weight:800;font-size:.92rem;letter-spacing:.2px}
+    .fl-dark .n.go{background:#e8590c;color:#fff}
+    .fl-light .n.go{background:#2e9d3a;color:#fff}
     .n.nat{font-size:.86rem;border-radius:18px}
-    .go-in{align-self:center;justify-self:center;width:60% !important;min-width:0 !important}
-    .ar{width:2px;height:30px;background:var(--line);position:relative;margin:2px 0 8px}
-    .ar::after{content:"";position:absolute;left:-6px;bottom:-9px;border:7px solid transparent;border-top:9px solid var(--line)}
-    .har{height:2px;width:100%;background:var(--line);position:relative}
-    .har::after{content:"";position:absolute;right:-4px;top:-6px;border:7px solid transparent;border-left:9px solid var(--line)}
-    .split{grid-column:1/-1;width:50%;height:34px;position:relative;margin-bottom:8px}
-    .split::before{content:"";position:absolute;left:50%;top:0;width:2px;height:12px;background:var(--line)}
-    .split{border-top:none}
-    .split::after{content:"";position:absolute;left:0;right:0;top:12px;height:22px;border:2px solid var(--line);border-bottom:none;border-radius:10px 10px 0 0}
-    .fc > .n:nth-of-type(n){position:relative}
-    .split + .n::before,.split + .n + .n::before{content:"";position:absolute;left:50%;top:-10px;margin-left:-7px;border:7px solid transparent;border-top:9px solid var(--line)}
-    .or{font-style:italic;font-family:Georgia,serif;font-size:.85rem;opacity:.8;margin:.4rem 0}
-    .fl-dark .or{color:#e8f0f4} .fl-light .or{color:#2b6584}
-    .n.nat{position:relative}
-    .n.nat::after{content:"";position:absolute;left:100%;top:50%;width:calc(1rem + 20% - 9px);height:2px;background:var(--line)}
-    .n.nat::before{content:"";position:absolute;left:calc(100% + 1rem + 20% - 10px);top:50%;margin-top:-7px;border:7px solid transparent;border-left:9px solid var(--line)}
-    .fl-foot{font-size:.8rem;line-height:1.5;margin:1.4rem 0 0 !important}
+    .fl-foot{font-size:.8rem;line-height:1.5;margin:1.6rem 0 0 !important}
     .fl-dark .fl-foot{color:#d8e6ec}
     .fl-light .fl-foot{color:#64748b}
     .fl-doc{display:inline-block;margin-top:1rem;padding:.6rem 1rem;border-radius:10px;font-size:.9rem;text-decoration:none;font-weight:700}
     .fl-dark .fl-doc{background:#fff;color:#1f3f50 !important}
     .fl-light .fl-doc{background:#2b6584;color:#fff !important}
     @media (max-width:980px){.fl-wrap{grid-template-columns:1fr}.jn-grid3{grid-template-columns:1fr 1fr !important}}
-    @media (max-width:560px){.n{font-size:.82rem;padding:.55rem .6rem}.n.start{width:100%}.fl-panel{padding:1.3rem 1rem}.jn-grid3,.jn-grid2{grid-template-columns:1fr !important}}
+    @media (max-width:560px){.n{font-size:.8rem;padding:.55rem .55rem}.n.start{width:100%}.n.go{font-size:.8rem;padding:.5rem .8rem}.fc{column-gap:.9rem}.fl-panel{padding:1.3rem .9rem}.jn-grid3,.jn-grid2{grid-template-columns:1fr !important}}
   </style>
   <!-- FOOTER style (same on every page) -->
   <style>
@@ -240,38 +226,31 @@
         <div class="fl-wrap">
         <article class="fl-panel fl-dark">
           <h3>M.Tech (R) Application Pathways*</h3>
-          <div class="fc">
-            <div class="n start">A) I have a BE / BTech / BS-MS / MSc or equivalent degree</div>
-            <div class="split"></div>
-            <div class="n">I have a valid GATE / NET score</div><div class="n">I don&rsquo;t have a valid GATE / NET score</div>
-            <div class="ar"></div><div class="ar"></div>
-            <div class="n go">Apply Now!</div><div class="n">My CGPA &ge; 7.5 (on 10)</div>
-            <div></div><div class="ar"></div>
-            <div></div><div class="n go">Apply Now!</div>
-          </div>
-          <div class="fc fc-one">
-            <div class="n start">B) I have a Master&rsquo;s or equivalent degree in Engg / Tech (ME / MTech)</div>
-            <div class="ar"></div>
-            <div class="n go">Apply Now!</div>
+          <div class="fc" data-conn="A>v:split A>ng:split v>ap1:down ng>cg:down cg>ap2:down B>ap3:down">
+            <div class="n start" data-id="A" style="grid-column:1/3;grid-row:1">A) I have a BE / BTech / BS-MS / MSc or equivalent degree</div>
+            <div class="n " data-id="v" style="grid-column:1;grid-row:2">I have a valid GATE / NET score</div>
+            <div class="n " data-id="ng" style="grid-column:2;grid-row:2">I don&rsquo;t have a valid GATE / NET score</div>
+            <div class="n go" data-id="ap1" style="grid-column:1;grid-row:3">Apply Now!</div>
+            <div class="n " data-id="cg" style="grid-column:2;grid-row:3">My CGPA &ge; 7.5 (on 10)</div>
+            <div class="n go" data-id="ap2" style="grid-column:2;grid-row:4">Apply Now!</div>
+            <div class="n start" data-id="B" style="grid-column:1/3;grid-row:5;margin-top:1rem">B) I have a Master&rsquo;s or equivalent degree in Engg / Tech (ME / MTech)</div>
+            <div class="n go" data-id="ap3" style="grid-column:1/3;grid-row:6">Apply Now!</div>
           </div>
           <p class="fl-foot">* As applicable to graduates from MoE-funded technical institutions (as per the Dept. of Higher Education website) / HP Govt. institutes / institutes with current NIRF (Overall) rank &lt; 100.</p>
           <a class="fl-doc" href="https://scee.iitmandi.ac.in/files/Ordinances_phd_mtech.pdf#page=4" target="_blank" rel="noopener">Know more: M.Tech (R) eligibility, rules &amp; ordinances &rarr;</a>
         </article>
         <article class="fl-panel fl-light">
           <h3>PhD Application Pathways</h3>
-          <div class="fc">
-            <div class="n start">A) I have a BE / BTech or equivalent degree<br>B) I have a BS-MS / MS / MSc degree</div>
-            <div class="split"></div>
-            <div class="n">I have a valid GATE / NET score</div><div class="n">I don&rsquo;t have a valid GATE / NET score</div>
-            <div class="ar"></div><div class="ar"></div>
-            <div class="n go">Apply Now!</div><div class="n">My CGPA** &ge; 7.5 (on 10)</div>
-            <div class="or">or</div><div class="ar"></div>
-            <div class="n nat">I have been selected through a national-level exam conducted by MoE / IITs / IISc / IISER / IIIT<br><em>or</em><br>I have two years of professional experience</div><div class="n go go-in">Apply Now!</div>
-          </div>
-          <div class="fc fc-row">
-            <div class="n start">C) I have a Master&rsquo;s or equivalent degree in Engg / Tech (ME / MTech)</div>
-            <div class="har"></div>
-            <div class="n go">Apply Now!</div>
+          <div class="fc" data-conn="A>v:split A>ng:split v>ap1:down ng>cg:down cg>ap2:down ng>nat:channel nat>ap2:right C>ap3:right">
+            <div class="n start" data-id="A" style="grid-column:1/3;grid-row:1">A) I have a BE / BTech or equivalent degree<br>B) I have a BS-MS / MS / MSc degree</div>
+            <div class="n " data-id="v" style="grid-column:1;grid-row:2">I have a valid GATE / NET score</div>
+            <div class="n " data-id="ng" style="grid-column:2;grid-row:2">I don&rsquo;t have a valid GATE / NET score</div>
+            <div class="n go" data-id="ap1" style="grid-column:1;grid-row:3">Apply Now!</div>
+            <div class="n narrow" data-id="cg" style="grid-column:2;grid-row:3">My CGPA** &ge; 7.5 (on 10)</div>
+            <div class="n nat" data-id="nat" style="grid-column:1;grid-row:4">I have been selected through a national-level exam conducted by MoE / IITs / IISc / IISER / IIIT<br><em>or</em><br>I have two years of professional experience</div>
+            <div class="n go" data-id="ap2" style="grid-column:2;grid-row:4">Apply Now!</div>
+            <div class="n " data-id="C" style="grid-column:1;grid-row:5;margin-top:1rem">C) I have a Master&rsquo;s or equivalent degree in Engg / Tech (ME / MTech)</div>
+            <div class="n go" data-id="ap3" style="grid-column:2;grid-row:5;margin-top:1rem">Apply Now!</div>
           </div>
           <p class="fl-foot">** For A): as applicable to graduates from MoE-funded technical institutions (as per the Dept. of Higher Education website) / HP Govt. institutes / institutes with current NIRF (Overall) rank &lt; 100. For B): as applicable to BS-MS / M.Sc. holders from IIT, IISER, IISc or institutes with current NIRF (Overall) rank &lt; 100.</p>
           <a class="fl-doc" href="https://scee.iitmandi.ac.in/files/Ordinances_phd_mtech.pdf#page=18" target="_blank" rel="noopener">Know more: PhD eligibility, rules &amp; ordinances &rarr;</a>
@@ -348,7 +327,48 @@
 
 
   <script src="script.js"></script>
+  <script>
+    // draw flowchart connectors between nodes (measured, so arrows always meet the boxes)
+    (function () {
+      var NS = 'http://www.w3.org/2000/svg';
+      function draw(fc) {
+        var old = fc.querySelector('svg.fl-lines'); if (old) old.remove();
+        var svg = document.createElementNS(NS, 'svg'); svg.setAttribute('class', 'fl-lines');
+        var col = getComputedStyle(fc).getPropertyValue('--ln').trim() || '#e8590c';
+        var mid = 'ah' + Math.random().toString(36).slice(2, 7);
+        svg.innerHTML = '<defs><marker id="' + mid + '" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="5.5" markerHeight="5.5" orient="auto-start-reverse">' +
+          '<path d="M0,0 L10,5 L0,10 z" fill="' + col + '"/></marker></defs>';
+        var box = fc.getBoundingClientRect();
+        function r(id) { var e = fc.querySelector('[data-id="' + id + '"]'); var b = e.getBoundingClientRect();
+          return { l: b.left - box.left, r: b.right - box.left, t: b.top - box.top, b: b.bottom - box.top, cx: b.left - box.left + b.width / 2, cy: b.top - box.top + b.height / 2 }; }
+        (fc.getAttribute('data-conn') || '').trim().split(/\s+/).forEach(function (c) {
+          var m = c.match(/^(\w+)>(\w+):(\w+)$/); if (!m) return;
+          var a = r(m[1]), t = r(m[2]), d, gap = 3, R = 10;
+          if (m[3] === 'split') {
+            var y = a.b + (t.t - a.b) / 2, dir = t.cx < a.cx ? -1 : 1;
+            d = 'M' + a.cx + ',' + a.b + ' V' + (y - R) + ' Q' + a.cx + ',' + y + ' ' + (a.cx + dir * R) + ',' + y +
+                ' H' + (t.cx - dir * R) + ' Q' + t.cx + ',' + y + ' ' + t.cx + ',' + (y + R) + ' V' + (t.t - gap);
+          } else if (m[3] === 'down') {
+            d = 'M' + t.cx + ',' + a.b + ' V' + (t.t - gap);
+          } else if (m[3] === 'right') {
+            d = 'M' + a.r + ',' + t.cy + ' H' + (t.l - gap);
+          } else if (m[3] === 'channel') {       // leave the left side of the source, drop down, turn left into the target
+            var x = a.l + 12, y2 = t.t - 18;
+            d = 'M' + x + ',' + a.b + ' V' + (y2 - R) + ' Q' + x + ',' + y2 + ' ' + (x - R) + ',' + y2 + ' H' + (t.cx + R) +
+                ' Q' + t.cx + ',' + y2 + ' ' + t.cx + ',' + (y2 + R) + ' V' + (t.t - gap);
+          }
+          var p = document.createElementNS(NS, 'path');
+          p.setAttribute('d', d); p.setAttribute('fill', 'none'); p.setAttribute('stroke', col);
+          p.setAttribute('stroke-width', '2.6'); p.setAttribute('stroke-linecap', 'round'); p.setAttribute('stroke-linejoin', 'round');
+          p.setAttribute('marker-end', 'url(#' + mid + ')');
+          svg.appendChild(p);
+        });
+        fc.insertBefore(svg, fc.firstChild);
+      }
+      function all() { document.querySelectorAll('.fc[data-conn]').forEach(draw); }
+      all(); window.addEventListener('load', all); window.addEventListener('resize', all);
+      if (document.fonts && document.fonts.ready) document.fonts.ready.then(all);
+    })();
+  </script>
 </body>
 </html>
-
-
