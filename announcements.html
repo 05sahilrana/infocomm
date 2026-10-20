@@ -71,6 +71,19 @@
     @media (max-width:800px){ .ft-inner{grid-template-columns:1fr 1fr} .ft-brand{grid-column:1/-1} }
     @media (max-width:500px){ .ft-inner{grid-template-columns:1fr;padding:2.4rem 1rem 1.6rem} .ft-bottom{flex-direction:column;padding:1rem} }
   </style>
+  <style>
+    main.container.section{max-width:900px;margin:0 auto;padding:3.5rem 1.5rem 4rem}
+    main .section-header h2{font-family:"Poppins",sans-serif;color:#0b2d51;font-size:clamp(1.7rem,3vw,2.3rem);margin:0 0 .4rem}
+    .announcement-list{list-style:none;margin:2.4rem 0 0;padding:0 0 0 1.6rem;border-left:2px solid #dbe4f0}
+    .announcement-item{position:relative;background:#fff;border:1px solid #e3e8ef;border-radius:14px;padding:1.2rem 1.4rem;margin:0 0 1.1rem;box-shadow:0 4px 14px rgba(11,45,81,.05)}
+    .announcement-item::before{content:"";position:absolute;left:calc(-1.6rem - 7px);top:1.4rem;width:12px;height:12px;border-radius:50%;background:#fff;border:3px solid #0b6fb3}
+    .announcement-item:first-child::before{border-color:#e8590c}
+    .announcement-date{display:inline-block;font-size:.75rem;font-weight:700;letter-spacing:.4px;text-transform:uppercase;color:#0b6fb3;background:#e8f1fb;padding:.2rem .55rem;border-radius:6px}
+    .announcement-item p{margin:.6rem 0 0;color:#334155;line-height:1.6}
+    .announcement-item a{color:#0b6fb3;font-weight:600}
+    .ann-topics{margin:.4rem 0 0;padding-left:1.2rem;line-height:1.6;color:#334155}
+    .ann-topics li{margin:.15rem 0}
+  </style>
 </head>
 
 <body>
@@ -110,18 +123,34 @@
   <ul class="announcement-list">
 
     <li class="announcement-item">
+      <time datetime="2026-10-07" class="announcement-date">Oct 7&ndash;10, 2026</time>
+      <p><strong>InfoComm Lab at India Mobile Congress (IMC) 2026.</strong> Researchers from the lab, together with Dr. Adarsh Patel, showcased their 5G and 6G work through research posters and live demonstrations at the IIT Mandi booth (Hall 1, Academic Area) at Yashobhoomi, New Delhi. The event was inaugurated by the Hon&rsquo;ble Prime Minister.</p>
+      <p>Team: N V Divya Lakshmi, Ishita Sharma, Sahil Rana, Anshuman Thakur, Abhay Upadhyay and Shivam Rajput. Topics showcased:</p>
+      <ul class="ann-topics">
+        <li>Testbed development for cell-free massive MIMO systems</li>
+    <li class="announcement-item">
       <time datetime="2026-09" class="announcement-date">Sep 2026</time>
       <p><strong>Anuranjan Jha</strong> and <strong>Shreya Srivastava</strong> presented the lab&rsquo;s work at <a href="https://pimrc2026.ieee-pimrc.org/" target="_blank" rel="noopener">IEEE PIMRC 2026</a>, Singapore.</p>
     </li>
-
+    <li class="announcement-item">
+      <time datetime="2026-08" class="announcement-date">2026</time>
+      <p>Welcome to our new members! <strong>Dibyajyoti Sarmah</strong> and <strong>Mohammad Umar</strong> joined as PhD scholars, and <strong>Avantika Trehan</strong>, <strong>Shubham Singh</strong>, <strong>Shruti Sharma</strong>, <strong>Mohammad Ahmer Siddiqui</strong> and <strong>Yash Singh</strong> joined as M.Tech (Research) scholars. <strong>N V Divya Lakshmi</strong> upgraded from M.S. to the PhD program.</p>
+    </li>
     <li class="announcement-item">
       <time datetime="2026-07-17" class="announcement-date">Jul 17, 2026</time>
-      <p><strong>Anuranjan Jha</strong> presented the lab&rsquo;s work at <a href="https://ece.iisc.ac.in/~spcom/2026/" target="_blank" rel="noopener">IEEE SPCOM 2026</a>, IISc Bengaluru.</p>
+      <p><strong>Anuranjan Jha</strong> and <strong>Mohd Saif Ali Khan</strong> presented the lab&rsquo;s work at <a href="https://ece.iisc.ac.in/~spcom/2026/" target="_blank" rel="noopener">IEEE SPCOM 2026</a>, IISc Bengaluru.</p>
     </li>
-
+    <li class="announcement-item">
+      <time datetime="2026-07" class="announcement-date">2026</time>
+      <p><strong>M. S. Vamsi</strong> and <strong>Prof. Satyajit Thakor</strong>&rsquo;s paper &ldquo;Capacity of Two Undirected Multiple-Unicast Networks With Arbitrary Demands&rdquo; appeared at <a href="https://ieeexplore.ieee.org/document/11653978" target="_blank" rel="noopener">IEEE ISIT 2026</a>, Guangzhou, China. Surya also received the <strong>IEEE ISIT 2026 Travel Grant</strong> to attend the symposium.</p>
+    </li>
     <li class="announcement-item">
       <time datetime="2026-06-09" class="announcement-date">Jun 9, 2026</time>
       <p><strong>Gopal Sai Krishna Chamarthi</strong>, <strong>N V Divya Lakshmi</strong> and <strong>Sk Md Shafique Anwar</strong> presented the lab&rsquo;s papers at <a href="https://events.vtsociety.org/vtc2026-spring/" target="_blank" rel="noopener">IEEE VTC2026-Spring</a>, Nice, France.</p>
+    </li>
+    <li class="announcement-item">
+      <time datetime="2026-06-01" class="announcement-date">Jun 1, 2026</time>
+      <p>Paper &ldquo;Optimal Detection and Phase Optimization in IRS-Assisted Ambient Backscatter Communication with Correlated Ambient Source&rdquo; by <strong>Anuranjan Jha</strong> and Dr. Adarsh Patel accepted at <a href="https://pimrc2026.ieee-pimrc.org/" target="_blank" rel="noopener">IEEE PIMRC 2026</a>, Singapore.</p>
     </li>
     <li class="announcement-item">
       <time datetime="2026-05" class="announcement-date">May 2026</time>
@@ -131,47 +160,37 @@
         Interested candidates are encouraged to email their CV and transcripts.
       </p>
     </li>
-
     <li class="announcement-item">
-      <time datetime="2026" class="announcement-date">2026</time>
-      <p><strong>Best Paper Award at COMSNETS</strong> to Samannaya Adhikari, M.Tech (Research) scholar, and Dr. Siddhartha Sarma for their work in communication and networking systems.</p>
-    </li>
-
-    <li class="announcement-item">
-      <time datetime="2026" class="announcement-date">2026</time>
+      <time datetime="2026-05" class="announcement-date">2026</time>
       <p>Two members of the InfoComm Lab received prestigious travel support to attend <a href="https://events.vtsociety.org/vtc2026-spring/" target="_blank" rel="noopener">IEEE VTC2026-Spring</a>, Nice, France: <strong>N V Divya Lakshmi</strong> &mdash; IEEE Communications Society Student Travel Grant; <strong>Gopal Sai Krishna Chamarthi</strong> &mdash; ANRF International Travel Support (ITS).</p>
     </li>
-
     <li class="announcement-item">
-      <time datetime="2025-12-10" class="announcement-date">Dec 10, 2025</time>
-      <p>
-        Paper accepted at <strong>IEEE International Conference on Communications (ICC 2026)</strong>
-        in the area of Massive MIMO communication networks.
-      </p>
+      <time datetime="2026-03-23" class="announcement-date">Mar 2026</time>
+      <p>Three papers from the lab accepted at <a href="https://events.vtsociety.org/vtc2026-spring/" target="_blank" rel="noopener">IEEE VTC2026-Spring</a>, Nice, France &mdash; on channel estimation for IRS-assisted XL-MIMO, pilot-free data detection in IoT HetNets, and semi-blind detection in cell-free mMIMO industrial IoT networks.</p>
     </li>
-
     <li class="announcement-item">
-      <time datetime="2025-11-02" class="announcement-date">Nov 02, 2025</time>
-      <p>
-        <strong>New SERB-funded project</strong> awarded on Wireless Energy Harvesting
-        and Wireless Powered Communication Networks.
-      </p>
+      <time datetime="2026-03" class="announcement-date">2026</time>
+      <p><strong>Mohd Saif Ali Khan</strong>&rsquo;s paper on pilot assignment for distributed massive MIMO published at <a href="https://ieeexplore.ieee.org/document/11555078" target="_blank" rel="noopener">IEEE WCNC 2026</a>.</p>
     </li>
-
     <li class="announcement-item">
-      <time datetime="2025-09-18" class="announcement-date">Sep 18, 2025</time>
-      <p>
-        Our lab organized a <strong>hands-on workshop</strong> on Cell-Free Massive MIMO
-        and Intelligent Reflecting Surfaces.
-      </p>
+      <time datetime="2026-01-22" class="announcement-date">Jan 22, 2026</time>
+      <p>Two papers from the lab accepted at <a href="https://ee.iith.ac.in/NCC2026/" target="_blank" rel="noopener">IEEE NCC 2026</a>, IIT Hyderabad &mdash; a zero-overhead ISAC framework for target localization, and blind detection-estimation in cell-free massive MIMO.</p>
     </li>
-
     <li class="announcement-item">
-      <time datetime="2025-07-05" class="announcement-date">Jul 05, 2025</time>
-      <p>
-        Two M.Tech (by Research) students successfully defended their theses
-        in Wireless Sensing and Backscatter Communication.
-      </p>
+      <time datetime="2026-01" class="announcement-date">Jan 2026</time>
+      <p><strong>Best Paper Award at COMSNETS</strong> to Samannaya Adhikari, M.Tech (Research) scholar, and Dr. Siddhartha Sarma for their work in communication and networking systems.</p>
+    </li>
+    <li class="announcement-item">
+      <time datetime="2026-01" class="announcement-date">Jan 2026</time>
+      <p><strong>Dr. Shilpa Thakur</strong>, Prof. Satyajit Thakor and Prof. R. K. Mallik published &ldquo;Optimizing Physical Layer Security of IRS-Assisted Wireless Networks With Imperfect CSI&rdquo; in <a href="https://ieeexplore.ieee.org/document/11224938" target="_blank" rel="noopener">IEEE Transactions on Communications</a>.</p>
+    </li>
+    <li class="announcement-item">
+      <time datetime="2025-12" class="announcement-date">Dec 2025</time>
+      <p>Paper &ldquo;Active vs. Passive IRS: Performance Analysis with Discrete Phase-Shift Configurations&rdquo; by <strong>Dr. Shilpa Thakur</strong> and Prof. Satyajit Thakor appeared at <a href="https://ieeexplore.ieee.org/document/11429913" target="_blank" rel="noopener">IEEE ANTS 2025</a>, Delhi.</p>
+    </li>
+    <li class="announcement-item">
+      <time datetime="2025" class="announcement-date">2025</time>
+      <p><strong>M Surya Vamsi</strong> received the <strong>IEEE ISIT 2025 Travel Grant</strong> to attend IEEE ISIT 2025, Ann Arbor, Michigan, USA.</p>
     </li>
 
   </ul>
