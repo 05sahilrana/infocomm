@@ -65,6 +65,15 @@
       font-size:.76rem;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:#cfe2ff !important;background:rgba(255,255,255,.06)}
     .jn-hero h1{color:#fff;font-size:clamp(2rem,4.6vw,3.1rem);line-height:1.15}
     .jn-hero h1 span{background:linear-gradient(90deg,#8ec5ff,#c4b5fd);-webkit-background-clip:text;background-clip:text;color:transparent}
+    .jn-admit{position:relative;z-index:1;display:flex;flex-wrap:wrap;align-items:center;gap:.6rem 1rem;margin:1.6rem 0 0;padding:.9rem 1.1rem;border-radius:14px;
+      background:rgba(232,89,12,.14);border:1px solid rgba(255,170,120,.45);max-width:760px}
+    .jn-admit[hidden]{display:none}
+    .jn-admit b{color:#fff}
+    .jn-admit span{color:#ffd9c2;font-size:.95rem}
+    .jn-admit a{margin-left:auto;padding:.5rem 1rem;border-radius:999px;background:#e8590c;color:#fff !important;font-weight:700;text-decoration:none;font-size:.9rem;white-space:nowrap}
+    .jn-admit a:hover{background:#ff6d1f}
+    .jn-admit .jn-pulse{width:10px;height:10px;border-radius:50%;background:#ff8a4c;box-shadow:0 0 0 0 rgba(255,138,76,.7);animation:jnPulse 1.8s infinite}
+    @keyframes jnPulse{70%{box-shadow:0 0 0 10px rgba(255,138,76,0)}100%{box-shadow:0 0 0 0 rgba(255,138,76,0)}}
     .jn-lead{max-width:640px;margin:1rem 0 0 !important;font-size:1.08rem;color:#d6e4f5 !important;line-height:1.6}
     .jn-stats{list-style:none;margin:2.2rem 0 0;padding:0;display:flex;gap:2.5rem;flex-wrap:wrap}
     .jn-stats strong{display:block;font-family:"Poppins",sans-serif;font-size:2rem;color:#fff;line-height:1.1}
@@ -200,6 +209,13 @@
         <p class="jn-eyebrow">Join Us &middot; Get involved!</p>
         <h1>Research programs at <span>SCEE, IIT Mandi</span></h1>
         <p class="jn-lead">Work with the InfoComm Lab on wireless communications, sensing, information theory and IoT &mdash; from theory to working testbeds.</p>
+        <div class="jn-admit" id="jnAdmit" data-until="2026-11-04T17:00:00+05:30">
+          <span class="jn-pulse" aria-hidden="true"></span>
+          <b>Admissions open &middot; Jan 2027</b>
+          <span>M.Tech (Research), PhD &amp; Dual Degree at SCEE &mdash; choose the <strong>Intelligent Communication Systems (ICS)</strong> group. Last date: Nov 4, 2026, 5 PM.</span>
+          <a href="https://sites.google.com/iitmandi.ac.in/scee-pg-admissions" target="_blank" rel="noopener">Apply now &rarr;</a>
+        </div>
+        <script>(function(){var b=document.getElementById('jnAdmit');if(b&&new Date()>new Date(b.getAttribute('data-until')))b.hidden=true;})();</script>
         <nav class="jn-jump" aria-label="Jump to section"><a href="#programs">Programs</a><a href="#pathways">Application pathways</a><a href="#common">Postdoc &amp; project staff</a><a href="#faculty">Faculty advisors</a></nav>
       </div>
     </section>
