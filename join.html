@@ -128,7 +128,7 @@
     .fl-panel h3{font-size:1.35rem;margin-bottom:1.4rem !important}
     .fl-dark{background:linear-gradient(165deg,#24546d,#2f6a88);color:#fff;--ln:#e8590c}
     .fl-dark h3{color:#fff !important}
-    .fl-light{background:#fff;border:1px solid #dbe4ea;--ln:#e8590c}
+    .fl-light{background:#fff;border:1px solid #dbe4ea;--ln:#2e9d3a}
     .fl-light h3{color:#24546d !important}
     .fc{position:relative;display:grid;grid-template-columns:1fr 1fr;column-gap:1.4rem;row-gap:42px;justify-items:center;align-items:center}
     .fc svg.fl-lines{position:absolute;inset:0;width:100%;height:100%;overflow:visible;pointer-events:none;z-index:0}
@@ -351,10 +351,16 @@
       function draw(fc) {
         var old = fc.querySelector('svg.fl-lines'); if (old) old.remove();
         var svg = document.createElementNS(NS, 'svg'); svg.setAttribute('class', 'fl-lines');
-        var col = getComputedStyle(fc).getPropertyValue('--ln').trim() || '#e8590c';
-        var mid = 'ah' + Math.random().toString(36).slice(2, 7);
-        svg.innerHTML = '<defs><marker id="' + mid + '" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="5.5" markerHeight="5.5" orient="auto-start-reverse">' +
-          '<path d="M0,0 L10,5 L0,10 z" fill="' + col + '"/></marker></defs>';
+        var col = getComputedStyle(fc).getPropertyValue('--ln').trim() || '#2e9d3a';
+        var defs = document.createElementNS(NS, 'defs'), marks = {};
+        svg.appendChild(defs);
+        function marker(c) {                    // one arrow-head per colour
+          if (marks[c]) return marks[c];
+          var id = 'ah' + Math.random().toString(36).slice(2, 7);
+          defs.insertAdjacentHTML('beforeend', '<marker id="' + id + '" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="5.5" markerHeight="5.5" orient="auto-start-reverse">' +
+            '<path d="M0,0 L10,5 L0,10 z" fill="' + c + '"/></marker>');
+          return (marks[c] = id);
+        }
         var box = fc.getBoundingClientRect();
         function r(id) { var e = fc.querySelector('[data-id="' + id + '"]'); var b = e.getBoundingClientRect();
           return { l: b.left - box.left, r: b.right - box.left, t: b.top - box.top, b: b.bottom - box.top, cx: b.left - box.left + b.width / 2, cy: b.top - box.top + b.height / 2 }; }
@@ -374,10 +380,11 @@
             d = 'M' + x + ',' + a.b + ' V' + (y2 - R) + ' Q' + x + ',' + y2 + ' ' + (x - R) + ',' + y2 + ' H' + (t.cx + R) +
                 ' Q' + t.cx + ',' + y2 + ' ' + t.cx + ',' + (y2 + R) + ' V' + (t.t - gap);
           }
+          var c = col;
           var p = document.createElementNS(NS, 'path');
-          p.setAttribute('d', d); p.setAttribute('fill', 'none'); p.setAttribute('stroke', col);
+          p.setAttribute('d', d); p.setAttribute('fill', 'none'); p.setAttribute('stroke', c);
           p.setAttribute('stroke-width', '2.6'); p.setAttribute('stroke-linecap', 'round'); p.setAttribute('stroke-linejoin', 'round');
-          p.setAttribute('marker-end', 'url(#' + mid + ')');
+          p.setAttribute('marker-end', 'url(#' + marker(c) + ')');
           svg.appendChild(p);
         });
         fc.insertBefore(svg, fc.firstChild);
@@ -389,3 +396,5 @@
   </script>
 </body>
 </html>
+
+
