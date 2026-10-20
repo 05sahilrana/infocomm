@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <title>Gallery — Infocomm Lab, IIT Mandi</title>
+  <meta name="description" content="Photo gallery of the Infocomm Lab, IIT Mandi — lab, experiments, conferences and events." />
+  <meta name="keywords" content="Infocomm Lab IIT Mandi, wireless research, communication systems, sensing" />
+  <link rel="canonical" href="https://infocomm.iitmandi.ac.in/gallery.html" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <!-- NAVBAR style (inline so every page looks the same even with an old/cached style.css or script.js) -->
+  <style>
+    html body nav.nav.nav{position:sticky;top:0;z-index:1000;background:#f7f9fc !important;background-image:none !important;
+      backdrop-filter:none !important;border-bottom:1px solid #e3e8ef !important;box-shadow:0 1px 8px rgba(15,23,42,.06) !important}
+    html body nav.nav.nav .nav-inner{display:flex !important;align-items:center;justify-content:space-between;gap:1rem;
+      width:100% !important;max-width:none !important;margin:0 !important;padding:.6rem 2rem !important;box-sizing:border-box}
+    html body nav.nav.nav .brand{display:flex !important;align-items:center;gap:.75rem;margin:0 !important;text-decoration:none}
+    html body nav.nav.nav .brand-logo{height:44px !important;width:44px !important;object-fit:contain;border-radius:6px;background:#fff}
+    html body nav.nav.nav .brand-name{display:flex;flex-direction:column;line-height:1.15}
+    html body nav.nav.nav .brand-text{font-family:"Poppins",sans-serif;font-weight:600;font-size:1.2rem;color:#0b2d51 !important}
+    html body nav.nav.nav .brand-sub{font-family:"Inter",sans-serif;font-size:.72rem;font-weight:500;letter-spacing:.6px;text-transform:uppercase;color:#586175 !important}
+    html body nav.nav.nav .nav-links{list-style:none;margin:0;padding:0;background:transparent !important;gap:.25rem}
+    html body nav.nav.nav .nav-links li a{position:relative;display:block;text-decoration:none;font-family:"Inter",sans-serif;font-size:.95rem;font-weight:500;
+      color:#334155 !important;padding:.5rem .9rem;border-radius:6px;opacity:1 !important;transition:color .2s,background-color .2s}
+    html body nav.nav.nav .nav-links li a:hover{color:#0b6fb3 !important;background:#e8eef7 !important}
+    html body nav.nav.nav .nav-links li a.active{color:#0b6fb3 !important;font-weight:600}
+    html body nav.nav.nav .nav-links li a.active::after{content:"";position:absolute;left:.9rem;right:.9rem;bottom:2px;height:2px;border-radius:2px;background:#0b6fb3}
+    html body nav.nav.nav .nav-toggle{background:none;border:0;padding:.6rem .4rem;cursor:pointer}
+    html body nav.nav.nav .hamburger,html body nav.nav.nav .hamburger::before,html body nav.nav.nav .hamburger::after{background:#0b2d51 !important}
+    @media (min-width:700px){
+      html body nav.nav.nav .nav-toggle{display:none !important}
+      html body nav.nav.nav .nav-links{display:flex !important;flex-direction:row;align-items:center;position:static}
+    }
+    @media (max-width:699px){
+      html body nav.nav.nav .nav-inner{position:relative;padding:.5rem 1rem !important}
+      html body nav.nav.nav .brand-logo{height:38px !important;width:38px !important}
+      html body nav.nav.nav .nav-links{display:none !important;position:absolute;top:100%;left:0;right:0;flex-direction:column;
+        background:#f7f9fc !important;border-bottom:1px solid #e3e8ef;box-shadow:0 8px 16px rgba(15,23,42,.08);padding:.5rem 1rem 1rem}
+      html body nav.nav.nav .nav-links.open{display:flex !important}
+      html body nav.nav.nav .nav-links li a.active::after{display:none}
+    }
+    @media (min-width:700px) and (max-width:1100px){
+      html body nav.nav.nav .nav-inner{padding:.6rem 1rem !important}
+      html body nav.nav.nav .nav-links li a{padding:.5rem .55rem;font-size:.88rem}
+      html body nav.nav.nav .brand-sub{display:none}
+    }
+  </style>
+  <style>
+    .rs{--navy:#0b2d51;--blue:#0b6fb3;--sky:#3b82f6;--text:#334155;--muted:#64748b;--line:#e3e8ef;--tint:#f5f8fc}
+    .rs-wrap{max-width:1180px;margin:0 auto;padding:0 1.5rem}
+    .rs h1,.rs h2,.rs h3,.rs h4{font-family:"Poppins",sans-serif;color:var(--navy);margin:0}
+    .rs-section{padding:4.5rem 0}
+    .rs-tint{background:var(--tint)}
+    .rs-kicker{font-size:.76rem;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:var(--blue) !important;margin:0 0 .45rem !important}
+    .rs-head{text-align:center;margin-bottom:2.2rem}
+    .rs-head h2{font-size:clamp(1.6rem,3vw,2.1rem)}
+    .rs-hero{position:relative;overflow:hidden;color:#fff;padding:4.5rem 0 3.5rem;
+      background:radial-gradient(800px 380px at 85% 0%,rgba(59,130,246,.35),transparent 60%),linear-gradient(135deg,#071d36,#0b2d51 45%,#124a86)}
+    .rs-hero::after{content:"";position:absolute;right:-120px;top:-120px;width:460px;height:460px;border-radius:50%;pointer-events:none;
+      border:1px solid rgba(143,197,255,.25);box-shadow:0 0 0 60px rgba(143,197,255,.05),0 0 0 120px rgba(143,197,255,.035)}
+    .rs-eyebrow{display:inline-block;margin:0 0 1rem !important;padding:.35rem .8rem;border:1px solid rgba(255,255,255,.25);border-radius:999px;
+      font-size:.76rem;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:#cfe2ff !important;background:rgba(255,255,255,.06)}
+    .rs-hero h1{color:#fff;font-size:clamp(2rem,4.6vw,3.1rem);line-height:1.15}
+    .rs-hero h1 span{background:linear-gradient(90deg,#8ec5ff,#c4b5fd);-webkit-background-clip:text;background-clip:text;color:transparent}
+    .rs-lead{max-width:640px;margin:1rem 0 0 !important;font-size:1.08rem;color:#d6e4f5 !important;line-height:1.6}
+    .rs-stats{list-style:none;margin:2.2rem 0 0;padding:0;display:flex;gap:2.5rem;flex-wrap:wrap}
+    .rs-stats strong{display:block;font-family:"Poppins",sans-serif;font-size:2rem;color:#fff;line-height:1.1}
+    .rs-stats span{font-size:.85rem;color:#b9cde6}
+    .gl-grid{columns:3 280px;column-gap:1rem}
+    .gl-item{break-inside:avoid;margin:0 0 1rem;border-radius:14px;overflow:hidden;cursor:zoom-in;background:#eef3fa;box-shadow:0 6px 18px rgba(11,45,81,.08);position:relative}
+    .gl-item img{display:block;width:100%;height:auto;transition:transform .35s}
+    .gl-item:hover img{transform:scale(1.04)}
+    .gl-item::after{content:"";position:absolute;left:0;right:0;bottom:0;height:4px;background:linear-gradient(90deg,#1e88e5 33%,#e8590c 33% 66%,#2e9d3a 66%);opacity:0;transition:opacity .25s}
+    .gl-item:hover::after{opacity:1}
+    .gl-box{position:fixed;inset:0;z-index:2000;background:rgba(3,8,16,.92);display:flex;align-items:center;justify-content:center;padding:3rem 4rem}
+    .gl-box[hidden]{display:none}
+    .gl-box img{max-width:100%;max-height:100%;border-radius:10px;box-shadow:0 20px 60px rgba(0,0,0,.5)}
+    .gl-close{position:absolute;top:14px;right:18px;background:none;border:0;color:#fff;font-size:2.4rem;cursor:pointer;line-height:1}
+    .gl-nav{position:absolute;top:50%;transform:translateY(-50%);width:48px;height:48px;border-radius:50%;border:0;cursor:pointer;background:rgba(255,255,255,.15);color:#fff;font-size:2rem;line-height:1;padding-bottom:4px}
+    .gl-nav:hover{background:#e8590c}
+    .gl-prev{left:14px} .gl-next{right:14px}
+    .gl-count{position:absolute;bottom:14px;left:0;right:0;text-align:center;color:#cbd5e1;font-size:.9rem;margin:0}
+    @media (max-width:600px){.gl-box{padding:3rem .6rem}.gl-nav{width:40px;height:40px}}
+  </style>
+  <!-- FOOTER style (same on every page) -->
+  <style>
+    html body .ft{margin-top:0;padding:0;background:#040b16;color:#b9c7d8;border:0;position:relative;font-family:"Inter",sans-serif}
+    .ft-stripe{display:flex;height:4px}
+    .ft-stripe span{flex:1}
+    .ft-stripe span:nth-child(1){background:#1e88e5}.ft-stripe span:nth-child(2){background:#e8590c}.ft-stripe span:nth-child(3){background:#2e9d3a}
+    .ft-inner{max-width:1180px;margin:0 auto;padding:3rem 1.5rem 2rem;display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:2.5rem}
+    .ft-cover{display:block;width:100%;max-width:380px;height:auto;border-radius:8px;margin-bottom:1rem}
+    .ft address{font-style:normal;line-height:1.7;font-size:.92rem;color:#b9c7d8}
+    .ft h4{font-family:"Poppins",sans-serif;color:#fff;font-size:1rem;margin:0 0 .9rem}
+    .ft p{margin:0}
+    .ft a{color:#cfe2ff;text-decoration:none}
+    .ft a:hover{color:#fff;text-decoration:underline}
+    .ft ul{list-style:none;margin:0;padding:0}
+    .ft li{margin-bottom:.45rem}
+    .ft .ft-links-2{display:grid;grid-template-columns:repeat(2,minmax(0,max-content));column-gap:2rem}
+    .ft-social{margin-top:.6rem !important}
+    .ft-social a{display:inline-flex;align-items:center;gap:.45rem}
+    .ft-social svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+    .ft-incharge{margin-top:1.1rem !important;line-height:1.6}
+    .ft-incharge span{display:block;font-size:.72rem;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:#e8590c}
+    .ft-bottom{border-top:1px solid rgba(255,255,255,.1);max-width:1180px;margin:0 auto;padding:1.1rem 1.5rem 1.4rem;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-size:.84rem;color:#8a9bb2}
+    @media (max-width:800px){ .ft-inner{grid-template-columns:1fr 1fr} .ft-brand{grid-column:1/-1} }
+    @media (max-width:500px){ .ft-inner{grid-template-columns:1fr;padding:2.4rem 1rem 1.6rem} .ft-bottom{flex-direction:column;padding:1rem} }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a class="brand" href="index.html">
+        <img src="https://cdn.jsdelivr.net/gh/SamannayaAdhikari/infocomm-lab-assets/infocommlogo.jpg" alt="Infocomm Lab logo" class="brand-logo">
+        <span class="brand-name"><span class="brand-text">Infocomm Lab</span><span class="brand-sub">IIT Mandi</span></span>
+      </a>
+
+      <button id="navToggle" class="nav-toggle" aria-expanded="false" aria-controls="navMenu" aria-label="Toggle navigation">
+        <span class="hamburger"></span>
+      </button>
+
+      <ul id="navMenu" class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="people.html">People</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="publications.html">Publications</a></li>
+        <li><a href="resources.html">Resources</a></li>
+        <li><a href="join.html">Join Us</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="rs">
+    <section class="rs-hero">
+      <div class="rs-wrap">
+        <p class="rs-eyebrow">Gallery</p>
+        <h1>Life at the <span>InfoComm Lab</span></h1>
+        <p class="rs-lead">Moments from our lab, experiments, conferences and events.</p>
+      </div>
+    </section>
+    <section class="rs-section">
+      <div class="rs-wrap">
+        <div class="gl-grid" id="glGrid">
+          <figure class="gl-item"><img loading="lazy" src="https://cdn.jsdelivr.net/gh/SamannayaAdhikari/infocomm-lab-assets/hero8.jpeg" alt="InfoComm Lab photo" onerror="this.closest('figure').remove()"></figure>
+          <figure class="gl-item"><img loading="lazy" src="Lab3.jpg" data-base="Lab3" data-exts="jpeg,png,JPG,JPEG,PNG,webp,WEBP,jfif" alt="InfoComm Lab photo" onerror="glNextImg(this)"></figure>
+          <figure class="gl-item"><img loading="lazy" src="Lab8.jpg" data-base="Lab8" data-exts="jpeg,png,JPG,JPEG,PNG,webp,WEBP,jfif" alt="InfoComm Lab photo" onerror="glNextImg(this)"></figure>
+          <figure class="gl-item"><img loading="lazy" src="Lab6.jpg" data-base="Lab6" data-exts="jpeg,png,JPG,JPEG,PNG,webp,WEBP,jfif" alt="InfoComm Lab photo" onerror="glNextImg(this)"></figure>
+          <figure class="gl-item"><img loading="lazy" src="Lab1.jpg" data-base="Lab1" data-exts="jpeg,png,JPG,JPEG,PNG,webp,WEBP,jfif" alt="InfoComm Lab photo" onerror="glNextImg(this)"></figure>
+          <figure class="gl-item"><img loading="lazy" src="https://cdn.jsdelivr.net/gh/SamannayaAdhikari/infocomm-lab-assets/hero3.jpeg" alt="InfoComm Lab photo" onerror="this.closest('figure').remove()"></figure>
+          <figure class="gl-item"><img loading="lazy" src="Lab9.jpg" data-base="Lab9" data-exts="jpeg,png,JPG,JPEG,PNG,webp,WEBP,jfif" alt="InfoComm Lab photo" onerror="glNextImg(this)"></figure>
+          <figure class="gl-item"><img loading="lazy" src="Lab5.jpg" data-base="Lab5" data-exts="jpeg,png,JPG,JPEG,PNG,webp,WEBP,jfif" alt="InfoComm Lab photo" onerror="glNextImg(this)"></figure>
+          <figure class="gl-item"><img loading="lazy" src="Lab7.jpg" data-base="Lab7" data-exts="jpeg,png,JPG,JPEG,PNG,webp,WEBP,jfif" alt="InfoComm Lab photo" onerror="glNextImg(this)"></figure>
+          <figure class="gl-item"><img loading="lazy" src="https://cdn.jsdelivr.net/gh/SamannayaAdhikari/infocomm-lab-assets/hero9.jpeg" alt="InfoComm Lab photo" onerror="this.closest('figure').remove()"></figure>
+          <figure class="gl-item"><img loading="lazy" src="Lab10.jpg" data-base="Lab10" data-exts="jpeg,png,JPG,JPEG,PNG,webp,WEBP,jfif" alt="InfoComm Lab photo" onerror="glNextImg(this)"></figure>
+          <figure class="gl-item"><img loading="lazy" src="Lab11.jpg" data-base="Lab11" data-exts="jpeg,png,JPG,JPEG,PNG,webp,WEBP,jfif" alt="InfoComm Lab photo" onerror="glNextImg(this)"></figure>
+          <figure class="gl-item"><img loading="lazy" src="https://cdn.jsdelivr.net/gh/SamannayaAdhikari/infocomm-lab-assets/hero7.jpeg" alt="InfoComm Lab photo" onerror="this.closest('figure').remove()"></figure>
+          <figure class="gl-item"><img loading="lazy" src="Lab12.jpg" data-base="Lab12" data-exts="jpeg,png,JPG,JPEG,PNG,webp,WEBP,jfif" alt="InfoComm Lab photo" onerror="glNextImg(this)"></figure>
+        </div>
+      </div>
+    </section>
+    <div class="gl-box" id="glBox" hidden role="dialog" aria-modal="true" aria-label="Photo viewer">
+      <button type="button" class="gl-close" aria-label="Close">&times;</button>
+      <button type="button" class="gl-nav gl-prev" aria-label="Previous photo">&#8249;</button>
+      <img alt="InfoComm Lab photo">
+      <button type="button" class="gl-nav gl-next" aria-label="Next photo">&#8250;</button>
+      <p class="gl-count"></p>
+    </div>
+  </main>
+
+  <!-- FOOTER (same on every page) -->
+  <footer class="site-footer ft">
+    <div class="ft-stripe" aria-hidden="true"><span></span><span></span><span></span></div>
+    <div class="ft-inner">
+      <div class="ft-brand">
+        <img class="ft-cover" src="infocomm_lab_scee_iit_mandi_cover.jpeg" alt="Info Comm Lab, IIT Mandi">
+        <address>
+          InfoComm Lab,<br>
+          School of Computing and Electrical Engineering,<br>
+          3rd Floor, A18 Building,<br>
+          North Campus, IIT Mandi,<br>
+          Mandi, Himachal Pradesh &ndash; 175075
+        </address>
+      </div>
+      <div>
+        <h4>Contact Us</h4>
+        <p><a href="mailto:infocomm@iitmandi.ac.in">infocomm@iitmandi.ac.in</a></p>
+        <p class="ft-social"><a href="https://www.linkedin.com/company/infocomm-lab-scee-iit-mandi/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 10v7M8 7v.01M12 17v-4a2 2 0 0 1 4 0v4M12 10v7"/></svg>InfoComm Lab on LinkedIn</a></p>
+        <p class="ft-incharge"><span>Student lab in-charge</span>Sahil Rana<br><a href="mailto:d24135@students.iitmandi.ac.in">d24135@students.iitmandi.ac.in</a></p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul class="ft-links-2">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="people.html">People</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="publications.html">Publications</a></li>
+          <li><a href="resources.html">Resources</a></li>
+          <li><a href="join.html">Join Us</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="ft-bottom">
+      <p>&copy; <span id="year"></span> Infocomm Lab, IIT Mandi</p>
+      <p>Website created by Samannaya Adhikari, Sahil Rana and Bhavesh Sharma</p>
+    </div>
+  </footer>
+
+
+  <script src="script.js"></script>
+  <script>
+    function glNextImg(img){var l=(img.getAttribute('data-exts')||'').split(',').filter(Boolean);
+      if(!l.length){var f=img.closest('figure'); if(f) f.remove(); return;} var e=l.shift(); img.setAttribute('data-exts',l.join(',')); img.src=img.getAttribute('data-base')+'.'+e;}
+    (function () {
+      var grid = document.getElementById('glGrid'), box = document.getElementById('glBox'), big = box.querySelector('img'), cnt = box.querySelector('.gl-count'), i = 0;
+      function imgs() { return Array.prototype.filter.call(grid.querySelectorAll('img'), function (x) { return x.complete && x.naturalWidth > 0; }); }
+      function show(k) { var l = imgs(); if (!l.length) return; i = (k + l.length) % l.length; big.src = l[i].currentSrc || l[i].src; cnt.textContent = (i + 1) + ' / ' + l.length; }
+      function open(img) { box.hidden = false; document.body.style.overflow = 'hidden'; show(imgs().indexOf(img)); }
+      function close() { box.hidden = true; document.body.style.overflow = ''; }
+      grid.addEventListener('click', function (e) { var im = e.target.closest('figure') && e.target.closest('figure').querySelector('img'); if (im) open(im); });
+      box.querySelector('.gl-close').addEventListener('click', close);
+      box.querySelector('.gl-prev').addEventListener('click', function (e) { e.stopPropagation(); show(i - 1); });
+      box.querySelector('.gl-next').addEventListener('click', function (e) { e.stopPropagation(); show(i + 1); });
+      box.addEventListener('click', function (e) { if (e.target === box) close(); });
+      document.addEventListener('keydown', function (e) { if (box.hidden) return; if (e.key === 'Escape') close(); if (e.key === 'ArrowLeft') show(i - 1); if (e.key === 'ArrowRight') show(i + 1); });
+    })();
+  </script>
+</body>
+</html>
+
+

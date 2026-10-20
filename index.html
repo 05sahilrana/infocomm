@@ -108,6 +108,11 @@
     .hm-dots button{width:9px;height:9px;border-radius:50%;border:0;padding:0;cursor:pointer;background:rgba(255,255,255,.5);transition:background .2s,transform .2s}
     .hm-dots button.on{background:#fff;transform:scale(1.35)}
     .hm-slider::after{z-index:2}
+<<<<<<< HEAD
+=======
+    .hm-gallery-btn{position:absolute;top:12px;right:12px;z-index:3;padding:.45rem .9rem;border-radius:999px;background:rgba(4,11,22,.6);color:#fff;font-size:.85rem;font-weight:700;text-decoration:none;backdrop-filter:blur(4px);transition:background .2s}
+    .hm-gallery-btn:hover{background:#e8590c}
+>>>>>>> 3004038 (Footer: compact quick links)
     .hm-tricolor{position:absolute;left:0;right:0;bottom:0;display:flex;height:5px}
     .hm-tricolor span{flex:1}
     .hm-tricolor span:nth-child(1){background:var(--b-blue)}
@@ -245,6 +250,7 @@
     .ft a:hover{color:#fff;text-decoration:underline}
     .ft ul{list-style:none;margin:0;padding:0}
     .ft li{margin-bottom:.45rem}
+    .ft .ft-links-2{display:grid;grid-template-columns:repeat(2,minmax(0,max-content));column-gap:2rem}
     .ft-social{margin-top:.6rem !important}
     .ft-social a{display:inline-flex;align-items:center;gap:.45rem}
     .ft-social svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
@@ -347,6 +353,10 @@
           <button type="button" class="hm-nav hm-prev" aria-label="Previous photo">&#8249;</button>
           <button type="button" class="hm-nav hm-next" aria-label="Next photo">&#8250;</button>
           <div class="hm-dots" role="tablist" aria-label="Choose a photo"></div>
+<<<<<<< HEAD
+=======
+          <a class="hm-gallery-btn" href="gallery.html">View gallery &rarr;</a>
+>>>>>>> 3004038 (Footer: compact quick links)
         </figure>
       </div>
       <div class="hm-tricolor" aria-hidden="true"><span></span><span></span><span></span></div>
@@ -522,13 +532,13 @@
       </div>
       <div>
         <h4>Quick Links</h4>
-        <ul>
-          <li><a href="index.html">Home</a></li>
+        <ul class="ft-links-2">
           <li><a href="about.html">About</a></li>
           <li><a href="people.html">People</a></li>
           <li><a href="projects.html">Projects</a></li>
           <li><a href="publications.html">Publications</a></li>
           <li><a href="resources.html">Resources</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
           <li><a href="join.html">Join Us</a></li>
         </ul>
       </div>
