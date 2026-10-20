@@ -260,8 +260,8 @@
         <ul class="ab-stats">
           <li><strong>6</strong><span>Faculty members</span></li>
           <li><strong>30</strong><span>Scholars &amp; students</span></li>
-          <li><strong>120+</strong><span>Publications</span></li>
-          <li><strong>15+</strong><span>Years of research</span></li>
+          <li><strong>40+</strong><span>Research papers</span></li>
+          <li><strong>5+</strong><span>Years of research</span></li>
         </ul>
       </div>
     </section>
@@ -445,7 +445,22 @@
       els.forEach(function (el) { el.classList.add('ab-reveal'); io.observe(el); });
     })();
   </script>
+  <script>
+    // stats count up from 0 when they scroll into view
+    (function () {
+      var els = document.querySelectorAll('.hm-stats strong, .ab-stats strong, .pb-stats strong');
+      if (!els.length || !('IntersectionObserver' in window)) return;
+      if (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      function run(el) {
+        var m = el.textContent.trim().match(/^(\d+)(\+?)$/); if (!m) return;
+        var end = +m[1], suf = m[2], t0 = null, dur = 1400;
+        function step(t) { if (!t0) t0 = t; var p = Math.min((t - t0) / dur, 1), e = 1 - Math.pow(1 - p, 3);
+          el.textContent = Math.round(end * e) + (p === 1 ? suf : ''); if (p < 1) requestAnimationFrame(step); }
+        requestAnimationFrame(step);
+      }
+      var io = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { run(e.target); io.unobserve(e.target); } }); }, { threshold: 0.6 });
+      els.forEach(function (el) { io.observe(el); });
+    })();
+  </script>
 </body>
 </html>
-
-
