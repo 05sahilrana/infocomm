@@ -88,7 +88,7 @@
     .gl-item:hover .gl-cap,.gl-item:focus-visible .gl-cap{opacity:1;transform:none}
     @media (hover:none){.gl-cap{opacity:1;transform:none;padding-top:1.6rem}}
     .gl-stage{display:flex;flex-direction:column;align-items:center;gap:.9rem;max-width:100%;max-height:100%}
-    .gl-stage img{max-height:calc(100vh - 10rem)}
+    .gl-box .gl-stage img{max-height:calc(100vh - 10rem);max-width:100%;object-fit:contain}
     .gl-bigcap{margin:0;color:#fff;text-align:center;font-size:1.05rem;font-weight:600}
     .gl-bigcap span{display:block;margin-top:.2rem;font-size:.75rem;letter-spacing:.06em;text-transform:uppercase;color:#ffb48a}
     .gl-box{position:fixed;inset:0;z-index:2000;background:rgba(3,8,16,.92);display:flex;align-items:center;justify-content:center;padding:3rem 4rem}
@@ -167,22 +167,22 @@
         <!-- CAPTIONS: for each photo set data-caption (text shown on hover / tap)
              and data-cat (filter group), e.g.
              data-caption="IMC 2026 visit, New Delhi" data-cat="Conferences &amp; events"
-             Suggested groups: Conferences &amp; events, Lab life, Celebrations, Campus -->
+             Groups: Conferences &amp; events, Lab life, Celebrations, Campus, Awards -->
         <div class="gl-grid" id="glGrid">
-          <figure class="gl-item" tabindex="0" data-cat="" data-caption=""><img loading="lazy" src="https://cdn.jsdelivr.net/gh/SamannayaAdhikari/infocomm-lab-assets/hero8.jpeg" alt="InfoComm Lab photo" onerror="this.closest('figure').remove()"></figure>
-          <figure class="gl-item" tabindex="0" data-cat="" data-caption=""><img loading="lazy" src="Lab3.jpg" data-base="Lab3" data-exts="jpeg,png,JPG,JPEG,PNG,webp,WEBP,jfif" alt="InfoComm Lab photo" onerror="glNextImg(this)"></figure>
-          <figure class="gl-item" tabindex="0" data-cat="" data-caption=""><img loading="lazy" src="Lab8.jpg" data-base="Lab8" data-exts="jpeg,png,JPG,JPEG,PNG,webp,WEBP,jfif" alt="InfoComm Lab photo" onerror="glNextImg(this)"></figure>
-          <figure class="gl-item" tabindex="0" data-cat="" data-caption=""><img loading="lazy" src="Lab6.jpg" data-base="Lab6" data-exts="jpeg,png,JPG,JPEG,PNG,webp,WEBP,jfif" alt="InfoComm Lab photo" onerror="glNextImg(this)"></figure>
-          <figure class="gl-item" tabindex="0" data-cat="" data-caption=""><img loading="lazy" src="Lab1.jpg" data-base="Lab1" data-exts="jpeg,png,JPG,JPEG,PNG,webp,WEBP,jfif" alt="InfoComm Lab photo" onerror="glNextImg(this)"></figure>
-          <figure class="gl-item" tabindex="0" data-cat="" data-caption=""><img loading="lazy" src="https://cdn.jsdelivr.net/gh/SamannayaAdhikari/infocomm-lab-assets/hero3.jpeg" alt="InfoComm Lab photo" onerror="this.closest('figure').remove()"></figure>
-          <figure class="gl-item" tabindex="0" data-cat="" data-caption=""><img loading="lazy" src="Lab9.jpg" data-base="Lab9" data-exts="jpeg,png,JPG,JPEG,PNG,webp,WEBP,jfif" alt="InfoComm Lab photo" onerror="glNextImg(this)"></figure>
-          <figure class="gl-item" tabindex="0" data-cat="" data-caption=""><img loading="lazy" src="Lab5.jpg" data-base="Lab5" data-exts="jpeg,png,JPG,JPEG,PNG,webp,WEBP,jfif" alt="InfoComm Lab photo" onerror="glNextImg(this)"></figure>
-          <figure class="gl-item" tabindex="0" data-cat="" data-caption=""><img loading="lazy" src="Lab7.jpg" data-base="Lab7" data-exts="jpeg,png,JPG,JPEG,PNG,webp,WEBP,jfif" alt="InfoComm Lab photo" onerror="glNextImg(this)"></figure>
-          <figure class="gl-item" tabindex="0" data-cat="" data-caption=""><img loading="lazy" src="https://cdn.jsdelivr.net/gh/SamannayaAdhikari/infocomm-lab-assets/hero9.jpeg" alt="InfoComm Lab photo" onerror="this.closest('figure').remove()"></figure>
-          <figure class="gl-item" tabindex="0" data-cat="" data-caption=""><img loading="lazy" src="Lab10.jpg" data-base="Lab10" data-exts="jpeg,png,JPG,JPEG,PNG,webp,WEBP,jfif" alt="InfoComm Lab photo" onerror="glNextImg(this)"></figure>
-          <figure class="gl-item" tabindex="0" data-cat="" data-caption=""><img loading="lazy" src="Lab11.jpg" data-base="Lab11" data-exts="jpeg,png,JPG,JPEG,PNG,webp,WEBP,jfif" alt="InfoComm Lab photo" onerror="glNextImg(this)"></figure>
-          <figure class="gl-item" tabindex="0" data-cat="" data-caption=""><img loading="lazy" src="https://cdn.jsdelivr.net/gh/SamannayaAdhikari/infocomm-lab-assets/hero7.jpeg" alt="InfoComm Lab photo" onerror="this.closest('figure').remove()"></figure>
-          <figure class="gl-item" tabindex="0" data-cat="" data-caption=""><img loading="lazy" src="Lab12.jpg" data-base="Lab12" data-exts="jpeg,png,JPG,JPEG,PNG,webp,WEBP,jfif" alt="InfoComm Lab photo" onerror="glNextImg(this)"></figure>
+          <figure class="gl-item" tabindex="0" data-cat="Campus" data-caption="IIT Mandi campus at dusk"><img loading="lazy" src="https://cdn.jsdelivr.net/gh/SamannayaAdhikari/infocomm-lab-assets/hero8.jpeg" alt="InfoComm Lab photo" onerror="this.closest('figure').remove()"></figure>
+          <figure class="gl-item" tabindex="0" data-cat="Lab life" data-caption="Brainstorming session at the whiteboard"><img loading="lazy" src="Lab3.jpg" data-base="Lab3" data-exts="jpeg,png,JPG,JPEG,PNG,webp,WEBP,jfif" alt="InfoComm Lab photo" onerror="glNextImg(this)"></figure>
+          <figure class="gl-item" tabindex="0" data-cat="Conferences &amp; events" data-caption="InfoComm Lab stall at India Mobile Congress (IMC) 2026"><img loading="lazy" src="Lab8.jpg" data-base="Lab8" data-exts="jpeg,png,JPG,JPEG,PNG,webp,WEBP,jfif" alt="InfoComm Lab photo" onerror="glNextImg(this)"></figure>
+          <figure class="gl-item" tabindex="0" data-cat="Celebrations" data-caption="Teachers&#39; Day celebration with our faculty"><img loading="lazy" src="Lab6.jpg" data-base="Lab6" data-exts="jpeg,png,JPG,JPEG,PNG,webp,WEBP,jfif" alt="InfoComm Lab photo" onerror="glNextImg(this)"></figure>
+          <figure class="gl-item" tabindex="0" data-cat="Lab life" data-caption="Researchers at work in the InfoComm Lab"><img loading="lazy" src="Lab1.jpg" data-base="Lab1" data-exts="jpeg,png,JPG,JPEG,PNG,webp,WEBP,jfif" alt="InfoComm Lab photo" onerror="glNextImg(this)"></figure>
+          <figure class="gl-item" tabindex="0" data-cat="Celebrations" data-caption="Celebration in the lab"><img loading="lazy" src="https://cdn.jsdelivr.net/gh/SamannayaAdhikari/infocomm-lab-assets/hero3.jpeg" alt="InfoComm Lab photo" onerror="this.closest('figure').remove()"></figure>
+          <figure class="gl-item" tabindex="0" data-cat="Conferences &amp; events" data-caption="Visitors at our IMC 2026 stall"><img loading="lazy" src="Lab9.jpg" data-base="Lab9" data-exts="jpeg,png,JPG,JPEG,PNG,webp,WEBP,jfif" alt="InfoComm Lab photo" onerror="glNextImg(this)"></figure>
+          <figure class="gl-item" tabindex="0" data-cat="Celebrations" data-caption="Teachers&#39; Day celebration in the lab"><img loading="lazy" src="Lab5.jpg" data-base="Lab5" data-exts="jpeg,png,JPG,JPEG,PNG,webp,WEBP,jfif" alt="InfoComm Lab photo" onerror="glNextImg(this)"></figure>
+          <figure class="gl-item" tabindex="0" data-cat="Celebrations" data-caption="Faculty members on Teachers&#39; Day"><img loading="lazy" src="Lab7.jpg" data-base="Lab7" data-exts="jpeg,png,JPG,JPEG,PNG,webp,WEBP,jfif" alt="InfoComm Lab photo" onerror="glNextImg(this)"></figure>
+          <figure class="gl-item" tabindex="0" data-cat="Awards" data-caption="Best Paper Award at COMSNETS"><img loading="lazy" src="https://cdn.jsdelivr.net/gh/SamannayaAdhikari/infocomm-lab-assets/hero9.jpeg" alt="InfoComm Lab photo" onerror="this.closest('figure').remove()"></figure>
+          <figure class="gl-item" tabindex="0" data-cat="Conferences &amp; events" data-caption="Our team at the IMC 2026 stall"><img loading="lazy" src="Lab10.jpg" data-base="Lab10" data-exts="jpeg,png,JPG,JPEG,PNG,webp,WEBP,jfif" alt="InfoComm Lab photo" onerror="glNextImg(this)"></figure>
+          <figure class="gl-item" tabindex="0" data-cat="Conferences &amp; events" data-caption="Lab members at IEEE PIMRC 2026, Singapore"><img loading="lazy" src="Lab11.jpg" data-base="Lab11" data-exts="jpeg,png,JPG,JPEG,PNG,webp,WEBP,jfif" alt="InfoComm Lab photo" onerror="glNextImg(this)"></figure>
+          <figure class="gl-item" tabindex="0" data-cat="Campus" data-caption="Himalayan view near the IIT Mandi campus"><img loading="lazy" src="https://cdn.jsdelivr.net/gh/SamannayaAdhikari/infocomm-lab-assets/hero7.jpeg" alt="InfoComm Lab photo" onerror="this.closest('figure').remove()"></figure>
+          <figure class="gl-item" tabindex="0" data-cat="Conferences &amp; events" data-caption="At IEEE PIMRC 2026, Singapore"><img loading="lazy" src="Lab12.jpg" data-base="Lab12" data-exts="jpeg,png,JPG,JPEG,PNG,webp,WEBP,jfif" alt="InfoComm Lab photo" onerror="glNextImg(this)"></figure>
         </div>
       </div>
     </section>
@@ -255,6 +255,8 @@
       // filter chips (only shown when photos have 2+ groups)
       var cats = [];
       Array.prototype.forEach.call(grid.querySelectorAll('.gl-item'), function (f) { var g = (f.getAttribute('data-cat') || '').trim(); if (g && cats.indexOf(g) < 0) cats.push(g); });
+      var ORDER = ['Conferences & events', 'Lab life', 'Celebrations', 'Awards', 'Campus'];
+      cats.sort(function (a, b) { var x = ORDER.indexOf(a), y = ORDER.indexOf(b); return (x < 0 ? 99 : x) - (y < 0 ? 99 : y); });
       if (cats.length > 1) {
         ['All'].concat(cats).forEach(function (g, k) {
           var b = document.createElement('button'); b.type = 'button'; b.className = 'gl-chip' + (k ? '' : ' on'); b.textContent = g;
