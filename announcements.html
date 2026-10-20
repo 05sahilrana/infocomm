@@ -113,6 +113,12 @@
     .announcement-item::before{content:"";position:absolute;left:calc(-1.8rem - 8px);top:1.35rem;width:14px;height:14px;border-radius:50%;background:#fff;border:3px solid var(--blue)}
     .an-list > .announcement-list:first-of-type > .announcement-item:first-child::before{border-color:#e8590c;background:#fff1e8}
     .announcement-date{display:inline-block;font-size:.74rem;font-weight:700;letter-spacing:.4px;text-transform:uppercase;color:var(--blue);background:#e8f1fb;padding:.22rem .6rem;border-radius:6px}
+    .announcement-item.an-hot{border-color:#f5c3a6;background:linear-gradient(135deg,#fff,#fff6f0)}
+    .an-badge{display:inline-block;margin-left:.5rem;padding:.12rem .55rem;border-radius:999px;background:#e8590c;color:#fff;font-size:.68rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;vertical-align:middle}
+    .an-actions{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.8rem}
+    .an-actions a{display:inline-block;padding:.42rem .9rem;border-radius:999px;border:1px solid #cfdcec;font-size:.85rem;text-decoration:none}
+    .an-actions a.an-primary{background:#e8590c;border-color:#e8590c;color:#fff !important}
+    .an-actions a:hover{border-color:#e8590c}
     .announcement-item p{margin:.6rem 0 0;color:var(--text);line-height:1.6}
     .announcement-item a{color:var(--blue);font-weight:600}
     .ann-topics{margin:.5rem 0 0;padding-left:1.2rem;line-height:1.6;color:var(--text)}
@@ -160,6 +166,12 @@
       <div class="an-wrap an-list">
         <h2 class="an-year"><span>2026</span></h2>
         <ul class="announcement-list">
+        <li class="announcement-item an-hot">
+          <time datetime="2026-10-08" class="announcement-date">Oct 8, 2026</time><span class="an-badge">Admissions open</span>
+          <p><strong>Admissions open for M.Tech (Research), PhD and Dual Degree programs at SCEE, IIT Mandi (Jan&ndash;May 2027 session).</strong> The InfoComm Lab is part of the <strong>Intelligent Communication Systems (ICS)</strong> group of SCEE &mdash; applicants interested in wireless communications, cell-free massive MIMO, ISAC, signal processing, information theory and 5G/6G testbeds are encouraged to apply under ICS.</p>
+          <p>Last date to apply: <strong>November 4, 2026, 5:00 PM</strong>.</p>
+          <p class="an-actions"><a class="an-primary" href="https://sites.google.com/iitmandi.ac.in/scee-pg-admissions" target="_blank" rel="noopener">Apply: SCEE PG admissions</a><a href="https://iitmandi.ac.in/pdf/admissions/scee.pdf" target="_blank" rel="noopener">Advertisement (PDF)</a><a href="join.html">Programs &amp; pathways</a></p>
+        </li>
         <li class="announcement-item">
           <time datetime="2026-10-07" class="announcement-date">Oct 7&ndash;10, 2026</time>
           <p><strong>InfoComm Lab at India Mobile Congress (IMC) 2026.</strong> Researchers from the lab, together with Dr. Adarsh Patel, showcased their 5G and 6G work through research posters and live demonstrations at the IIT Mandi booth (Hall 1, Academic Area) at Yashobhoomi, New Delhi. The event was inaugurated by the Hon&rsquo;ble Prime Minister.</p>
